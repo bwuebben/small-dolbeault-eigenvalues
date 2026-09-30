@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the manuscript as below."
+title: "Small Dolbeault Eigenvalues along Hermitian Yang–Mills Flow: Manuscript and Computational Checks"
+type: software
+authors:
+  - family-names: Wuebben
+    given-names: Bernd Johannes
+date-released: 2026-09-30
+repository-code: "https://github.com/bwuebben/small-dolbeault-eigenvalues"
+license:
+  - CC-BY-4.0
+  - MIT
+keywords:
+  - Hermitian Yang–Mills flow
+  - Dolbeault Laplacian
+  - holomorphic vector bundles
+  - spectral degeneration
+  - weighted graph Laplacian
+  - slope stability
+preferred-citation:
+  type: unpublished
+  title: "Small Dolbeault eigenvalues along Hermitian Yang–Mills flow"
+  authors:
+    - family-names: Wuebben
+      given-names: Bernd Johannes
+  year: 2026
+  url: "https://github.com/bwuebben/small-dolbeault-eigenvalues/blob/main/paper/small-dolbeault-eigenvalues.pdf"

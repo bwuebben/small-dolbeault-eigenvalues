@@ -1,0 +1,311 @@
+\section{The diagonal flow}\label{sec:diagonal-flow}
+
+This section is finite-dimensional. It determines the exact asymptotics
+of the flow on block-scalar metrics that governs the small spectrum in
+Sections~\ref{sec:transfer} and~\ref{sec:complete-spectrum}.
+
+\subsection{Setting and the weight grading}
+
+Let $\Gamma$ be a finite directed acyclic graph with vertex set
+$\{1,\ldots,m\}$ and edge set $\Gamma_1$. An edge $\alpha\in\Gamma_1$ from $i$ to
+$j$ is written $\alpha=(i\to j)$. Fix masses $M_i>0$ and constants
+$c_\alpha>0$, and assume that the underlying undirected graph is connected.
+In the geometric application the vertices are the stable factors, an edge
+$i\to j$ records a nonzero harmonic entry $\beta_{ij}$ with $F_i$ on the
+subbundle side, $M_i=V\rk F_i$, and $c_\alpha=\lVert\beta_{ij}\rVert_{L^2}^2$.
+
+On the hyperplane $\sum_iM_iy_i=0$ of $\mathbb R^m$ put
+\begin{equation}\label{eq:diag-flow}
+ k_\alpha(y)=c_\alpha e^{2(y_i-y_j)},\qquad
+ M_ip_i(y)=\sum_{\alpha\text{ out of }i}k_\alpha
+          -\sum_{\alpha\text{ into }i}k_\alpha,\qquad
+ \dot y_i=-p_i(y).
+\end{equation}
+With $d_i=e^{y_i}$ this is the flow $\dot gg^{-1}=-\diag(p_i\id_{F_i})$
+for $g=\diag(d_i\id_{F_i})$ studied in Section~\ref{sec:transfer}. Put
+$\mathfrak e=\sum_\alpha k_\alpha$, the \emph{total conductance}. The positive eigenvalues
+$\nu_1\le\cdots\le\nu_{m-1}$ of the weighted graph form
+$\sum_\alpha k_\alpha|x_i-x_j|^2$ on $\{\sum_iM_ix_i=0\}$, with norm
+$\sum_iM_i|x_i|^2$, are the \emph{graph eigenvalues} of $y$.
+
+\begin{definition}\label{def:weight-grading}
+The \emph{weight grading} is the unique minimizer $w\in\mathbb R^m$ of
+$\frac12\sum_iM_iw_i^2$ subject to $w_j-w_i\ge\frac12$ for every edge
+$i\to j$. An edge is \emph{tight} if equality holds, and its \emph{slack}
+is $\varepsilon_\alpha=2(w_j-w_i)-1\ge0$. The \emph{tight subgraph}
+$\mathcal T\subset\Gamma_1$ consists of the tight edges, and its connected components
+(on all $m$ vertices, isolated vertices included) are the \emph{tight
+components}.
+\end{definition}
+
+The constraint set is nonempty, since half the length of a longest path
+into each vertex is admissible, and the objective is strictly convex.
+The constraints are invariant under adding constants, so
+$\sum_iM_iw_i=0$. Since they are linear, there are Lagrange multipliers
+$u_\alpha\ge0$, vanishing off $\mathcal T$, with
+\begin{equation}\label{eq:kkt}
+ M_iw_i=\sum_{\alpha\text{ into }i}u_\alpha
+        -\sum_{\alpha\text{ out of }i}u_\alpha .
+\end{equation}
+Summing over a tight component $\mathcal C$ gives $\sum_{i\in\mathcal C}M_iw_i=0$, because
+$u$ is supported on edges inside tight components. A vertex with no tight
+edge therefore has $w_i=0$. At least one edge is tight: otherwise every
+multiplier would vanish, so $w=0$ by \eqref{eq:kkt}, which is not
+admissible.
+
+This is the weight grading of Haiden, Katzarkov, Kontsevich, and Pandit
+\cite[Section~3]{HKKP2023}. Their flow \cite[(3.10)]{HKKP2023} is
+\eqref{eq:diag-flow} after the substitutions
+\[
+ x=-2y,\qquad t=2\tau,\qquad v=-2w,\qquad m_i=M_i,
+\]
+and their tight edges $v_i-v_j=1$ are ours.
+
+\begin{definition}\label{def:nondegenerate}
+The pair $(\Gamma,M)$ is \emph{nondegenerate} if some multiplier vector
+satisfying \eqref{eq:kkt} is strictly positive on every tight edge.
+\end{definition}
+
+In the language of optimization this is strict complementarity. Replacing $M$
+by a positive multiple leaves $w$ unchanged and rescales the multipliers,
+so for $M_i=V\rk F_i$ nondegeneracy depends only on $\Gamma$ and the ranks.
+We then say that $(\Gamma,(r_i))$ is nondegenerate.
+
+This is exactly the hypothesis of \cite[Theorem~3.6]{HKKP2023}, under which
+$y=w\log\tau+O(1)$. It fails, for example, for the zigzag
+$1\to2\leftarrow3\to4$ with masses satisfying $M_1M_4=M_2M_3$ (compare
+\cite[(3.23)--(3.28)]{HKKP2023}),
+where iterated logarithms can appear. The equal-rank zigzag of
+Theorem~\ref{thm:zigzag-flow} lies on that quadric. In a nondegenerate
+graph the tight edges are exactly the edges carrying positive multipliers.
+
+\subsection{Convergence of the remainder}
+
+\begin{theorem}\label{thm:diag-convergence}
+Assume $(\Gamma,M)$ is nondegenerate. The tight potential
+\[
+ \Phi(z)=\sum_iM_iw_iz_i+\frac12\sum_{\alpha\in\mathcal T}c_\alpha e^{2(z_i-z_j)}
+\]
+has a minimizer $\zeta^*$, unique subject to $\sum_{i\in\mathcal C}M_i\zeta^*_i=0$
+for every tight component $\mathcal C$. Every solution of \eqref{eq:diag-flow}
+satisfies
+\begin{equation}\label{eq:diag-asymptotics}
+ y(\tau)=w\log\tau+\zeta^*+\sum_{\mathcal C}Z_{\mathcal C}\mathbf 1_{\mathcal C}+O(\tau^{-\delta})
+\end{equation}
+for some $\delta>0$ and constants $Z_{\mathcal C}$ with $\sum_{\mathcal C}M_{\mathcal C}Z_{\mathcal C}=0$, where
+$M_{\mathcal C}=\sum_{i\in\mathcal C}M_i$ and $\mathbf 1_{\mathcal C}$ is the indicator vector of $\mathcal C$.
+The vector $\zeta^*$ depends only on $(\Gamma,M,c)$. The constants $Z_{\mathcal C}$ depend
+on the solution.
+\end{theorem}
+
+\begin{proof}
+Set $s=\log\tau$ for $\tau\ge1$ and $z(s)=y(e^s)-ws$. Then
+$\sum_iM_iz_i=0$, and $\tau k_\alpha=c_\alpha e^{2t_\alpha}e^{-\varepsilon_\alpha s}$
+with $t_\alpha=z_i-z_j$. Define
+\[
+ \Psi_s(z)=\sum_iM_iw_iz_i
+ +\frac12\sum_\alpha c_\alpha e^{2t_\alpha}e^{-\varepsilon_\alpha s}.
+\]
+Since $\partial\Psi_s/\partial z_i=M_iw_i+M_i\tau p_i$ and
+$dz_i/ds=-\tau p_i-w_i$, the curve $z$ is the gradient flow
+$dz/ds=-M^{-1}\nabla\Psi_s(z)$. Because $\partial_s\Psi_s\le0$,
+\begin{equation}\label{eq:psi-monotone}
+ \frac{d}{ds}\Psi_s(z(s))
+ =-\sum_i\frac{(\partial_i\Psi_s)^2}{M_i}
+  -\frac12\sum_\alpha\varepsilon_\alpha\tau k_\alpha\le0.
+\end{equation}
+
+Fix multipliers $u$ satisfying \eqref{eq:kkt} with $u_\alpha>0$ on $\mathcal T$.
+By \eqref{eq:kkt}, $\sum_iM_iw_iz_i=-\sum_\alpha u_\alpha t_\alpha$, so
+\[
+ \Psi_s(z)=\sum_{\alpha\in\mathcal T}\Bigl(\frac{c_\alpha}2e^{2t_\alpha}
+ -u_\alpha t_\alpha\Bigr)
+ +\frac12\sum_{\alpha\notin\mathcal T}c_\alpha e^{2t_\alpha}e^{-\varepsilon_\alpha s}.
+\]
+Each tight term is bounded below by $\frac{u_\alpha}2(1-\log(u_\alpha/c_\alpha))$
+and is proper in $t_\alpha$; the other terms are nonnegative. Hence
+$\Psi_s(z(s))$ decreases to a finite limit, every tight difference
+$t_\alpha$ is bounded along the solution, and \eqref{eq:psi-monotone} gives
+\begin{equation}\label{eq:slack-integrable}
+ \int_0^\infty\sum_{\alpha\notin\mathcal T}\varepsilon_\alpha\tau k_\alpha\,ds<\infty.
+\end{equation}
+Within a tight component, $z_i-z_j$ is therefore bounded.
+
+Let $Z_{\mathcal C}(s)=M_{\mathcal C}^{-1}\sum_{i\in\mathcal C}M_iz_i$. In
+$\sum_{i\in\mathcal C}\partial_i\Psi_s$ every edge inside $\mathcal C$ cancels, and
+$\sum_{i\in\mathcal C}M_iw_i=0$. Edges between different tight components are not
+tight, so their slack is at least
+$\varepsilon_*=\min_{\alpha\notin\mathcal T}\varepsilon_\alpha>0$. Hence
+\[
+ \Bigl|\frac{dZ_{\mathcal C}}{ds}\Bigr|
+ \le\frac1{M_{\mathcal C}\varepsilon_*}\sum_{\alpha\notin\mathcal T}\varepsilon_\alpha\tau k_\alpha,
+\]
+which is integrable by \eqref{eq:slack-integrable}. So $Z_{\mathcal C}(s)$ converges,
+and $z$ is bounded. Consequently $\tau k_\alpha\le Ce^{-\varepsilon_*s}$ for
+$\alpha\notin\mathcal T$. If every edge is tight there is one component, and these
+terms are absent.
+
+Let $H$ be the $M$-orthogonal complement of the span of the $\mathbf 1_{\mathcal C}$,
+and write $z=\zeta+\sum_{\mathcal C}Z_{\mathcal C}\mathbf 1_{\mathcal C}$ with $\zeta\in H$. The tight
+potential satisfies $\Phi(z+\sum_{\mathcal C}\theta_{\mathcal C}\mathbf 1_{\mathcal C})=\Phi(z)$, so
+$M^{-1}\nabla\Phi$ takes values in $H$, and
+\[
+ \frac{d\zeta}{ds}=-M^{-1}\nabla\Phi(\zeta)+R(s),\qquad
+ |R(s)|\le Ce^{-\varepsilon_*s}.
+\]
+On $H$ the map $\zeta\mapsto(t_\alpha)_{\alpha\in\mathcal T}$ is injective, so
+$\Phi|_H$ is strictly convex and proper, with a unique minimizer $\zeta^*$,
+and its Hessian $2\sum_{\alpha\in\mathcal T}c_\alpha e^{2t_\alpha}(dt_\alpha)^2$ is
+uniformly positive on bounded subsets of $H$.
+
+Let $B\subset H$ be a closed ball containing $\zeta^*$ and the bounded curve
+$\zeta([0,\infty))$. On $B$, in the norm $|x|_M^2=\sum_iM_ix_i^2$, the
+Hessian of $\Phi|_H$ is bounded below by some $c_0>0$. Put
+$W=\Phi(\zeta)-\Phi(\zeta^*)\ge0$. For $\zeta\in B$, strong convexity gives
+\[
+ \tfrac{c_0}2|\zeta-\zeta^*|_M^2\le W\le\tfrac1{2c_0}|\nabla\Phi(\zeta)|_{M^{-1}}^2,
+\]
+where $|v|_{M^{-1}}^2=\sum_iv_i^2/M_i$. Along the solution,
+\[
+ \frac{dW}{ds}=-|\nabla\Phi|_{M^{-1}}^2+\langle\nabla\Phi,R\rangle
+ \le-\tfrac12|\nabla\Phi|_{M^{-1}}^2+\tfrac12|R|_M^2
+ \le-c_0W+C^2e^{-2\varepsilon_*s}.
+\]
+By Gr\"onwall's inequality, $W(s)\le C'(1+s)e^{-\min(c_0,2\varepsilon_*)s}$,
+and hence $|\zeta(s)-\zeta^*|_M=O(e^{-\delta s})$ for every
+$\delta<\frac12\min(c_0,2\varepsilon_*)$. Since $z$ is bounded,
+$|dZ_{\mathcal C}/ds|\le Ce^{-\varepsilon_*s}$, and so
+$|Z_{\mathcal C}(s)-\lim Z_{\mathcal C}|\le Ce^{-\varepsilon_*s}/\varepsilon_*$.
+In the variable $\tau=e^s$ this is \eqref{eq:diag-asymptotics}.
+\end{proof}
+
+The critical equation of $\Phi$ on $H$ states that
+\begin{equation}\label{eq:ustar}
+ u^*_\alpha=c_\alpha e^{2(\zeta^*_i-\zeta^*_j)}\qquad(\alpha\in\mathcal T)
+\end{equation}
+satisfies \eqref{eq:kkt}. It is the unique multiplier vector of this form.
+When $\mathcal T$ is a forest, \eqref{eq:kkt} determines $u^*$, which is then
+independent of $c$.
+
+\begin{remark}\label{rem:implicit-bias}
+After the substitution $\theta=M^{1/2}y$, the flow \eqref{eq:diag-flow} is
+gradient flow for the exponential loss $\frac12\sum_\alpha c_\alpha
+e^{-\langle x_\alpha,\theta\rangle}$ of the linearly separable vectors
+$x_\alpha=2M^{-1/2}(e_j-e_i)$. The weight grading is the corresponding
+hard-margin direction, and tight edges are support vectors. For gradient
+descent with unit weights, Soudry, Hoffer, Nacson, Gunasekar, and Srebro
+prove convergence of the remainder when the support vectors span the data
+\cite[Theorems~3 and~4]{Soudry2018}. Here that means there is a single tight
+component. Nacson et al.\ \cite[Theorem~10]{Nacson2019} bound the component
+of the remainder outside the span of the support vectors without that
+assumption. The iterated-logarithm expansion of Soudry et al.\ in the degenerate case
+\cite[Theorem~13]{Soudry2018} parallels \cite[Section~5]{HKKP2023}. The
+case of several tight components, where the constants $Z_{\mathcal C}$ carry the
+dependence on the solution, is the case needed below. The monotone quantity
+$\Psi_s$ handles it directly.
+\end{remark}
+
+\subsection{Conductances and graph eigenvalues}
+
+Put $a_\alpha=1+\varepsilon_\alpha$ and
+$u^0_\alpha=c_\alpha e^{2(\zeta^*_i-\zeta^*_j)}$ for every edge; on tight
+edges $u^0_\alpha=u^*_\alpha$. By
+Theorem~\ref{thm:diag-convergence},
+\begin{equation}\label{eq:edge-asymptotics}
+ \tau^{a_\alpha}k_\alpha(y(\tau))\longrightarrow
+ k^\infty_\alpha=u^0_\alpha e^{2(Z_{\mathcal C(i)}-Z_{\mathcal C(j)})},
+\end{equation}
+where $\mathcal C(i)$ is the tight component of $i$. In particular
+$\tau k_\alpha\to u^*_\alpha$ on tight edges, whatever the solution.
+
+For an exponent $a$, contract the connected components of the subgraph of
+edges with $a_\alpha<a$, adding masses. Join the resulting vertices by the
+edges with $a_\alpha=a$ that connect distinct contracted vertices, with
+conductances $k^\infty_\alpha$ summed over parallel edges. Let $d_a$ be the number
+of positive eigenvalues of this \emph{$a$-quotient graph}. Edges with
+$a_\alpha=a$ inside one contracted vertex are omitted; such edges can
+occur.
+
+\begin{theorem}\label{thm:diag-spectrum}
+Assume $(\Gamma,M)$ is nondegenerate, and let $y$ solve \eqref{eq:diag-flow}.
+\begin{enumerate}
+\item For each exponent $a$, exactly $d_a$ graph eigenvalues satisfy
+ $\nu=\rho\,\tau^{-a}(1+o(1))$, where $\rho$ runs through the positive
+ eigenvalues of the $a$-quotient graph, with multiplicity. The
+ corresponding spectral subspaces converge to the quotient eigenspaces,
+ embedded as vectors constant on the contracted vertices.
+\item At $a=1$ the quotient graph is the tight subgraph, which is
+ nonempty, with conductances $u^*$ and masses $M_i$. These coefficients are the same for every
+ solution. The value $\frac12$ occurs with multiplicity at least the number
+ of tight components with at least two vertices. For each such component $\mathcal C$,
+ $w\mathbf 1_{\mathcal C}$ is a $\frac12$-eigenvector.
+\item For each $a>1$ with $d_a\ge1$, the sum of the coefficients at exponent $a$
+ is
+ \[
+  \sum_{\alpha}k^\infty_\alpha\bigl(M_A^{-1}+M_B^{-1}\bigr),
+ \]
+ summed over edges with $a_\alpha=a$ that join distinct contracted vertices
+ $A\ne B$. As the initial condition varies, this sum is unbounded, and so is
+ the largest coefficient at exponent $a$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:edge-asymptotics}, each conductance lies within a factor
+$1+O(\tau^{-\delta})$ of $k^\infty_\alpha\tau^{-a_\alpha}$. A common relative
+perturbation of all conductances moves every graph eigenvalue by at most the same
+factor, by min--max. The proof of Theorem~\ref{thm:orders} uses only the
+ordering of the exponents. With $t=\tau^{-1}$ and real exponents
+$a_\alpha$ in place of $2p_{ij}$, it gives the eigenvalue and eigenspace
+statements in (1); the $1+o(1)$ factors change each quotient by $o(1)$.
+
+In (2) nothing is contracted at $a=1$, and \eqref{eq:ustar} identifies the
+weights. For every tight edge, $w_j-w_i=\frac12$. By \eqref{eq:kkt},
+\[
+ \sum_{\alpha\in\mathcal T,\;\alpha\ni i}u^*_\alpha(w_i-w_{\alpha(i)})
+ =\frac12\Bigl(\sum_{\alpha\text{ into }i}u^*_\alpha
+ -\sum_{\alpha\text{ out of }i}u^*_\alpha\Bigr)=\frac12M_iw_i,
+\]
+where $\alpha(i)$ is the other endpoint. This identity holds row by row, and
+the tight Laplacian is block diagonal over tight components. So
+$w\mathbf 1_{\mathcal C}$ is a $\frac12$-eigenvector whenever it is nonzero. It is
+nonzero when $\mathcal C$ has an edge, and it is $M$-orthogonal to $\mathbf 1_{\mathcal C}$.
+
+For (3), the trace of the Laplacian of the $a$-quotient graph with respect to the
+masses is the displayed sum. Its terms are
+$u^0_\alpha e^{2(Z_{\mathcal C(i)}-Z_{\mathcal C(j)})}$ with $\mathcal C(i)\ne \mathcal C(j)$, and the linear
+forms $Z_{\mathcal C(i)}-Z_{\mathcal C(j)}$ are nonzero on $\{\sum M_{\mathcal C}Z_{\mathcal C}=0\}$. So the sum is
+unbounded as $Z$ ranges over this hyperplane.
+
+Every such $Z$ is approximately attained. Start at a late time $s_0$ from
+$\zeta^*+\sum_{\mathcal C}\theta_{\mathcal C}\mathbf 1_{\mathcal C}$, with
+$\sum_{\mathcal C}M_{\mathcal C}\theta_{\mathcal C}=0$, and put $\Theta=\max|\theta_{\mathcal C}|$.
+Let $s_2\in(s_0,\infty]$ be the supremum of the $s$ for which
+$|z(\sigma)-z(s_0)|_\infty\le1$ on $[s_0,s]$. On $[s_0,s_2)$, every
+difference $t_\alpha$ is at most $2\Theta+2+\max|\zeta^*_i-\zeta^*_j|$. So every
+non-tight conductance satisfies $\tau k_\alpha\le C_1e^{4\Theta}e^{-\varepsilon_*s}$,
+where $C_1$ does not depend on $(\theta_{\mathcal C})$ or $s_0$. Let $B$ now
+be the closed ball in $H$ about $\zeta^*$ containing all $\zeta$ with
+$|z-z(s_0)|_\infty\le1$, for $z(s_0)$ of the above form. Its convexity
+constant $c_0$ depends only on $\Gamma$, $M$, $c$ and $\Theta$. There:
+\begin{itemize}
+\item $|dZ_{\mathcal C}/ds|\le C_2e^{4\Theta}e^{-\varepsilon_*s}$, so
+ $|Z_{\mathcal C}(s)-\theta_{\mathcal C}|\le C_2e^{4\Theta-\varepsilon_*s_0}/\varepsilon_*$;
+\item the transverse part starts at the critical point, $\zeta(s_0)=\zeta^*$.
+ The estimate above, with $R=O(e^{4\Theta-\varepsilon_*s})$, gives
+ $|\zeta(s)-\zeta^*|_M\le C_3e^{4\Theta-\varepsilon_*s_0}$.
+\end{itemize}
+The deviation $|z(s)-z(s_0)|_\infty$ is at most
+$C_2e^{4\Theta-\varepsilon_*s_0}/\varepsilon_*
++(\min_iM_i)^{-1/2}C_3e^{4\Theta-\varepsilon_*s_0}$. If $s_0$ is so large
+that this is below $\frac12$, the deviation stays below $\frac12$ on
+$[s_0,s_2)$. By continuity this
+forces $s_2=\infty$. Hence
+\[
+ \lim_{s\to\infty}Z_{\mathcal C}(s)=\theta_{\mathcal C}+O(e^{4\Theta-\varepsilon_*s_0}).
+\]
+The flow is autonomous, and a shift of time does not change the leading
+coefficient of $\tau^{-a}$. So every vector $(\theta_{\mathcal C})$ is, up to an
+arbitrarily small error, the vector of limits $Z_{\mathcal C}$ of some
+solution.
+\end{proof}

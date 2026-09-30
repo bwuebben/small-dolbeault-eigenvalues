@@ -1,0 +1,14 @@
+# Public release allowlist; build products and unlisted files stay local.
+*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/CITATION.cff
+!/CITATION.bib
+!/Makefile
+!/paper/
+!/paper/*.tex
+!/paper/small-dolbeault-eigenvalues.pdf
+!/checks/
+!/checks/README.md
+!/checks/check_*.py

@@ -1,0 +1,128 @@
+\section{Spectral recovery for semistable bundles on curves}\label{sec:curve-recovery}
+
+We now show that the harmonic families of Section~\ref{sec:several} can be
+constructed from every simple strictly semistable bundle on a curve,
+including those with repeated stable Jordan--H\"older factors. The
+construction uses the normal form of Lemma~\ref{lem:normal-form}.
+
+\subsection{A metric family realizing the graded object}
+
+Let $E$ now be simple and strictly semistable. Fix a Jordan--H\"older
+filtration \eqref{eq:curve-filtration} with stable quotients $F_i$,
+allowing repetitions. On a smooth curve a saturated
+filtration has locally free terms and quotients, so the lemma applies.
+All quotients have slope $\mu(E)$. Choose Hermitian--Einstein metrics
+$h_i$ on them, choosing the same metric on isomorphic copies under
+fixed identifications, and put $h_0=\bigoplus_i h_i$ on
+$G=\operatorname{gr}(E)=\bigoplus_iF_i$.
+Write $G=\bigoplus_\alpha H_\alpha\otimes\CC^{m_\alpha}$ as in
+\eqref{eq:isotypical-splitting}, and set
+$d=\sum_\alpha m_\alpha^2-1$.
+Apply Lemma~\ref{lem:normal-form} using these metrics to obtain
+$\Phi$ and $\beta$.
+
+Choose any strictly decreasing integers $\ell_1>\cdots>\ell_m=0$, scaling
+exponents as in Section~\ref{sec:several}, and set
+\begin{equation}\label{eq:recovery-gauges}
+ g_t=\diag(t^{\ell_i}\id_{F_i}),\qquad
+ \Psi_t=g_t\Phi^{-1}:E\longrightarrow G,\qquad
+ h_t=\Psi_t^*h_0,\qquad t>0.
+\end{equation}
+Define $p_{ij}=\ell_i-\ell_j$ and
+$p_* =\min_{\beta_{ij}\ne0}p_{ij}$. This minimum exists: if all
+entries vanished, $E$ would be a direct sum of $m\ge2$ stable
+bundles and hence would not be simple. Let $L_t$ be the operator
+\eqref{eq:matrix-form} on $\mathcal K_G=H^0(X,\End_0G)$, with
+$N_t=\sum_{i<j}t^{p_{ij}}\beta_{ij}$, and let $\nu_j(t)$ be its
+$d$ eigenvalues in increasing order.
+
+\begin{theorem}[Recovery along a constructed metric family]\label{thm:curve-recovery}
+The metrics \eqref{eq:recovery-gauges} form an approximate
+Hermitian--Einstein family on $E$. More precisely, with
+$\kappa=2\pi\mu(E)/V$,
+\begin{equation}\label{eq:recovery-curvature}
+ \lVert K_{h_t}-\kappa\id_E\rVert_{L^\infty,\op,h_t}
+ =O(t^{2p_*}).
+\end{equation}
+The commutator form $L_t$ is positive definite. Exactly $d$ eigenvalues of the
+trace-free endomorphism Laplacian tend to zero, all are positive for
+$t>0$, and
+\begin{equation}\label{eq:recovery-rates}
+ \frac{\lambda_j(h_t)}{\nu_j(t)}=1+O(t^{2p_*}),
+ \qquad 1\le j\le d,\qquad
+ \lambda_{d+1}(h_t)\ge\delta>0
+\end{equation}
+for sufficiently small $t$.
+
+Let $\Pi_t^E$ be the orthogonal projection onto these $d$
+eigenvalues, and let $P_G$ be the $L^2(h_0)$ projection onto
+\[
+ \mathcal K_G=H^0(X,\End_0G)
+ =\left\{(X_\alpha)_\alpha:\sum_\alpha
+       \rk(H_\alpha)\tr X_\alpha=0\right\}.
+\]
+Conjugation by $\Psi_t$ defines a unitary identification
+$\mathcal U_tu=\Psi_tu\Psi_t^{-1}$ of the endomorphism $L^2$
+spaces. For every $k\ge0$,
+\begin{equation}\label{eq:recovery-projection}
+ \lVert\mathcal U_t\Pi_t^E\mathcal U_t^{-1}-P_G
+ \rVert_{L^2(h_0)\to C^k(h_0)}=O(t^{2p_*}).
+\end{equation}
+Adjoining $\CC\id_G$ to the full limiting space gives the algebra
+$\bigoplus_\alpha M_{m_\alpha}(\CC)$ acting on $G$. Its minimal
+nonzero central idempotents and matrix sizes recover the isotypical components and
+their multiplicities; the holomorphic images of minimal nonzero
+idempotents recover the stable factors up to isomorphism.
+
+If the $F_i$ are pairwise nonisomorphic, then $d=m-1$, $L_t$ is the
+connected weighted graph Laplacian \eqref{eq:graph-form}, and the
+quotient graphs of Theorem~\ref{thm:orders} determine every leading
+coefficient and corresponding limiting spectral subspace.
+\end{theorem}
+
+\begin{proof}
+The holomorphic structure transported by $\Psi_t$ is
+\begin{equation}\label{eq:recovery-operator}
+ \Psi_t\db_E\Psi_t^{-1}
+ =g_t(\db_0+\beta)g_t^{-1}
+ =\db_0+\sum_{i<j}t^{p_{ij}}\beta_{ij}.
+\end{equation}
+This is precisely the family of Section~\ref{sec:repeated}, with
+its fixed product metric. The map $\Psi_t$ is a holomorphic
+isometry from $(E,h_t)$ to that bundle. Naturality of the Chern
+connection and \eqref{eq:several-curvature} prove
+\eqref{eq:recovery-curvature}; the pointwise operator norms agree
+under this isometry.
+
+Conjugation by a holomorphic isometry intertwines the Dolbeault
+operators on endomorphisms and their adjoints. It preserves the
+trace-free condition and the Hilbert--Schmidt metrics. Thus
+$\mathcal U_t$ identifies the endomorphism Laplacians unitarily.
+Since $E$ is simple, Theorem~\ref{thm:matrix-relative} makes $L_t$
+positive definite and gives \eqref{eq:recovery-rates}, with
+$\delta=\gamma/4$ in the notation of that theorem.
+The same theorem proves \eqref{eq:recovery-projection}. When all
+multiplicities equal one, Theorems~\ref{thm:relative} and
+\ref{thm:orders} give connectedness and the graph contraction
+description of individual decay orders and limiting spectral subspaces.
+
+Finally, stability of the distinct representatives gives
+\[
+ \mathcal K_G\oplus\CC\id_G
+ =H^0(X,\End G)=\bigoplus_\alpha
+     \id_{H_\alpha}\otimes M_{m_\alpha}(\CC).
+\]
+The central idempotent for $\alpha$ has image
+$H_\alpha\otimes\CC^{m_\alpha}$. Its matrix ideal has dimension
+$m_\alpha^2$, and a minimal nonzero idempotent in that ideal has
+image isomorphic to $H_\alpha$. Decomposing the central identity
+into orthogonal rank-one projections recovers $m_\alpha$ copies.
+Their direct sum over $\alpha$ is $\operatorname{gr}(E)$.
+The Jordan--H\"older theorem makes
+the isomorphism class of this graded bundle independent of the chosen
+filtration \cite{Kobayashi1987}.
+\end{proof}
+
+The construction depends on a filtration, quotient metrics, and integer
+scaling exponents; the scope of such statements is summarized in
+Section~\ref{sec:earlier-work}.

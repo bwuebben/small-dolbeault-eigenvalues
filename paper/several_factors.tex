@@ -1,0 +1,449 @@
+\section{Several stable summands on a curve}\label{sec:several}
+
+Let $(X,\omega)$ now be a compact connected Riemann surface. Fix pairwise
+nonisomorphic stable bundles $F_1,\ldots,F_m$, $m\ge2$, of equal slope,
+with ranks $r_i$ and Hermitian--Einstein metrics $h_i$. On
+$E_0=\bigoplus_iF_i$ use the metric $h_0=\bigoplus_i h_i$.
+Choose strictly decreasing integers $\ell_1>\cdots>\ell_m=0$, the
+\emph{scaling exponents}, and harmonic forms
+\[
+ \beta_{ij}\in\Omega^{0,1}(\Hom(F_j,F_i)),\qquad i<j.
+\]
+Some forms may vanish, but at least one is nonzero. Set
+\begin{equation}\label{eq:several-family}
+ p_{ij}=\ell_i-\ell_j,\qquad
+ N_t=\sum_{i<j}t^{p_{ij}}\beta_{ij},\qquad
+ \db_t=\db_0+N_t,\qquad t>0,
+\end{equation}
+where each summand occupies its indicated upper-triangular block.
+Integrability is automatic on a curve. The diagonal transformation
+$g_t=\diag(t^{\ell_i}\id_{F_i})$ satisfies
+$\db_t=g_t\db_1g_t^{-1}$. Thus all $E_t$, $t>0$, are holomorphically
+isomorphic, and $g_t$ is an isometry from $(E_1,g_t^*h_0)$ to $(E_t,h_0)$.
+
+On the fixed Hilbert space $H=L^2(X,\End_0 E_0)$ define
+\[
+ D_t=D_0+B_t,\qquad D_0=\db_{0,\End},\qquad
+ B_tu=[N_t,u],\qquad \Delta_t=D_t^*D_t.
+\]
+The form domain is $H^1$ and the operator domain is $H^2$. Stability
+and nonisomorphism give
+\begin{equation}\label{eq:split-kernel}
+ \mathcal K=\Ker D_0
+ =\left\{\diag(x_i\id_{F_i}):\sum_i r_ix_i=0\right\},
+ \qquad \dim_{\CC}\mathcal K=m-1.
+\end{equation}
+Let $P:H\to\mathcal K$ be the orthogonal projection, $Q=\id-P$, and
+let $\gamma>0$ be the lowest eigenvalue of $\Delta_0$ on $QH$. Put
+\[
+ \eta_t=\lVert B_t\rVert_{L^2\to L^2(\Omega^{0,1})},\qquad
+ p_* =\min_{\beta_{ij}\ne0}p_{ij}.
+\]
+The coefficients of $B_t$ are $O(t^{p_*})$ in every differentiability
+norm; in particular $\eta_t=O(t^{p_*})$.
+
+\subsection{The weighted graph and the relative estimate}
+
+Associate to \eqref{eq:several-family} the undirected graph with vertices
+$1,\ldots,m$ and edges $ij$ for which $\beta_{ij}\ne0$. Define its vertex
+masses and conductances by
+\begin{equation}\label{eq:graph-data}
+ M_i=Vr_i,\qquad c_{ij}=\lVert\beta_{ij}\rVert_{L^2}^2,
+ \qquad k_{ij}(t)=c_{ij}t^{2p_{ij}}.
+\end{equation}
+Absent conductances are zero. The weighted graph Laplacian $L_t$ on
+$\mathcal K$ is defined by
+\begin{equation}\label{eq:graph-form}
+ A_t(x):=\langle x,L_tx\rangle
+ =\sum_{i<j}k_{ij}(t)|x_i-x_j|^2,
+ \qquad \lVert x\rVert^2=\sum_iM_i|x_i|^2.
+\end{equation}
+Equivalently, $(L_tx)_i=M_i^{-1}\sum_{j\ne i}k_{ij}(t)(x_i-x_j)$,
+restricted to $\sum_iM_ix_i=0$. Write
+$\nu_1(t)\le\cdots\le\nu_{m-1}(t)$ for its eigenvalues and
+$\lambda_1(t)\le\lambda_2(t)\le\cdots$ for those of $\Delta_t$ on $H$.
+Both lists count multiplicity and include zero.
+
+\begin{theorem}\label{thm:relative}
+If $\eta_t\le\sqrt\gamma/4$ and $\gamma_t=(\sqrt\gamma-\eta_t)^2$,
+then
+\begin{equation}\label{eq:relative}
+ \left(1-\frac{2\eta_t^2}{\gamma_t}\right)\nu_j(t)
+ \le\lambda_j(t)\le\nu_j(t),\qquad 1\le j\le m-1,
+ \qquad \lambda_m(t)\ge\frac\gamma4.
+\end{equation}
+There are exactly $m-1$ eigenvalues below $\gamma/4$, including zeros.
+For every positive graph eigenvalue,
+\begin{equation}\label{eq:relative-ratio}
+ \frac{\lambda_j(t)}{\nu_j(t)}=1+O(t^{2p_*}).
+\end{equation}
+The error is uniform in $j$ for this fixed family, regardless of the
+ratios between its positive graph eigenvalues. If the graph has $c$
+connected components, then $\Delta_t$ has exactly $c-1$ zero eigenvalues
+on trace-free endomorphisms for every $t>0$. In particular, $E_t$ is
+simple if and only if the graph is connected.
+\end{theorem}
+
+\begin{proof}
+For $x\in\mathcal K$, the $ij$ block of $B_tx$ is
+$t^{p_{ij}}(x_j-x_i)\beta_{ij}$. The different blocks are orthogonal, so
+\[
+ \lVert B_tx\rVert^2=A_t(x).
+\]
+Harmonicity gives the cancellation
+\begin{equation}\label{eq:harmonic-cancellation}
+ D_0^*B_tx=0\qquad(x\in\mathcal K).
+\end{equation}
+For $y\in QH^1$, the split spectral gap gives
+\begin{equation}\label{eq:complement-gap}
+ \lVert D_ty\rVert\ge\lVert D_0y\rVert-\lVert B_ty\rVert
+ \ge(\sqrt\gamma-\eta_t)\lVert y\rVert=\sqrt{\gamma_t}\,\lVert y\rVert.
+\end{equation}
+Decompose $u=x+y$ with $x\in\mathcal K$, $y\in QH^1$. By
+\eqref{eq:harmonic-cancellation},
+\[
+ \lVert D_tu\rVert^2=A_t(x)
+  +2\operatorname{Re}\langle B_tx,B_ty\rangle+\lVert D_ty\rVert^2.
+\]
+The cross term has absolute value at most
+$2\eta_t A_t(x)^{1/2}\lVert y\rVert$. Young's inequality therefore gives
+\begin{equation}\label{eq:form-lower}
+ \lVert D_tu\rVert^2\ge
+ \left(1-\frac{2\eta_t^2}{\gamma_t}\right)A_t(x)+\frac{\gamma_t}2\lVert y\rVert^2.
+\end{equation}
+
+The min--max principle on subspaces of $\mathcal K$ gives the upper
+bound in \eqref{eq:relative}. For the lower bound, compare with the
+orthogonal sum of $(1-2\eta_t^2/\gamma_t)L_t$ on $\mathcal K$ and
+$(\gamma_t/2)\id$ on $QH$. Its variational values below $\gamma_t/2$ are the graph
+eigenvalues with the indicated prefactor. Since
+\[
+ \nu_{m-1}(t)\le\eta_t^2\le\gamma/16,
+ \qquad \gamma_t/2\ge9\gamma/32,
+\]
+min--max proves \eqref{eq:relative}, including
+$\lambda_m(t)\ge \gamma_t/2>\gamma/4$. This also proves
+\eqref{eq:relative-ratio}; its constants may depend on the fixed bundles
+and forms.
+
+The kernel of the graph form consists of vectors constant on each
+connected component. Its intersection with $\mathcal K$ has dimension
+$c-1$. Formula \eqref{eq:form-lower} shows that these are exactly the
+zero modes of $\Delta_t$ for small $t$. The positive-parameter complex
+gauge equivalence gives the same kernel dimension for all $t>0$.
+Adding the scalar identity proves the assertion about simplicity.
+\end{proof}
+
+\begin{remark}\label{rem:harmonicity-needed}
+The cancellation \eqref{eq:harmonic-cancellation} is needed. Without it,
+complementary directions can change the leading term of the form restricted
+to $\mathcal K$. Already
+in finite dimensions, $D_0=(0\ \ 1)$ and $B_t=(t\ \ 0)$ have restricted
+energy $t^2$ on $\Ker D_0$, while $(D_0+B_t)^*(D_0+B_t)$ has $(-1,t)$ in its
+kernel. So the relative comparison does not follow from smallness of $B_t$
+alone.
+\end{remark}
+
+\subsection{The complementary equation and smooth convergence}
+
+On $QH$ let $T_t=Q\Delta_tQ$, with domain $QH^2$, be the operator of
+the restricted closed quadratic form. It satisfies $T_t\ge \gamma_t$, where
+$\gamma_t$ is as in Theorem~\ref{thm:relative}. By \eqref{eq:harmonic-cancellation}, the
+off-diagonal block is
+\begin{equation}\label{eq:off-diagonal}
+ R_t=Q\Delta_tP=QB_t^*B_tP,
+ \qquad \lVert R_tx\rVert\le\eta_t A_t(x)^{1/2}.
+\end{equation}
+For $0\le\lambda<\gamma_t/2$, solving the $Q$ component of the eigenvalue
+equation gives
+\begin{equation}\label{eq:schur}
+ y=-(T_t-\lambda)^{-1}R_tx,\qquad
+ S_t(\lambda)x=\lambda x,\qquad
+ S_t(\lambda)=L_t-R_t^*(T_t-\lambda)^{-1}R_t.
+\end{equation}
+The correction in this Schur complement satisfies the relative form bound
+\begin{equation}\label{eq:schur-bound}
+ 0\le L_t-S_t(\lambda)\le\frac{2\eta_t^2}{\gamma_t}L_t.
+\end{equation}
+Cauchy--Schwarz for the positive form on the left yields, for $x,z\in
+\mathcal K$,
+\begin{equation}\label{eq:polarized-schur}
+ |\langle z,(L_t-S_t(\lambda))x\rangle|
+ \le\frac{2\eta_t^2}{\gamma_t}A_t(z)^{1/2}A_t(x)^{1/2}.
+\end{equation}
+
+\begin{proposition}\label{prop:subspace}
+For every $k\ge0$, a unit eigensection $u$ belonging to one of the
+$m-1$ small eigenvalues $\lambda$ satisfies
+\begin{equation}\label{eq:smooth-complement}
+ \lVert Qu\rVert_{C^k}\le C_k t^{p_*}\sqrt\lambda.
+\end{equation}
+If $\Pi_t$ denotes the orthogonal projection onto the full small
+spectral subspace, then
+\begin{equation}\label{eq:full-projection}
+ \lVert\Pi_t-P\rVert_{L^2\to C^k}=O(t^{2p_*}).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write $u=x+y$ as above and set $\epsilon_t=2\eta_t^2/\gamma_t$.
+Formula \eqref{eq:form-lower} implies
+$A_t(x)\le\lambda/(1-\epsilon_t)$. Equations
+\eqref{eq:off-diagonal}--\eqref{eq:schur} first give
+$\lVert y\rVert_{L^2}\le C\eta_t\sqrt\lambda$.
+
+To obtain the same estimate in stronger norms, observe that the nonzero
+$\beta_{ij}$ form a fixed finite collection in distinct orthogonal
+blocks. Therefore
+$\lVert B_tx\rVert_{H^s}\le C_s\lVert B_tx\rVert_{L^2}$ for
+$x\in\mathcal K$, uniformly in its scalar coefficients and in $t$.
+The coefficients of $B_t$ and all their derivatives are $O(t^{p_*})$,
+so
+\[
+ \lVert R_tx\rVert_{H^s}\le C_s t^{p_*}A_t(x)^{1/2}.
+\]
+Uniform elliptic estimates, together with the $L^2$ inverse bound,
+give uniform $H^s\to H^{s+2}$ bounds for $(T_t-\lambda)^{-1}$ when
+$0\le\lambda\le\gamma/16$. The projections $P,Q$ introduce only
+smooth finite-rank terms. Apply these estimates to \eqref{eq:schur}
+and then use Sobolev embedding to obtain \eqref{eq:smooth-complement}.
+
+The largest small eigenvalue is $O(t^{2p_*})$. Applying
+\eqref{eq:smooth-complement} to an orthonormal eigenbasis bounds $Q$
+on $\operatorname{ran}\Pi_t$, as a map to $C^k$, by $O(t^{2p_*})$.
+The spaces $\operatorname{ran}\Pi_t$ and $\mathcal K$ have the same
+finite dimension. Thus $P$ restricts to an isomorphism between them for
+small $t$, and $\operatorname{ran}\Pi_t$ is the graph of a map
+$\mathcal K\to QH$ of $C^k$ norm $O(t^{2p_*})$. The formula for
+the orthogonal projection onto this graph proves
+\eqref{eq:full-projection}.
+\end{proof}
+
+After adjoining the scalar identity, the limiting subspace is the
+algebra $\bigoplus_i\CC\id_{F_i}$. Its minimal nonzero idempotents are
+the projections onto the $F_i$, and hence determine the unordered
+summands of the split limit $E_0$. The small spectral subspace at
+positive $t$ need not be an algebra.
+
+\subsection{Mean curvature of the family}
+
+The common Einstein constant of the $h_i$ is $\kappa$. The Chern
+connection is $\nabla_t=\nabla_0+N_t-N_t^*$. Harmonicity and the
+K\"ahler identities eliminate the linear term in its mean curvature,
+so
+\begin{equation}\label{eq:several-curvature}
+ K_t=\kappa\id+\sqrt{-1}\Lambda_\omega
+       (N_t-N_t^*)\wedge(N_t-N_t^*),
+ \qquad K_t-\kappa\id=O_{C^k}(t^{2p_*}).
+\end{equation}
+In a unitary coframe on the curve, write $N_t=n_t\bar\theta$.
+The quadratic term is $[n_t,n_t^*]$, so it is trace-free; it may have
+off-diagonal blocks. Thus $g_t^*h_0$ is an approximate
+Hermitian--Einstein family on the fixed bundle $E_1$. The
+upper-triangular filtration, whose quotients are stable of the same
+slope, proves semistability by degree additivity. Its first summand
+excludes stability. Theorem~\ref{thm:relative} supplies the precise
+spectral rates for this family.
+
+\section{Decay orders and limiting spectral subspaces}\label{sec:orders}
+
+The graph comparison reduces every leading decay order to a finite
+construction. Let $p^{(1)}<\cdots<p^{(s)}$ be the distinct exponents
+$p_{ij}$ on nonzero edges. For such an exponent $p$, let
+$\mathcal C_{<p}$ be the connected components of the graph that
+retains only edges with $p_{ij}<p$, and define
+$\mathcal C_{\le p}$ similarly. Isolated vertices count as
+components. Define a quotient graph on the vertices
+$A\in\mathcal C_{<p}$ by the masses and conductances
+\begin{equation}\label{eq:quotient-data}
+ M_A=\sum_{i\in A}M_i,\qquad
+ c^{(p)}_{AB}
+ =\sum_{\substack{ij\text{ joins }A\text{ to }B\\p_{ij}=p}}c_{ij},
+ \qquad A\ne B.
+\end{equation}
+Each original unordered edge is counted once. Internal edges make no
+contribution. Let $L^{(p)}$ be the weighted Laplacian of this
+quotient graph, and list its positive eigenvalues as
+$\rho_{p,1},\ldots,\rho_{p,d_p}$, counting multiplicity.
+Their number is
+\[
+ d_p=|\mathcal C_{<p}|-|\mathcal C_{\le p}|.
+\]
+The quotient vertex space embeds isometrically in the original vertex
+space as the vectors constant on each $A\in\mathcal C_{<p}$.
+
+\begin{theorem}\label{thm:orders}
+For each $p$, exactly $d_p$ eigenvalues of $\Delta_t$ have
+the asymptotics
+\begin{equation}\label{eq:all-orders}
+ \lambda(t)=t^{2p}(\rho_{p,k}+o(1)),
+ \qquad 1\le k\le d_p.
+\end{equation}
+Together with the $c-1$ identically zero eigenvalues, these account for
+all $m-1$ small eigenvalues. For each fixed positive eigenvalue $\rho$
+of $L^{(p)}$, the corresponding spectral subspace converges to
+the $\rho$-eigenspace, embedded as block-scalar endomorphisms constant
+on the components in $\mathcal C_{<p}$. More precisely, the
+orthogonal projections converge in $L^2\to C^k$ norm for every $k$.
+For a repeated coefficient the assertion concerns the entire subspace.
+\end{theorem}
+
+\begin{proof}
+First work on the full graph vertex space, including its scalar zero
+mode, with the mass inner product. Let $W_p$ consist of the vectors
+constant on $\mathcal C_{<p}$. All terms with exponent less than
+$p$ vanish on $W_p$ and, by self-adjointness, have zero cross
+blocks relative to $W_p\oplus W_p^\perp$. On
+$W_p^\perp$, their sum divided by $t^{2p}$ tends uniformly
+to positive infinity on the unit sphere. Indeed, if stronger edges
+exist and $p_-<p$ is their largest exponent, the graph gaps
+inside their connected components give a lower bound
+$c't^{2(p_- -p)}$ on that complement.
+
+After division by $t^{2p}$, the terms with exponent at least
+$p$ have bounded cross blocks. Their restriction to $W_p$
+converges to $L^{(p)}$, with masses exactly as in
+\eqref{eq:quotient-data}. For a bounded spectral parameter, elimination
+of $W_p^\perp$ introduces an error tending to zero, because the
+inverse of its diagonal block tends to zero. The finite-dimensional
+min--max principle then shows that the $\dim W_p$ bounded
+eigenvalues of $t^{-2p}L_t$ converge to those of $L^{(p)}$;
+all remaining eigenvalues tend to infinity. If no stronger edge exists,
+this is ordinary matrix convergence, with no complementary block.
+
+The positive quotient eigenvalues account for exactly $d_p$
+modes at this scale. The component counts telescope to $m-c$ over all
+exponents, leaving $c$ exact graph zero modes. Remove the scalar mode
+and apply the relative estimate \eqref{eq:relative} to obtain
+\eqref{eq:all-orders} for $\Delta_t$.
+
+Now let $u_t=x_t+y_t$ be a unit eigensection with
+$\lambda(t)/t^{2p}\to\rho>0$. By \eqref{eq:form-lower},
+$A_t(x_t)=O(t^{2p})$. Every stronger edge therefore satisfies
+\[
+ |(x_t)_i-(x_t)_j|=O(t^{p-p_{ij}}).
+\]
+Every limit of $x_t$ lies in $W_p\cap\mathcal K$, and
+$y_t\to0$ in every $C^k$ norm by \eqref{eq:smooth-complement}.
+Test the second equation in \eqref{eq:schur} against a fixed
+$z\in W_p\cap\mathcal K$. Its energy is $O(t^{2p})$, so
+\eqref{eq:polarized-schur} bounds the correction by
+$O(t^{2p+2p_*})$. After division by $t^{2p}$ this correction
+vanishes. The stronger graph terms vanish on $z$, the terms with
+exponent greater than $p$ vanish in the limit, and the remaining
+terms give
+\[
+ L^{(p)}x_0=\rho x_0.
+\]
+This equality on the full quotient space follows from the tested
+identity on its mean-zero subspace, since both sides have mean zero.
+
+Choose a small interval about $\rho$ containing no other quotient
+eigenvalue and not containing zero. The eigenvalue count above gives
+the dimension of the spectral subspace for which
+$\lambda/t^{2p}$ lies in this interval. Limits of orthonormal
+eigensections remain orthonormal, because their $Q$ components tend to
+zero. They therefore span the entire $\rho$-eigenspace. Compactness
+in the fixed finite-dimensional space $\mathcal K$, together with
+\eqref{eq:smooth-complement}, gives convergence of the corresponding
+orthogonal projections in every $L^2\to C^k$ norm.
+\end{proof}
+
+\section{Examples with unequal decay orders}\label{sec:examples}
+
+\subsection{Three factors}
+
+Take $m=3$, $\ell=(p+q,q,0)$, and integers $0<p<q$. Assume
+$\beta_{12},\beta_{23}\ne0$; the entry $\beta_{13}$ may vanish. Set
+\[
+ A=\lVert\beta_{12}\rVert_{L^2}^2,\qquad
+ B=\lVert\beta_{23}\rVert_{L^2}^2,\qquad
+ C=\lVert\beta_{13}\rVert_{L^2}^2.
+\]
+Thus $k_{12}=At^{2p}$, $k_{23}=Bt^{2q}$, and
+$k_{13}=Ct^{2(p+q)}$. The two positive graph eigenvalues are the roots
+of $\nu^2-T\nu+J=0$, where
+\begin{align}
+ T={}&k_{12}(M_1^{-1}+M_2^{-1})
+      +k_{23}(M_2^{-1}+M_3^{-1})
+      +k_{13}(M_1^{-1}+M_3^{-1}),\label{eq:three-trace}\\
+ J={}&\frac{M_1+M_2+M_3}{M_1M_2M_3}
+       (k_{12}k_{23}+k_{12}k_{13}+k_{23}k_{13}).\label{eq:three-product}
+\end{align}
+These identities are the trace and sum of principal two-by-two minors
+of the mass-normalized graph Laplacian. With
+$\sigma=2\min\{p,q-p\}>0$, Theorem~\ref{thm:relative} gives
+\begin{align}
+ \lambda_1(t)&=B\left(\frac1{M_1+M_2}+\frac1{M_3}\right)
+      t^{2q}\bigl(1+O(t^\sigma)\bigr),\label{eq:three-slow}\\
+ \lambda_2(t)&=A\left(\frac1{M_1}+\frac1{M_2}\right)
+      t^{2p}\bigl(1+O(t^\sigma)\bigr),
+ \qquad\lambda_3(t)\ge\gamma/4.\label{eq:three-fast}
+\end{align}
+To check the error terms directly, put $\eta=t^{2(q-p)}$ and
+$\vartheta=t^{2p}$. The leading terms of $T,J$ have relative errors
+$O(\eta)$ and $O(\vartheta)$ respectively, and $J/T^2=O(\eta)$.
+The larger root is $T(1+O(\eta))$ and the smaller is
+$(J/T)(1+O(\eta))$. The operator comparison adds $O(\vartheta)$.
+At the $t^{2q}$ scale, the stronger $12$ edge has combined vertices
+$1,2$, explaining the mass $M_1+M_2$ in \eqref{eq:three-slow}.
+
+Write $r_{12}=r_1+r_2$ and $r=r_{12}+r_3$. The limiting eigensections
+are the normalized versions of
+\begin{align*}
+ q_{\rm slow}&=\diag\left(\frac{r_3}r\id_{F_1},
+                  \frac{r_3}r\id_{F_2},-\frac{r_{12}}r\id_{F_3}\right),
+ &\lVert q_{\rm slow}\rVert^2&=\frac{Vr_{12}r_3}r,\\
+ q_{\rm fast}&=\diag\left(\frac{r_2}{r_{12}}\id_{F_1},
+                  -\frac{r_1}{r_{12}}\id_{F_2},0\right),
+ &\lVert q_{\rm fast}\rVert^2&=\frac{Vr_1r_2}{r_{12}}.
+\end{align*}
+Theorem~\ref{thm:orders} gives smooth convergence after fixing the
+phases by positive inner products with these respective limits.
+The stronger extension separates the internal $F_1,F_2$ mode at the
+larger eigenvalue; the weaker extension separates their combined block
+from $F_3$ at the smaller eigenvalue.
+
+For three line bundles, $V=1$, $A=B=1$, and $(p,q)=(1,2)$, the
+formulas become
+\begin{equation}\label{eq:three-lines}
+ \lambda_1(t)=\tfrac32t^4(1+O(t^2)),\qquad
+ \lambda_2(t)=2t^2(1+O(t^2)).
+\end{equation}
+These choices are realized geometrically on a curve of genus at least
+two. Choose three pairwise nonisomorphic degree-zero line bundles.
+Every nontrivial degree-zero Hom line bundle has $h^1=g-1>0$, by the
+Riemann--Roch argument in Corollary~\ref{cor:sharpness}. Choose harmonic
+forms of unit $L^2$ norm for the consecutive edges and set
+$\beta_{13}=0$. The resulting bundle is simple and strictly semistable.
+
+\subsection{Five factors and a repeated coefficient}
+
+Take five pairwise nonisomorphic degree-zero line bundles on such a
+curve, with $V=1$ and $\ell=(7,6,3,1,0)$. Choose unit-norm forms on the
+path edges $12,23,34,45$, whose exponents are $1,3,2,1$. One may also
+include a form of norm $2$ on edge $15$, of exponent $7$. All remaining
+entries vanish. The quotient graphs have the following positive spectra:
+\[
+\begin{array}{c|c|c}
+ p&\text{components before adding edges of exponent }p
+        &\text{positive coefficients}\\ \hline
+ 1&\{1\},\{2\},\{3\},\{4\},\{5\}&2,\ 2\\
+ 2&\{1,2\},\{3\},\{4,5\}&3/2\\
+ 3&\{1,2\},\{3,4,5\}&5/6\\
+ 7\text{ (if present)}&\{1,2,3,4,5\}&\text{none}
+\end{array}
+\]
+At exponent $2$, edge $34$ joins masses $1,2$, giving $1+1/2$.
+At exponent $3$, edge $23$ joins masses $2,3$, giving $1/2+1/3$.
+The optional edge of exponent $7$ is internal to a component already
+connected by stronger edges. Consequently
+\begin{equation}\label{eq:five-lines}
+ \lambda_1(t)\sim\tfrac56t^6,\qquad
+ \lambda_2(t)\sim\tfrac32t^4,\qquad
+ \lambda_3(t)\sim2t^2,\qquad\lambda_4(t)\sim2t^2.
+\end{equation}
+For the last two eigenvalues, the limiting two-dimensional subspace is
+spanned by the internal differences on $F_1\oplus F_2$ and
+$F_4\oplus F_5$. Theorem~\ref{thm:orders} specifies this subspace,
+without choosing individual eigenvectors within it.

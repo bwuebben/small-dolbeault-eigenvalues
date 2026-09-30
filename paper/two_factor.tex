@@ -1,0 +1,174 @@
+\section{An extension of two stable bundles}\label{sec:two-factor}
+
+Let $(X,\omega)$ again be a compact connected K\"ahler manifold. Let
+$F,G$ be nonisomorphic stable bundles of equal slope, with ranks $a,b$,
+and put $r=a+b$. Fix Hermitian--Einstein metrics $h_F,h_G$, whose common
+Einstein constant is $\kappa=2\pi\mu_\omega(F)/V$, and a nonzero harmonic
+form
+\[
+ \beta\in\Omega^{0,1}(\Hom(G,F)),\qquad
+ \db\beta=0,\qquad \db^*\beta=0.
+\]
+All inner products in this section use $h_0=h_F\oplus h_G$ and the fixed
+K\"ahler form. We use the convention
+$\langle u,v\rangle=\int_X\tr(u^*v)\dvol$.
+
+On the fixed smooth bundle $F\oplus G$ define
+\begin{equation}\label{eq:two-family}
+ N=\begin{pmatrix}0&\beta\\0&0\end{pmatrix},\qquad
+ \db_t=\db_0+tN,\qquad t\in\mathbb R.
+\end{equation}
+This is integrable in every complex dimension because $\db_0N=0$ and
+$N\wedge N=0$. Denote the resulting holomorphic bundle by $E_t$.
+On trace-free endomorphisms put
+\[
+ D_t=D_0+tB,\qquad D_0=\db_{0,\End},\qquad
+ Bu=[N,u],\qquad \Delta_t=D_t^*D_t.
+\]
+These nonnegative self-adjoint elliptic operators have the fixed domain
+$H^2$ in $L^2$. Eigenvalues count complex multiplicity and include zero.
+Let $P_F$ be the orthogonal projection onto $F$ and set
+\begin{equation}\label{eq:two-q}
+ q=P_F-\frac ar\id
+ =\diag\left(\frac br\id_F,-\frac ar\id_G\right),\qquad
+ V_q=\lVert q\rVert_{L^2}^2=\frac{Vab}{r}.
+\end{equation}
+
+Write $\beta=\sum_\nu\beta_\nu\bar\theta^\nu$ in a local unitary
+coframe, and define the global self-adjoint trace-free endomorphism
+\begin{equation}\label{eq:two-C}
+ C=\diag\left(\sum_\nu\beta_\nu\beta_\nu^*,
+                  -\sum_\nu\beta_\nu^*\beta_\nu\right).
+\end{equation}
+Stability gives $\Ker\Delta_0=\CC q$, as verified below. Let $P$ be the
+$L^2$ projection onto this kernel, $Q=\id-P$, and
+$R=(\Delta_0|_{QH^2})^{-1}:QL^2\to QH^2$. Define
+\begin{equation}\label{eq:two-coefficients}
+ c=\frac{r\lVert\beta\rVert_{L^2}^2}{Vab},\qquad
+ z=C-cq=QC,\qquad d=\frac{\langle z,Rz\rangle}{V_q}.
+\end{equation}
+
+\begin{theorem}\label{thm:two-factor}
+For the family \eqref{eq:two-family}, $E_t$ is simple and strictly
+semistable for every $t\ne0$. Exactly one eigenvalue of $\Delta_t$ tends
+to zero, and
+\begin{equation}\label{eq:two-expansion}
+ \lambda_1(t)=ct^2-dt^4+O(t^6),\qquad c>0,\quad d\ge0.
+\end{equation}
+There are $\delta,t_0>0$ such that $\lambda_2(t)\ge\delta$ for
+$|t|<t_0$. The normalized first eigensection, with phase chosen so that
+$\langle q,u_t\rangle>0$, satisfies for every $k\ge0$
+\begin{equation}\label{eq:two-section}
+ u_t=\frac{q}{\sqrt{V_q}}-\frac{t^2}{\sqrt{V_q}}Rz+O_{C^k}(t^3).
+\end{equation}
+The mean curvature and its averaged trace-free norm are exactly
+\begin{equation}\label{eq:two-curvature}
+ K_t=\kappa\id+t^2C,\qquad
+ \varepsilon_1(t)=\frac{t^2}{V}\int_X\lVert C\rVert_{\op}\dvol.
+\end{equation}
+Moreover, $\lambda_1(t)\le ct^2$ for every real $t$.
+\end{theorem}
+
+\begin{proof}
+Nonisomorphism and stability at equal slope imply
+\[
+ H^0(\Hom(F,G))=H^0(\Hom(G,F))=0,\qquad
+ H^0(\End F)=\CC\id_F,\quad H^0(\End G)=\CC\id_G.
+\]
+Thus the trace-free holomorphic endomorphisms of the split bundle are
+precisely $\CC q$. This proves the assertion about $\Ker\Delta_0$ and
+the existence of $R$.
+
+For $t\ne0$, an endomorphism of $E_t$ preserves $F$, since its composite
+$F\to E_t\to G$ vanishes. It induces scalars $\alpha,\eta$ on $F,G$,
+and its upper-right block $v$ satisfies
+\[
+ \db v+t(\eta-\alpha)\beta=0.
+\]
+Pairing with $\beta$ gives $\eta=\alpha$. The block $v$ is then
+holomorphic and hence zero, proving simplicity. For any subsheaf of
+$E_t$, its intersection with $F$ and image in $G$ have slopes at most
+the common slope whenever their ranks are nonzero. Degree and rank
+additivity prove semistability, and the equal-slope subbundle $F$
+rules out stability.
+
+Expand on the common domain:
+\begin{equation}\label{eq:two-operator}
+ \Delta_t=\Delta_0+tA_1+t^2A_2,\qquad
+ A_1=D_0^*B+B^*D_0,\quad A_2=B^*B.
+\end{equation}
+Since $D_0q=0$, $Bq=-N$, and $D_0^*N=0$ by harmonicity, one has
+$A_1q=0$. The adjoint formula
+$B^*v=\sum_\nu[N_\nu^*,v_\nu]$ gives
+\begin{equation}\label{eq:two-action}
+ A_2q=C,\qquad \Delta_tq=t^2C,\qquad
+ \langle q,C\rangle=\lVert\beta\rVert_{L^2}^2.
+\end{equation}
+In particular $PC=cq$, and the Rayleigh quotient of $q$ gives
+$\lambda_1(t)\le ct^2$.
+
+The zero eigenvalue of $\Delta_0$ is isolated and simple. The analytic
+family \eqref{eq:two-operator} has compact resolvent and constant domain,
+so its spectral projection near zero is analytic and of rank one for
+small $|t|$ \cite[Chapter~VII]{Kato1995}. The remaining spectrum stays
+bounded away from zero. For clarity, on a contour separating zero from
+the positive spectrum, $(\Delta_0-\zeta)^{-1}$ maps $L^2$ to $H^2$,
+and
+$(tA_1+t^2A_2)(\Delta_0-\zeta)^{-1}$ has norm $O(|t|)$ on $L^2$.
+A Neumann series constructs the perturbed resolvent and its contour
+integral. The same argument between $H^s$ and $H^{s+2}$ gives Taylor
+expansions of the eigensection in every $C^k$ norm.
+
+Choose the analytic eigensection $v(t)$ with
+$\langle q,v(t)\rangle=V_q$ and write
+\[
+ v(t)=q+tv_1+t^2v_2+t^3v_3+\cdots,\qquad v_j\perp q.
+\]
+The order-$t$ equation gives $\lambda'(0)=0$ and $v_1=0$. At order
+$t^2$, projection onto $q$ and $q^\perp$ gives respectively the
+coefficient $c$ and
+\[
+ \Delta_0v_2+C=cq,\qquad v_2=-Rz.
+\]
+The order-$t^3$ coefficient vanishes because $A_1q=0$. If
+$\lambda_{[4]}$ denotes the coefficient of $t^4$, then
+\[
+ V_q\lambda_{[4]}
+ =\langle q,A_1v_3+A_2v_2\rangle
+ =-\langle z,Rz\rangle.
+\]
+This coefficient is $-d$, with $d\ge0$ because $R$ is positive.
+Conjugation by $J=\diag(-\id_F,\id_G)$ is unitary and intertwines
+$D_t$ with $D_{-t}$. Uniqueness of the isolated branch makes its
+eigenvalue even in $t$, proving the $O(t^6)$ remainder in
+\eqref{eq:two-expansion}. Finally,
+$\lVert v(t)\rVert^2=V_q+O(t^4)$, so normalization gives
+\eqref{eq:two-section}.
+
+The Chern connection is $\nabla_t=\nabla_0+t(N-N^*)$, where the adjoint
+also changes the form type. The K\"ahler identity
+$\db^*\beta=-\sqrt{-1}\Lambda_\omega\partial\beta=0$ and its
+adjoint kill the linear term in the contracted curvature. In a unitary
+coframe with $\omega=\sqrt{-1}\sum\theta^\nu\wedge\bar\theta^\nu$,
+the quadratic term is
+\[
+ \sqrt{-1}\Lambda_\omega(N-N^*)\wedge(N-N^*)=C.
+\]
+Its trace is zero, proving \eqref{eq:two-curvature}.
+\end{proof}
+
+To view this degeneration on the fixed holomorphic bundle $E_1$, set
+$g_t=\diag(t\id_F,\id_G)$ for $t>0$. Then
+\begin{equation}\label{eq:two-gauge}
+ \db_t=g_t\db_1g_t^{-1},\qquad
+ h_t=g_t^*h_0=t^2h_F\oplus h_G.
+\end{equation}
+The map $g_t:(E_1,h_t)\to(E_t,h_0)$ is a holomorphic isometry and
+identifies the endomorphism Laplacians unitarily. Thus $h_t$ is an
+approximate Hermitian--Einstein family on $E_1$. The convergence in
+\eqref{eq:two-section} is in the gauge $g_t$ of \eqref{eq:two-gauge}. Its limit $u_0$
+has two distinct fiberwise eigenvalues, and
+\[
+ P_F=\sqrt{V_q}\,u_0+\frac ar\id,\qquad P_G=\id-P_F.
+\]
+

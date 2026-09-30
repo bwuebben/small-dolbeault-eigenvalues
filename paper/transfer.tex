@@ -1,0 +1,286 @@
+\section{Uniform spectral transfer}\label{sec:transfer}
+
+Throughout this section $X$ is a compact curve. Let $E$ be a simple
+semistable holomorphic bundle whose Jordan--H\"older factors
+$F_1,\ldots,F_m$, $m\ge2$, are pairwise nonisomorphic, with ranks $r_i$
+and Hermitian--Einstein metrics $h_i$. Put $E_0=\bigoplus_iF_i$,
+$h_0=\bigoplus_ih_i$, $M_i=Vr_i$, and $|M|=\sum_iM_i$.
+
+\subsection{The socle filtration and the harmonic normal form}
+
+The \emph{socle} $\operatorname{soc}(E)$ is the sum of the stable
+subbundles of $E$ of slope $\mu(E)$; it is polystable. Put
+$S_1=\operatorname{soc}(E)$ and let $S_{k+1}\supset S_k$ be the preimage
+of $\operatorname{soc}(E/S_k)$. This \emph{socle filtration}
+$0=S_0\subset S_1\subset\cdots\subset S_L=E$ is canonical, and each
+$S_k/S_{k-1}$ is a direct sum of some of the $F_i$. Since the factors are
+pairwise nonisomorphic, each $F_i$ occurs in exactly one
+$S_{k}/S_{k-1}$; we call $k$ the \emph{socle layer} of $F_i$. Two-step
+extensions are the case $L=2$.
+
+\begin{lemma}\label{lem:socle-normal-form}
+There is a smooth identification $E\cong(E_0,\db_0+N)$, preserving the
+socle filtration, in which $N=\sum\beta_{ij}$ with
+$\beta_{ij}\in\Omega^{0,1}(\Hom(F_j,F_i))$ harmonic, and $\beta_{ij}\ne0$
+only if the layer of $F_i$ is smaller than that of $F_j$. The directed
+graph $\Gamma$ with an edge $i\to j$ for each nonzero $\beta_{ij}$ is
+connected.
+\end{lemma}
+
+\begin{proof}
+Refine the socle filtration to a Jordan--H\"older filtration and apply
+Lemma~\ref{lem:normal-form}. Each layer occupies a consecutive range of
+Jordan--H\"older indices, and the corresponding diagonal block of $N$ is
+the normal form of the polystable, hence split, subquotient
+$S_k/S_{k-1}$. Its entries between adjacent indices are harmonic
+representatives of zero classes, so they vanish. Suppose the entries of
+index gap less than $\sigma$ inside a layer vanish. Then the subquotient
+on indices $a,\ldots,a+\sigma$ is the direct sum of the intermediate
+factors and the extension of $F_{a+\sigma}$ by $F_a$ given by the harmonic
+entry. Being a subquotient of a polystable bundle, it is split, so that
+entry vanishes as well. Connectedness is equivalent to simplicity by the
+argument of Theorem~\ref{thm:relative}.
+\end{proof}
+
+A factor in layer $k\ge2$ has a nonzero entry from layer $k-1$.
+Otherwise it would be a holomorphic subbundle of $E/S_{k-2}$ and would lie
+in layer $k-1$.
+
+\subsection{Diagonal metrics and their correction}
+
+For $g=\diag(d_i\id_{F_i})$ with $d_i>0$ and $\prod_id_i^{r_i}=1$, put
+$N_g=gNg^{-1}$, $h_g=g^*h_0$,
+\[
+ k_{ij}(g)=\lVert(N_g)_{ij}\rVert_{L^2}^2,\qquad
+ M_ip_i(g)=\sum_{j}k_{ij}(g)-\sum_{l}k_{li}(g),\qquad
+ \mathfrak e_g=\sum_{ij}k_{ij}(g),
+\]
+and let $\nu_1(g)\le\cdots\le\nu_{m-1}(g)$ be the positive graph
+eigenvalues of Section~\ref{sec:diagonal-flow} for these conductances. We
+call $\mathfrak e_g=\lVert N_g\rVert_{L^2}^2$ the \emph{total conductance},
+and write $D_g=\db_{0,\End}+[N_g,\cdot\,]$ for the Dolbeault operator of
+$(E_0,\db_0+N_g)$ on endomorphisms. The
+\emph{diagonal flow} is \eqref{eq:diag-flow}, that is
+$\dot gg^{-1}=-\diag(p_i(g)\id_{F_i})$.
+
+The mean curvature of $(\db_0+N_g,h_0)$ is $\kappa\id+C_g$, where
+$C_g=\sqrt{-1}\Lambda_\omega(N_g-N_g^*)\wedge(N_g-N_g^*)$, as in
+\eqref{eq:several-curvature}. Taking block traces shows
+$PC_g=\diag(p_i(g)\id_{F_i})$. Theorem~\ref{thm:relative} holds with
+independent edge amplitudes, since its proof uses only harmonicity and
+$\eta=\lVert[N_g,\cdot]\rVert\le C\sqrt{\mathfrak e_g}$:
+\begin{equation}\label{eq:general-independent-comparison}
+ \lambda_j(h_g)=\nu_j(g)(1+O(\mathfrak e_g)),\qquad 1\le j\le m-1,
+\end{equation}
+uniformly as $\mathfrak e_g\to0$, with no condition on the ratios of the conductances.
+
+\begin{lemma}\label{lem:layer-energy}
+Along the diagonal flow, $\dot{\mathfrak e}=-2\sum_iM_ip_i^2$ and
+\begin{equation}\label{eq:layer-energy}
+ \dot{\mathfrak e}\le-\frac{8\mathfrak e^2}{(L-1)^2|M|},\qquad
+ \int_T^\infty\mathfrak e^{3/2}\,d\tau\le\frac{(L-1)^2|M|}{4}\sqrt{\mathfrak e(T)}.
+\end{equation}
+The flow exists for all time and preserves $\prod_id_i^{r_i}=1$.
+\end{lemma}
+
+\begin{proof}
+Each conductance satisfies $\dot k_{ij}=-2(p_i-p_j)k_{ij}$, and summing gives
+the formula for $\dot{\mathfrak e}$. Let $\varphi_i$ be minus the layer of $F_i$,
+shifted so that $\sum_iM_i\varphi_i=0$. Every edge $i\to j$ has
+$\varphi_i-\varphi_j\ge1$, so
+\[
+ \mathfrak e\le\sum_{i\to j}k_{ij}(\varphi_i-\varphi_j)=\sum_iM_ip_i\varphi_i
+ \le\Bigl(\sum_iM_ip_i^2\Bigr)^{1/2}\Bigl(\sum_iM_i\varphi_i^2\Bigr)^{1/2}.
+\]
+The shifted values lie in an interval of length $L-1$, so
+$\sum_iM_i\varphi_i^2\le(L-1)^2|M|/4$. This proves the differential
+inequality, and integration gives the integral bound. The total conductance
+decreases,
+so the $p_i$ are bounded on finite intervals, and the positive $d_i$ cannot
+reach zero or infinity in finite time. Since $\sum_ir_ip_i=0$, the weighted
+determinant is preserved.
+\end{proof}
+
+\begin{lemma}\label{lem:general-correction}
+For sufficiently small $\mathfrak e_g$, set $v_g=RQC_g$, $k_g=\exp(-v_g/2)$, and
+let $\widehat h_g=(k_gg)^*h_0$ be the \emph{corrected diagonal metric}. Along the diagonal flow the residual
+\eqref{eq:flow-residual} satisfies
+$\lVert\mathcal E_{\widehat h_g}\rVert_{L^\infty,\op}\le A\mathfrak e_g^{3/2}$.
+Moreover $e^{-C\mathfrak e_g}h_g\le\widehat h_g\le e^{C\mathfrak e_g}h_g$ and
+$\lambda_j(\widehat h_g)=\nu_j(g)(1+O(\mathfrak e_g))$. The constants depend only on
+the fixed forms and $h_0$.
+\end{lemma}
+
+\begin{proof}
+The split Laplacian preserves adjoints, so $v_g$ is self-adjoint, and
+$v_g=O_{C^k}(\mathfrak e_g)$ for every $k$. The first variation of mean curvature at
+the split metric is $s\mapsto\Delta_0s$. Taylor expansion therefore gives,
+in the gauge $k_gg$,
+\[
+ \widehat K_g=C_g-\Delta_0v_g+O_{C^k}(\mathfrak e_g^{3/2})
+ =PC_g+O_{C^k}(\mathfrak e_g^{3/2}).
+\]
+Uniformity follows from the fixed finite collection of harmonic forms:
+$N_g=O_{C^k}(\sqrt{\mathfrak e_g})$, and the mixed terms between $N_g$ and $v_g$ are
+$O_{C^k}(\mathfrak e_g^{3/2})$.
+
+The diagonal flow gives $\dot N_g=-[PC_g,N_g]=O_{C^k}(\mathfrak e_g^{3/2})$, hence
+$\dot v_g=O_{C^k}(\mathfrak e_g^2)$. Although $v_g$ need not commute with $PC_g$,
+\[
+ \partial_\tau(k_gg)(k_gg)^{-1}=\dot k_gk_g^{-1}-k_g\,PC_g\,k_g^{-1}
+ =-PC_g+O_{C^k}(\mathfrak e_g^2).
+\]
+Its sum with its adjoint is the transported metric derivative, so the terms
+$\mp2PC_g$ cancel in the residual \eqref{eq:flow-residual}. This proves the
+residual bound. The metric comparison follows from $v_g=O(\mathfrak e_g)$, and the
+spectral statement from \eqref{eq:metric-spectral-comparison} and
+\eqref{eq:general-independent-comparison}.
+\end{proof}
+
+\subsection{Matching the flow at late times}
+
+\begin{lemma}\label{lem:socle-matching}
+Let $h$ solve \eqref{eq:metric-flow} on $E$. For every large $T$,
+\[
+ h(T)=A_Tg_T^*\widetilde h_T,\qquad A_T>0,\qquad
+ \widetilde h_T\longrightarrow h_0\ \text{in }C^\infty,\qquad
+ \mathfrak e_{g_T}\longrightarrow0,
+\]
+where $g_T$ is diagonal with $\prod_id_i^{r_i}=1$, and $\widetilde h_T$ is
+a metric on $(E_0,\db_0+N_{g_T})$. We call the maps $g_T$ the
+\emph{diagonal gauges} of $h$.
+\end{lemma}
+
+\begin{proof}
+In the smooth unitary flow gauges write $D_T\to\db_0$ on $E_0$. Each
+$(E_0,D_T)$ is isomorphic to $E$.
+
+\emph{Hom dimensions.} Let $F_i$ lie in layer $k$. A nonzero map from $F_i$
+to a semistable bundle of slope $\mu$ is injective with saturated image,
+and that image lies in the socle. Hence $\dim\Hom(F_i,E/S_{k-1})=1$. At
+the split limit every such Hom space also has dimension one.
+
+\emph{Splitting.} For $F_i$ in layer one, the Hom-bundle Laplacians
+converge smoothly, so their one-dimensional kernel projections do too. This
+gives holomorphic maps $\iota_{i,T}:F_i\to(E_0,D_T)$ converging to the
+standard inclusions. For large $T$ their sum is fiberwise injective, and
+its image is the socle of $(E_0,D_T)$. The $h_0$-orthogonal complement
+carries a quotient holomorphic structure on the remaining factors that
+converges smoothly to $\db_0$ and is isomorphic to $E/S_1$. Repeating this
+$L$ times gives a smooth identification $\sigma_T\to\id$ transporting $D_T$
+to $\db_0+\alpha_T$. Here $\alpha_T$ is strictly block upper-triangular in
+layers, $\alpha_T\to0$ smoothly, and the diagonal blocks are exactly
+$\db_{F_i}$.
+
+\emph{Harmonic form.} Apply the triangular Hodge induction in the proof of
+Lemma~\ref{lem:normal-form}, with the filtration by layer gap in place of
+the Jordan--H\"older index gap. This is legitimate because $\alpha_T$ has no
+entries inside a layer, and products of entries of layer gaps $a$ and $b$
+have layer gap $a+b$. At each step the entries of the next layer gap are
+replaced by their harmonic parts, using the gauge $\db_0^*\mathbb G$ of the
+current entries, where $\mathbb G$ is the Green operator of the Dolbeault
+Laplacian. The new product terms are polynomials in entries that tend to
+zero in $C^\infty$. Hence the gauge tends to the identity, and the resulting
+harmonic normal form $\db_0+N'_T$ has $N'_T\to0$.
+
+\emph{Uniqueness up to diagonal maps.} Let
+$\Phi:(E_0,\db_0+N)\to(E_0,\db_0+N'_T)$ be a holomorphic isomorphism. It
+preserves the socle filtration, which is the standard layer flag on both
+sides. On $N'_T$ this is because the splitting sends the flag to the socle
+and the Hodge gauge is unipotent in layers. Inside a layer the gauge
+equation reduces to $\db_0\Phi_{ij}=0$, so $\Phi$ is $\diag(z_i)$ there.
+Write $\Phi=Z+U$ with $U$ strictly upper-triangular in layers. The
+$(i,j)$ entry of $\db_0\Phi+N'_T\Phi-\Phi N=0$ is
+\[
+ \db_0U_{ij}+z_jN'_{T,ij}-z_iN_{ij}
+ +\sum_{k}\bigl(N'_{T,ik}U_{kj}-U_{ik}N_{kj}\bigr)=0,
+\]
+summed over $k$ in layers strictly between those of $i$ and $j$. By
+induction on the layer gap, the sum vanishes. The exact form
+$\db_0U_{ij}$ then equals a harmonic form, so both vanish, and $U_{ij}$ is
+a holomorphic section of $\Hom(F_j,F_i)$, hence zero. Therefore $\Phi=Z$
+and $N'_T=ZNZ^{-1}$.
+
+A parallel diagonal unitary map removes the phases of the $z_i$. The
+moduli $d_i=|z_i|$, normalized so that $\prod_id_i^{r_i}=1$, define $g_T$;
+this does not change $N_{g_T}$. The metric $\widetilde h_T$ tends to $h_0$,
+because the splitting and the Hodge gauge tend to the identity and the
+unitary maps are parallel. Also $\mathfrak e_{g_T}\to0$, because $N'_T\to0$. The
+resulting identification with $E$ differs from $g_T$ by an automorphism of
+$E$, which is scalar since $E$ is simple. Its squared modulus is $A_T$.
+\end{proof}
+
+\subsection{The transfer theorem}
+
+\begin{theorem}\label{thm:transfer}
+Start the flow \eqref{eq:metric-flow} on $E$ from any smooth metric. For
+every sufficiently large $T$ there are a solution $g^{[T]}$ of the diagonal
+flow on $[T,\infty)$ and a number $\delta_T\to0$ such that
+\begin{equation}\label{eq:transfer}
+ e^{-\delta_T}\nu_j(g^{[T]}(\tau))\le\lambda_j(h(\tau))
+ \le e^{\delta_T}\nu_j(g^{[T]}(\tau)),\qquad\tau\ge T,\quad1\le j<m.
+\end{equation}
+Moreover $\liminf\lambda_m(h(\tau))>0$, and in smooth unitary flow gauges
+the full small spectral projection converges in every $L^2\to C^k$ norm to
+the projection onto $\mathcal K$.
+\end{theorem}
+
+\begin{proof}
+At time $T$ apply Lemma~\ref{lem:socle-matching}. Start the diagonal flow
+at $g_T$, and compare $h$ with $A_T\widehat h_{g^{[T]}(\tau)}$. The initial
+discrepancy is $O(\epsilon_T+\mathfrak e_{g_T})$, where
+$e^{-\epsilon_T}h_0\le\widetilde h_T\le e^{\epsilon_T}h_0$.
+Lemmas~\ref{lem:layer-energy} and~\ref{lem:general-correction} bound the
+total residual by $O(\sqrt{\mathfrak e_{g_T}})$. The barriers \eqref{eq:flow-barriers}
+then give
+\begin{equation}\label{eq:general-restarted-barrier}
+ e^{-b_T}A_T\widehat h_{g^{[T]}(\tau)}\le h(\tau)\le
+ e^{b_T}A_T\widehat h_{g^{[T]}(\tau)},\qquad
+ b_T=\epsilon_T+C\mathfrak e_{g_T}+\frac{A(L-1)^2|M|}{4}\sqrt{\mathfrak e_{g_T}}.
+\end{equation}
+Combine this with \eqref{eq:metric-spectral-comparison} and
+Lemma~\ref{lem:general-correction} to obtain \eqref{eq:transfer} with
+$\delta_T\le4b_T+C\mathfrak e_{g_T}$. The remaining assertions follow by
+resolvent convergence, as in Theorem~\ref{thm:flow-two-factor}.
+\end{proof}
+
+\begin{corollary}\label{cor:coefficient-transfer}
+Fix $j<m$ and a positive function $f$ with $f(\tau+\sigma)/f(\tau)\to1$ for
+every fixed $\sigma$. Suppose every solution $g$ of the diagonal flow satisfies
+$\nu_j(g(\tau))/f(\tau)\to c_j(g)>0$. Then every solution of
+\eqref{eq:metric-flow} has $\lambda_j(h(\tau))/f(\tau)\to c_j(h)>0$, with
+$|\log(c_j(h)/c_j(g^{[T]}))|\le\delta_T$.
+\end{corollary}
+
+\begin{proof}
+At one fixed large $T$, the comparison \eqref{eq:transfer} gives positive
+finite bounds on the lower and upper limits $\ell,u$ of $\lambda_j/f$. For
+each larger $T$, the comparison on $[T,\infty)$ gives
+$e^{-\delta_T}c_j(g^{[T]})\le\ell\le u\le e^{\delta_T}c_j(g^{[T]})$. Hence
+$u/\ell\le e^{2\delta_T}$ for all large $T$, and $u=\ell$. The shift
+condition makes the choice of time origin of $g^{[T]}$ immaterial.
+\end{proof}
+
+\begin{lemma}\label{lem:instantaneous-edges}
+Let $g_\tau$ be the diagonal gauges of Lemma~\ref{lem:socle-matching} at
+time $\tau$. For every edge and every large $T$,
+\[
+ e^{-2b_T-o_\tau(1)}\le\frac{k_{ij}(g_\tau)}{k_{ij}(g^{[T]}(\tau))}
+ \le e^{2b_T+o_\tau(1)}.
+\]
+\end{lemma}
+
+\begin{proof}
+Evaluate \eqref{eq:general-restarted-barrier} and the representation
+$h(\tau)=A_\tau g_\tau^*\widetilde h_\tau$ on a nonzero vector of $F_i$.
+Since $g$ acts on $F_i$ by the scalar $d_i$, and
+$\widehat h_g\in e^{\pm C\mathfrak e_g}h_g$, this gives $d_i(g_\tau)^2/d_i(g^{[T]}(\tau))^2$
+up to the factor $A_T/A_\tau$ and $e^{\pm(b_T+o_\tau(1))}$. Dividing the
+bounds for the two endpoints of an edge cancels $A_T/A_\tau$.
+\end{proof}
+
+Two choices of the diagonal gauges $g_\tau$, with
+$\widetilde h,\widetilde h'\to h_0$, have conductance ratios tending to one,
+by the same argument. The limits of conductances along $g_\tau$ in
+Section~\ref{sec:complete-spectrum} therefore do not depend on these
+choices.

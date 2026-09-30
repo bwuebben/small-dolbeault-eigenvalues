@@ -1,0 +1,137 @@
+\section{Two-step extensions in higher dimensions}\label{sec:higher-dim}
+
+Let $(X,\omega)$ be a compact connected K\"ahler manifold of complex
+dimension $n\ge1$, with the conventions of Section~\ref{sec:intro}. Let
+$F_1,\ldots,F_m$ be pairwise nonisomorphic stable vector bundles of common
+slope, with Hermitian--Einstein metrics $h_i$. Partition the indices as
+$I\sqcup J$, and let
+\[
+ 0\longrightarrow S=\bigoplus_{i\in I}F_i\longrightarrow E\longrightarrow
+ U=\bigoplus_{j\in J}F_j\longrightarrow0
+\]
+be an extension, with harmonic representative $N=\sum\beta_{ij}$. Here each
+entry $\beta_{ij}$ is a harmonic form in $\Omega^{0,1}(\Hom(F_j,F_i))$.
+Assume that the graph $\Gamma$ of nonzero entries is connected.
+
+\begin{theorem}\label{thm:higher-dim}
+Let $E$ be as above, with masses $M_i=V\rk F_i$ and conductances
+$k_{ij}=\lVert(gNg^{-1})_{ij}\rVert_{L^2}^2$. Along the normalized flow from
+any smooth initial metric on $E$:
+\begin{enumerate}
+\item every small eigenvalue satisfies the two-sided comparison
+ \eqref{eq:transfer} with the diagonal flow, with $\delta_T\to0$, and the
+ full small spectral projection converges to $\mathcal K$ in every
+ $L^2\to C^k$ norm;
+\item if $(\Gamma,(r_i))$ is nondegenerate, conclusions (1)--(4) of
+ Theorem~\ref{thm:complete-spectrum} hold;
+\item for two factors, $\tau\lambda_1(h(\tau))\to\frac12$, as in
+ Theorem~\ref{thm:flow-two-factor}.
+\end{enumerate}
+Corollaries~\ref{cor:coefficient-transfer} and~\ref{cor:balanced} and the
+statements of Section~\ref{sec:flow-examples} hold on $X$ whenever the
+required bundles and nonzero harmonic entries exist there.
+\end{theorem}
+
+The fixed-metric results of Sections~\ref{sec:two-factor}
+and~\ref{sec:several}, including Theorem~\ref{thm:orders}, also hold on $X$
+for two-step extensions. Section~\ref{sec:two-factor} is already stated
+there. For more than two socle layers the families need not be integrable
+when $n\ge2$. On
+$\Sigma_1\times\Sigma_2$, for instance, entries $\beta_{12}$ and $\beta_{23}$ pulled
+back from the two factors have a nonzero product class in
+$H^{0,2}(\Hom(F_3,F_1))$.
+
+\begin{proof}
+We check each input used on curves.
+
+\emph{Integrability.} Harmonic forms are $\db_0$-closed, and
+$\beta_{ij}\wedge\beta_{kl}$ requires $j=k$, which cannot occur since
+$j\in J$ and $k\in I$. So $\db_0N+N\wedge N=0$, and the same holds for
+$gNg^{-1}$ and every entrywise rescaling.
+
+\emph{Mean curvature.} The Chern connection of $(\db_0+N,h_0)$ is
+$A_0+N-N^*$. Since $\db_0^*N=0$, the K\"ahler identity
+$[\Lambda,\partial_0]=\sqrt{-1}\,\db_0^*$ gives $\Lambda\partial_0N=0$, and
+likewise for $\db_0N^*$. Hence
+$K-\kappa\id=\sqrt{-1}\Lambda(N-N^*)\wedge(N-N^*)$. In a local unitary
+coframe with $N=\sum_\nu n_\nu\bar\theta^\nu$, this is
+$\sum_\nu[n_\nu,n_\nu^*]$, as in \eqref{eq:two-C}. Its block traces give the
+same $p_i$ as on a curve.
+
+\emph{Fixed-metric comparison.} The proofs of Theorem~\ref{thm:relative}
+and Proposition~\ref{prop:subspace} use the cancellation
+$D_0^*[N,x]=[\db_0^*N,x]=0$, the spectral gap of $\Delta_0$ on $QH$,
+elliptic estimates, and Sobolev embedding. All of these hold on $X$.
+
+\emph{Order comparison.} Propositions~4.3 and~4.5 of \cite{HKKP2018},
+used in \eqref{eq:flow-barriers}, are stated and proved on compact
+K\"ahler manifolds of any dimension, by a pointwise maximum principle.
+
+\emph{Correction.} The first variation of mean curvature at a
+Hermitian--Einstein metric is $\Delta_\partial=\Delta_{\db}$ on
+endomorphisms: the difference is $[K,\cdot]$, which vanishes there. The
+mixed terms in Lemma~\ref{lem:general-correction} are
+$O(\mathfrak e^{3/2})$ uniformly. So that lemma and Lemma~\ref{lem:layer-energy} hold
+unchanged.
+
+\emph{Convergence of the flow.} Every Jordan--H\"older filtration of $E$
+has graded object isomorphic to $S\oplus U$. A saturated stable subsheaf
+of slope $\mu$ in $E$ is reflexive, hence isomorphic to some $F_k$, and
+$\Hom(F_k,E)=0$ for $k\in J$ since each extension class is nonzero. So the
+Harder--Narasimhan--Seshadri graded object is locally free, and its singular
+set is empty. By Sibley--Wentworth \cite[Theorem~1.1]{SibleyWentworth2015},
+the flow converges modulo unitary gauge, smoothly on all of $X$, to an
+admissible Yang--Mills connection $A_\infty$ on a bundle isomorphic to
+$S\oplus U$. They credit the smooth convergence to Hong and Tian
+\cite{HongTian2004}, and the
+identification of the limit to Jacob and Sibley
+\cite{Jacob2015,Sibley2015}.
+
+$A_\infty$ is smooth and integrable. Its Hermitian--Einstein summands have
+constants given by their slopes, and every holomorphic summand of
+$\bigoplus F_i$ has slope $\mu$. So $A_\infty$ is Hermitian--Einstein, and it
+is gauge equivalent to the product connection of $h_0$. For each $k$, the
+infimum over unitary gauges of the $C^k$ distance to $A_\infty$ tends to
+zero. Choosing near-optimal gauges with $k$ tending slowly to infinity gives,
+for every large $\tau$, holomorphic isometries from $(E,h(\tau))$ to
+$(E_0,h_0,\db^{(\tau)})$ with $\db^{(\tau)}\to\db_0$ in $C^\infty$. This is
+the input used on curves.
+
+\emph{Matching.} In Lemmas~\ref{lem:flow-matching}
+and~\ref{lem:socle-matching}, the transported extension entry $\alpha_T$ is
+$\db$-closed: in the block computation of $D_T^2=0$, the product
+$\alpha_T\wedge\alpha_T$ lands in $\Hom(U,S)\circ\Hom(U,S)=0$. Hodge theory
+on $X$ gives $\alpha_T=H\alpha_T+\db v_T$ with $v_T\to0$ in $C^\infty$.
+Uniqueness up to diagonal maps uses only $L^2$-orthogonality of harmonic
+and exact forms and $H^0(\Hom(U,S))=0$.
+
+The remaining arguments are finite-dimensional or use only these inputs.
+\end{proof}
+
+\begin{example}\label{ex:products}
+Let $X=\Sigma\times Y$, where $\Sigma$ is a curve of genus at least two and $Y$ is a
+connected compact K\"ahler manifold, with a product K\"ahler form.
+\begin{itemize}
+\item For stable $F$ on $\Sigma$, the pullback of a Hermitian--Einstein metric is
+ Hermitian--Einstein, since $\Lambda_\omega$ of a form pulled back from $\Sigma$
+ is $\Lambda_{\omega_\Sigma}$ of that form. By the K\"unneth formula
+ $H^0(X,\End\pi^*F)=\CC$, so $\pi^*F$ is stable.
+\item Nonisomorphic stable bundles of equal slope pull back to such
+ bundles, and
+ \[
+  H^1(X,\Hom(\pi^*G,\pi^*F))\supset H^1(\Sigma,\Hom(G,F))\ne0.
+ \]
+\item Harmonic forms pull back to harmonic forms.
+\end{itemize}
+Every example of Section~\ref{sec:flow-examples} therefore occurs on $X$,
+with arbitrary initial metrics on $X$. The same holds for the sharpness
+families of Section~\ref{sec:slope}. For the explicit constants,
+$V=1$ means $\operatorname{Vol}(\Sigma)\operatorname{Vol}(Y)=1$.
+\end{example}
+
+For extensions with more than two steps in dimension $n\ge2$, the
+Maurer--Cartan equation prevents all entries from being harmonic. A natural
+replacement is the gauge $\db_0^*N=0$. In it, the entry $N_{13}$ acquires
+the cup-product correction $-\db_0^*\mathbb G(N_{12}\wedge N_{23})$, with
+$\mathbb G$ the Green operator, which exists
+only when $[N_{12}]\cup[N_{23}]=0$. We do not treat this case.

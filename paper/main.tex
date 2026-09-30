@@ -1,0 +1,845 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+  pdftitle={Small Dolbeault eigenvalues along Hermitian Yang--Mills flow}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\CC}{\mathbb C}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\dvol}{\,dV_\omega}
+\newcommand{\db}{\bar\partial}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Ker}{\operatorname{ker}}
+\hyphenation{semi-sta-ble poly-sta-ble Her-mit-ian}
+
+\title[Small eigenvalues along Hermitian Yang--Mills flow]{Small Dolbeault eigenvalues\\
+along Hermitian Yang--Mills flow}
+\author{Bernd Johannes Wuebben}
+\subjclass[2020]{53C07 (primary); 32L05, 32Q15, 58J50 (secondary)}
+\keywords{Hermitian Yang--Mills flow, Dolbeault Laplacian, holomorphic vector
+bundles, spectral degeneration, weighted graph Laplacian, slope stability}
+\date{September 20, 2026 (initial version); September 30, 2026 (this version)}
+
+\begin{document}
+
+\begin{abstract}
+We study the small eigenvalues of the Dolbeault Laplacian on trace-free
+endomorphisms of a semistable holomorphic bundle along Hermitian
+Yang--Mills flow, normalized as $h^{-1}\partial_\tau h=-2(K_h-\kappa)$ with
+$K_h$ the mean curvature and $\kappa$ its average. The
+bundles considered are simple bundles on a compact curve whose
+Jordan--H\"older factors are pairwise nonisomorphic, and extensions of one
+polystable bundle by another on compact K\"ahler manifolds, again with
+pairwise nonisomorphic stable factors. From every
+smooth initial metric, each small eigenvalue is asymptotic to an eigenvalue
+of a weighted graph Laplacian, whose conductances evolve by an explicit
+finite-dimensional flow; the relative error tends to zero. The graph records
+which stable factors are joined by nonzero extension classes. The
+asymptotics are governed by the weight grading of Haiden, Katzarkov,
+Kontsevich, and Pandit, the solution of a quadratic program on this graph.
+Suppose some Lagrange multiplier vector of this program is strictly positive
+on every active constraint. We then determine the decay exponent and the
+leading coefficient of every small eigenvalue, and the limits of the
+spectral subspaces. The eigenvalues of order $\tau^{-1}$ have coefficients
+independent of the initial metric, and $1/2$ is always one of them. At each
+faster rate the coefficients depend on the initial metric, and their sum is
+unbounded over metrics on one fixed bundle. A key step shows that the
+bounded remainder in the asymptotics of the finite-dimensional flow
+converges. Examples include an eigenvalue decaying like $\tau^{-4/3}$ and,
+without the positivity condition, an eigenvalue of order
+$(\tau\log\tau)^{-1}$. We also treat families of harmonic extensions with
+fixed metrics, including repeated factors
+and recovery of the graded object, and we show that the constants in a slope
+inequality relating the lowest eigenvalue to the averaged trace-free mean
+curvature are sharp in every rank.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+The summand projections of a polystable direct sum are holomorphic
+endomorphisms and hence zero modes of its Dolbeault Laplacian. Under a
+deformation of the holomorphic structure, some of these modes can acquire
+positive eigenvalues. We ask how the extension data determine the small
+eigenvalues and their limiting spectral subspaces, and what these limits
+reveal about the stable summands. Our main concern is the spectrum along
+Hermitian Yang--Mills flow, where the time parameter is intrinsic rather than
+chosen.
+For every simple bundle on a curve whose Jordan--H\"older factors are
+pairwise nonisomorphic, and for two-step extensions on compact K\"ahler
+manifolds, we reduce the small spectrum to a finite-dimensional flow. Under
+a positivity condition on the associated Lagrange multipliers, we determine
+the exponent and the leading coefficient of every small eigenvalue, the
+limits of the spectral subspaces, and which coefficients retain information
+about the initial metric.
+
+On a compact curve, every stable bundle carries a Hermitian--Einstein
+metric, whose Chern connection is projectively flat
+\cite{NarasimhanSeshadri1965,Donaldson1983}, and the Yang--Mills
+functional was analysed from the point of view of Morse theory by
+Atiyah and Bott \cite{AtiyahBott1983}. Hermitian Yang--Mills flow
+\cite{Donaldson1985,Simpson1988} carries a semistable bundle on a curve
+to a Hermitian--Einstein connection on its graded bundle, modulo unitary
+gauge \cite{Daskalopoulos1992,Rade1992}. In higher dimensions the
+limiting reflexive sheaf is the double dual of the graded object of the
+Harder--Narasimhan--Seshadri filtration
+\cite{DaskalopoulosWentworth2004,Jacob2015,Sibley2015}. When that graded
+object is locally free, the convergence is smooth on the whole manifold
+\cite{SibleyWentworth2015}.
+
+The exponents are governed by the weight grading of Haiden, Katzarkov,
+Kontsevich, and Pandit \cite{HKKP2023}, a solution of a quadratic program
+on the directed graph of nonzero extension entries. When the Lagrange multipliers of that program are strictly positive,
+which is the hypothesis of \cite[Theorem~3.6]{HKKP2023}, we show the
+following. The eigenvalues decaying like $\tau^{-1}$ have coefficients that
+do not depend on the initial metric, and $1/2$ is always one of them. At
+each faster rate the coefficients depend on the initial metric, and their
+sum is unbounded over metrics on one fixed bundle. The proof has three parts: a
+comparison of every small eigenvalue with a finite-dimensional diagonal
+flow, with relative error tending to zero on the entire future interval; a
+proof that the bounded remainder in the asymptotics of that flow converges;
+and a contraction rule for weighted graph Laplacians whose weights decay at
+different rates. The finite-dimensional models, the exponents, and the
+logarithmic example come from \cite{HKKP2023,HKKP2018}. Our contribution is
+the transfer of precise coefficients to the Dolbeault spectrum of the
+bundle, the convergence of the remainder, and the resulting dichotomy.
+Section~\ref{sec:earlier-work} gives the detailed attribution.
+
+The spectral input is a relative comparison for harmonic extension
+families with fixed background metrics. Scaled harmonic extensions of
+this kind were used by Sektnan and Tipler in an adiabatic Hermitian
+Yang--Mills problem \cite[Section~5]{SektnanTipler2024}. A finite-dimensional commutator
+form describes the small spectrum; for pairwise nonisomorphic stable
+factors it is a weighted graph Laplacian. The error is relative to each
+eigenvalue, so the estimate remains effective when different modes
+vanish at different rates.
+
+These asymptotics also give quantitative information about slope
+stability. The classical subsheaf degree formula
+\cite{Kobayashi1987,Lubke1983} yields an inequality
+relating slopes, the lowest endomorphism eigenvalue, and the trace-free
+mean curvature. Corrected two-factor families show that its constants are
+sharp in every rank. Thus the explicit spectral families
+both describe the approach to a polystable splitting and test the
+optimality of a general stability estimate.
+
+We use the following conventions throughout. Let $(X,\omega)$ be a
+compact connected K\"ahler manifold of complex dimension $n\ge1$, and set
+\[
+ dV_\omega=\frac{\omega^n}{n!},\qquad V=\int_X dV_\omega.
+\]
+For a torsion-free coherent sheaf $\mathcal F$ of positive rank, define
+\[
+ \deg_\omega\mathcal F
+ =\int_X c_1(\mathcal F)\wedge\frac{\omega^{n-1}}{(n-1)!},
+ \qquad
+ \mu_\omega(\mathcal F)=\frac{\deg_\omega\mathcal F}{\rk\mathcal F}.
+\]
+Here $c_1(\mathcal F)=c_1(\det\mathcal F)$. Following Mumford and
+Takemoto \cite{Mumford1963,Takemoto1972}, the bundle $E$ is
+slope-stable if $\mu_\omega(\mathcal F)<\mu_\omega(E)$ for every
+coherent subsheaf with $0<\rk\mathcal F<\rk E$; semistability uses
+the non-strict inequality; see \cite[Chapter~V]{Kobayashi1987}. It suffices to consider saturated subsheaves,
+for which $E/\mathcal F$ is torsion-free.
+
+For a holomorphic bundle $E$ of rank $r\ge2$ with a smooth Hermitian
+metric $h$, let $\db_{\End E}$ denote the induced Dolbeault operator on
+$\End E$, and define
+\begin{equation}\label{eq:lambda}
+ \lambda_1(h)=
+ \inf_{0\ne u\in C^\infty(X,\End_0 E)}
+ \frac{\lVert\db_{\End E}u\rVert_{L^2}^2}{\lVert u\rVert_{L^2}^2}.
+\end{equation}
+All $L^2$ norms use $h$, $\omega$, and the Hilbert--Schmidt norm on
+endomorphisms. Thus $\lambda_1(h)$ is the lowest eigenvalue, including
+zero, of $\db_{\End E}^{*}\db_{\End E}$ on trace-free endomorphisms;
+it is not the first positive eigenvalue when the kernel is nonzero.
+The bundle is simple if $H^0(X,\End E)=\CC\id_E$. By elliptic theory,
+$\lambda_1(h)>0$ if and only if $E$ is simple.
+
+\subsection{The small spectrum along the flow}\label{sec:intro-flow}
+
+Let $X$ be a compact curve, and let $E$ be a simple semistable bundle whose
+Jordan--H\"older factors $F_1,\ldots,F_m$, $m\ge2$, are pairwise
+nonisomorphic, of ranks $r_i$. The \emph{socle} of a semistable bundle is
+the sum of its stable subbundles of the same slope
+\cite[Section~1.5]{HuybrechtsLehn2010}. The socle filtration
+$S_1\subset S_2\subset\cdots\subset E$ takes $S_1$ to be the socle of $E$
+and $S_{k+1}/S_k$ to be the socle of $E/S_k$. Each $F_i$ occurs in exactly
+one quotient $S_k/S_{k-1}$, its \emph{socle layer}. A \emph{two-step
+extension} is one with two socle layers,
+\[
+ 0\longrightarrow S\longrightarrow E\longrightarrow U\longrightarrow0,
+\]
+with $S$ and $U$ polystable of slope $\mu(E)$.
+
+By Lemma~\ref{lem:socle-normal-form}, $E$ is smoothly identified with
+$(\bigoplus_iF_i,\db_0+N)$, where $N=\sum\beta_{ij}$, each
+$\beta_{ij}\in\Omega^{0,1}(\Hom(F_j,F_i))$ is harmonic, and $\beta_{ij}\ne0$
+only when $F_i$ lies in a lower socle layer than $F_j$. Let $\Gamma$ be the
+directed graph with an edge $i\to j$ for each nonzero $\beta_{ij}$, and put
+$M_i=Vr_i$. We call $\sum_ix_i\id_{F_i}$, $x_i\in\CC$, a
+\emph{block-scalar} endomorphism. Write $K_h=\sqrt{-1}\Lambda_\omega F_h$
+for the mean curvature, and run the normalized metric flow
+\[
+ h^{-1}\partial_\tau h=-2(K_h-\kappa\id),\qquad \kappa=2\pi\mu(E)/V,
+\]
+from any smooth metric. The flow converges to the Hermitian--Einstein
+connection of the graded bundle \cite{Daskalopoulos1992,Rade1992}. Exactly
+$m-1$ eigenvalues $\lambda_1\le\cdots\le\lambda_{m-1}$ of the Dolbeault
+Laplacian on trace-free endomorphisms therefore tend to zero.
+
+The finite-dimensional comparison object is the \emph{diagonal flow}. It is
+the flow on block-scalar metrics $g^*h_0$, $g=\diag(e^{y_i}\id_{F_i})$, in
+which the mean curvature is replaced by its block-scalar average:
+\begin{equation}\label{eq:intro-diag-flow}
+ \dot y_i=-\frac1{M_i}\Bigl(\sum_{i\to j}k_{ij}-\sum_{l\to i}k_{li}\Bigr),
+ \qquad k_{ij}=\lVert\beta_{ij}\rVert_{L^2}^2e^{2(y_i-y_j)}.
+\end{equation}
+The edge weight, or \emph{conductance}, $k_{ij}$ is the squared norm of the
+rescaled extension entry. This is the weighted-graph flow of
+\cite[(3.10)]{HKKP2023}, and we call $y$ its logarithmic coordinates.
+
+The \emph{weight grading} $w$ of \cite{HKKP2023} is the minimizer of
+$\frac12\sum_iM_iw_i^2$ subject to $w_j-w_i\ge\frac12$ for every edge
+$i\to j$ (Definition~\ref{def:weight-grading}). An edge is \emph{tight}
+when equality holds, that is, when its constraint is active; the tight edges form the \emph{tight subgraph}
+$\mathcal T$, and its connected components, isolated vertices included, are
+the \emph{tight components}. The Lagrange multipliers of this program vanish
+off $\mathcal T$. We call $(\Gamma,(r_i))$ \emph{nondegenerate} when some
+multiplier vector is strictly positive on every tight edge
+(Definition~\ref{def:nondegenerate}). In optimization this is strict
+complementarity; it is the hypothesis of \cite[Theorem~3.6]{HKKP2023}.
+
+Each edge receives the exponent $a_{ij}=2(w_j-w_i)\ge1$. For each value $a$
+of these exponents, contract the connected components of the edges with
+smaller exponent, adding the masses, and join the resulting vertices by the
+edges of exponent $a$. Call this the \emph{$a$-quotient graph}, and let
+$d_a$ be the number of its positive Laplacian eigenvalues. The small
+eigenvalues are assigned exponents accordingly: $d_a$ of them receive the
+exponent $a$, larger exponents taking smaller indices. Write $a_j$ for the
+exponent of $\lambda_j$.
+
+\begin{theorem}\label{thm:intro-main}
+Assume $(\Gamma,(r_i))$ is nondegenerate. For every smooth initial metric:
+\begin{enumerate}
+\item $\tau^{a_j}\lambda_j(h(\tau))\to c_j(h)>0$ for every $j<m$.
+\item The coefficients with $a_j=1$ are the positive eigenvalues of the
+ Laplacian of $\mathcal T$ with masses $M_i$ and conductances $u^*_{ij}$.
+ Here $u^*$ is the unique multiplier vector of the form
+ $u^*_{ij}=\lVert\beta_{ij}\rVert^2e^{2(z_i-z_j)}$ on the edges of
+ $\mathcal T$, with $z\in\mathbb R^m$, and zero elsewhere. These coefficients do
+ not depend on the initial metric. The value $\frac12$ is always among
+ them; for each tight component $\mathcal C$ with at least two vertices it
+ has the eigenvector $\sum_{i\in\mathcal C}w_i\id_{F_i}$.
+\item For every exponent $a>1$ with $d_a\ge1$, the coefficients with
+ $a_j=a$ are the positive eigenvalues of the $a$-quotient graph with
+ conductances $k^\infty_{ij}(h)=\lim\tau^{a_{ij}}k_{ij}(g_\tau)$. Here
+ $g_\tau$ is the diagonal part of $h(\tau)$ in the normal form
+ (Lemma~\ref{lem:socle-matching}), and these limits depend on the initial
+ metric. The sum of the coefficients is unbounded as the initial metric
+ varies on $E$.
+\item In unitary gauges in which the flow converges, the spectral
+ projection onto the eigenvalues with a given exponent and a given
+ coefficient converges smoothly. The limit is the corresponding eigenspace
+ of the Laplacian of the $a$-quotient graph ($\mathcal T$ when $a=1$),
+ embedded as block-scalar endomorphisms constant on the contracted
+ vertices.
+\end{enumerate}
+The same holds for two-step extensions on compact K\"ahler manifolds of any
+dimension, when the factors are vector bundles.
+\end{theorem}
+
+Theorem~\ref{thm:intro-main} combines Theorems~\ref{thm:complete-spectrum}
+and~\ref{thm:higher-dim}. Its basis is a comparison that needs no
+nondegeneracy (Theorem~\ref{thm:transfer}): for every sufficiently large
+$T$ there are a solution $g^{[T]}$ of \eqref{eq:intro-diag-flow} on
+$[T,\infty)$ and $\delta_T\to0$ with
+\[
+ e^{-\delta_T}\nu_j(g^{[T]}(\tau))\le\lambda_j(h(\tau))\le
+ e^{\delta_T}\nu_j(g^{[T]}(\tau)),\qquad\tau\ge T,
+\]
+where the $\nu_j$ are the positive eigenvalues of the weighted graph
+Laplacian with masses $M_i$ and conductances $k_{ij}$. Without
+nondegeneracy, iterated logarithms can appear in the diagonal flow.
+
+Three examples show the range of behaviour.
+\begin{itemize}
+\item For a nonsplit extension of two stable bundles,
+ $\tau\lambda_1(h(\tau))\to\frac12$. The limit is independent of the ranks,
+ the extension class, the initial metric, and the dimension
+ (Theorems~\ref{thm:flow-two-factor} and~\ref{thm:higher-dim}).
+\item Take four stable factors of ranks $(2,1,1,2)$ with nonzero entries
+ exactly on the edges $1\to2$, $3\to2$, $3\to4$ (a zigzag). Two eigenvalues
+ are asymptotic to $1/(2\tau)$, and $\lambda_1\sim c(h(0))\tau^{-4/3}$. With
+ $V=1$, unit-norm entries, and the initial metrics $h_\rho=g_\rho^*h_0$ with
+ $g_\rho=\diag(\rho^{1/2},\rho^{-1/2},\rho^{1/2},\rho^{-1/2})$, one has
+ $c(h_\rho)=\frac2{27}\rho^{-2/3}(1+O(\rho))$
+ (Proposition~\ref{prop:unequal-rank-family}).
+\item For four line bundles with the same zigzag, the multiplier on the edge
+ $3\to2$ is forced to vanish, so $(\Gamma,(r_i))$ is degenerate. Here
+ $\lambda_1\sim(2\tau\log\tau)^{-1}$, an eigenvalue separated from the
+ others by a logarithmic factor, and $\lambda_2\sim\lambda_3\sim(2\tau)^{-1}$
+ (Theorem~\ref{thm:zigzag-flow}).
+\end{itemize}
+The exponent $4/3$ and the logarithmic model are features of the weighted
+graph flows of \cite[Section~3.2 and Example~5.13]{HKKP2023}. The theorems
+here determine the corresponding Dolbeault coefficients along the actual
+flow.
+
+The finite-dimensional input is Theorem~\ref{thm:diag-convergence}. For
+nondegenerate $(\Gamma,(r_i))$, every solution of \eqref{eq:intro-diag-flow}
+satisfies
+\[
+ y(\tau)=w\log\tau+\zeta^*+\sum_{\mathcal C}Z_{\mathcal C}\mathbf 1_{\mathcal C}
+ +O(\tau^{-\delta}).
+\]
+Here $\zeta^*$ is the minimizer of an explicit strictly convex function on
+the tight subgraph, determined by $\Gamma$, the ranks, $V$ and the norms
+$\lVert\beta_{ij}\rVert$; $\mathbf 1_{\mathcal C}$ is the indicator vector
+of the tight component $\mathcal C$. The constants $Z_{\mathcal C}$ depend on
+the solution. This refines the bounded remainder of
+\cite[Theorem~3.6]{HKKP2023}. It also yields convergence of the bounded term
+in the metric asymptotics along the actual flow
+(Corollary~\ref{cor:metric-asymptotics}). The constants $Z_{\mathcal C}$
+are exactly what makes the faster coefficients depend on the initial metric.
+
+\subsection{Harmonic extensions and their small spectrum}
+
+First suppose that $X$ is a compact curve. Fix pairwise nonisomorphic
+stable bundles $F_1,\ldots,F_m$, $m\ge2$, of equal slope and ranks $r_i$,
+and equip $E_0=\bigoplus_iF_i$ with a product Hermitian--Einstein metric.
+Choose harmonic forms
+$\beta_{ij}\in\Omega^{0,1}(\Hom(F_j,F_i))$, $i<j$, at least one of
+which is nonzero. For strictly decreasing integers
+$\ell_1>\cdots>\ell_m=0$, set
+\[
+ p_{ij}=\ell_i-\ell_j,\qquad
+ \db_t=\db_0+\sum_{i<j}t^{p_{ij}}\beta_{ij},\qquad t>0.
+\]
+Each entry occupies its indicated upper-triangular block. Integrability
+is automatic on a curve; denote the resulting holomorphic bundle by
+$E_t$. The diagonal transformation
+$g_t=\diag(t^{\ell_i}\id_{F_i})$ identifies all positive parameters with
+the same holomorphic bundle. We retain the fixed product metric when
+computing the spectrum. Equivalently, $g_t$ transports it to a family
+of metrics on that fixed holomorphic bundle.
+
+The split trace-free holomorphic endomorphisms form the space
+\[
+ \mathcal K=\left\{\diag(x_i\id_{F_i}):\sum_i r_ix_i=0\right\}.
+\]
+Associate an undirected graph to the nonzero entries $\beta_{ij}$, with
+vertex masses $Vr_i$ and edge conductances
+$t^{2p_{ij}}\lVert\beta_{ij}\rVert_{L^2}^2$. Its weighted Laplacian
+$L_t$ on $\mathcal K$ is defined by
+\[
+ \langle x,L_tx\rangle
+ =\sum_{i<j}t^{2p_{ij}}\lVert\beta_{ij}\rVert_{L^2}^2|x_i-x_j|^2,
+ \qquad \lVert x\rVert^2=V\sum_i r_i|x_i|^2.
+\]
+Let $\nu_1(t)\le\cdots\le\nu_{m-1}(t)$ be its eigenvalues and
+$\lambda_1(t)\le\lambda_2(t)\le\cdots$ those of the Dolbeault Laplacian
+on trace-free endomorphisms of $E_t$, counting complex multiplicity and including
+zero. Put $p_* =\min_{\beta_{ij}\ne0}p_{ij}$. The following statement
+is proved in Section~\ref{sec:several}.
+
+\begin{theorem}[Spectral comparison]\label{thm:intro-spectral}
+Exactly $m-1$ eigenvalues tend to zero as $t\to0$, and the remaining
+spectrum stays uniformly bounded away from zero. For every positive
+$\nu_j(t)$,
+\[
+ \frac{\lambda_j(t)}{\nu_j(t)}=1+O(t^{2p_*}),
+\]
+with an error uniform in $j$ for the fixed family. If the graph has $c$
+connected components, exactly $c-1$ of the small eigenvalues are
+identically zero. Let $\Pi_t$ be the orthogonal projection onto the full
+small spectral subspace and $P$ the orthogonal projection onto
+$\mathcal K$. For every $k\ge0$,
+\[
+ \lVert\Pi_t-P\rVert_{L^2\to C^k}=O(t^{2p_*}).
+\]
+\end{theorem}
+
+Theorem~\ref{thm:orders} determines every leading decay order by a
+finite construction. At an edge exponent $p$, contract the
+components joined by edges with $p_{ij}<p$ and add their vertex
+masses. Join the resulting vertices using entries with $p_{ij}=p$,
+assigning conductances $\lVert\beta_{ij}\rVert_{L^2}^2$ and adding
+contributions between the same pair of vertices. The positive
+eigenvalues $\rho$ of this quotient graph give
+precisely the coefficients of the modes
+$\lambda(t)=t^{2p}(\rho+o(1))$. Their spectral subspaces converge
+smoothly to the corresponding quotient eigenspaces, embedded as
+endomorphisms constant on each contracted component. For a repeated
+coefficient, the conclusion concerns the whole eigenspace. For the
+matrix family $L_t$ alone, the contraction rule follows from the
+reduction process of analytic perturbation theory
+\cite[Chapter~II, \S2.3]{Kato1995}; Theorem~\ref{thm:orders} transfers
+it, together with the limiting subspaces, to the Dolbeault spectrum.
+
+The limiting full subspace has a geometric interpretation. After
+adjoining the scalar identity to $\mathcal K$, one obtains the algebra
+$\bigoplus_i\CC\id_{F_i}$. Its minimal nonzero idempotents are the
+projections onto the stable summands. The limiting spectral subspace,
+viewed as a space of endomorphisms with pointwise multiplication,
+therefore identifies the unordered summands of this split
+limit.
+
+For a concrete example, take three pairwise nonisomorphic degree-zero
+line bundles on a curve of genus at least two and volume one. Choose
+harmonic forms of unit $L^2$ norm on the consecutive blocks $12,23$,
+scale them by $t,t^2$, and set the $13$ entry to zero. The two small
+eigenvalues satisfy
+\[
+ \lambda_1(t)=\tfrac32t^4(1+O(t^2)),\qquad
+ \lambda_2(t)=2t^2(1+O(t^2)).
+\]
+The limiting eigensection for the smaller eigenvalue distinguishes
+$F_1\oplus F_2$ from $F_3$; that for the larger eigenvalue distinguishes
+$F_1$ from $F_2$. An absolute error of order $t^4$
+would obscure the first leading coefficient, whereas the relative
+comparison determines both. Section~\ref{sec:examples} derives these
+formulas and gives a five-factor example with a repeated coefficient.
+
+\subsection{Realization for semistable bundles on curves}
+
+The harmonic families can be constructed from every simple strictly
+semistable bundle $E$ on a compact curve. Choose a Jordan--H\"older
+filtration with stable quotients $F_1,\ldots,F_m$, allowing repetitions.
+Its graded bundle
+$G=\operatorname{gr}(E)=\bigoplus_iF_i$ is determined up to isomorphism
+by $E$ \cite{Seshadri1967}; see also
+\cite[Section~1.5]{HuybrechtsLehn2010}. After choosing
+Hermitian--Einstein metrics on the quotients, compatible with fixed
+identifications between isomorphic copies,
+Lemma~\ref{lem:normal-form} gives a filtration-preserving smooth
+identification in which all upper-triangular extension entries are
+harmonic. The construction corrects successive upper diagonals and
+retains the changes they induce in higher entries. It requires no
+smallness assumption on the original extension.
+
+Write $G=\bigoplus_\alpha H_\alpha\otimes\CC^{m_\alpha}$ with
+pairwise nonisomorphic stable $H_\alpha$. Since stable bundles are
+simple and a nonzero homomorphism between stable bundles of equal slope
+is an isomorphism
+\cite[Chapter~V, Proposition~7.11 and Corollaries~7.12, 7.14]{Kobayashi1987},
+its holomorphic endomorphism algebra is
+$\bigoplus_\alpha M_{m_\alpha}(\CC)$.
+Theorem~\ref{thm:matrix-relative} extends the relative comparison
+to the quadratic form below, where $N_t$ is the harmonic extension
+form after diagonal scaling:
+\[
+ \langle x,L_tx\rangle=\lVert[N_t,x]\rVert_{L^2}^2,
+ \qquad x\in H^0(X,\End_0G).
+\]
+Theorem~\ref{thm:curve-recovery} constructs approximate
+Hermitian--Einstein metrics $h_t$
+(cf.\ \cite[Chapter~VI, Theorem~10.13]{Kobayashi1987} and
+\cite{Jacob2014}) and explicit gauges \eqref{eq:recovery-gauges} in which this comparison
+applies. Exactly $d=\sum_\alpha m_\alpha^2-1$ positive
+eigenvalues tend to zero, the remaining spectrum has a uniform gap,
+and the full small spectral projection converges smoothly to the
+projection onto $H^0(X,\End_0G)$. Adjoining the scalar identity
+recovers the endomorphism algebra of the graded bundle. Its central
+idempotents identify the isotypical components, its matrix sizes give
+the multiplicities, and the images of its minimal idempotents give
+the stable factors up to isomorphism. Individual repeated copies
+have no canonical projections. For example, Section~\ref{sec:repeated-example}
+constructs a simple bundle with graded object $A\oplus B\oplus A\oplus C$
+and five small modes, with leading terms $t^4,t^2,t^2,2t^2,2t^2$.
+These recovery statements concern the constructed metric families.
+
+\subsection{Slope inequalities and their sharpness}
+
+We now return to an arbitrary smooth Hermitian metric $h$ on a bundle
+$E$ over a compact connected K\"ahler manifold. The implication from
+irreducible Hermitian--Einstein metrics to slope stability rests on
+the subbundle curvature formula and its extension to coherent
+subsheaves \cite{Kobayashi1987,Lubke1983}. The converse is the
+Donaldson--Uhlenbeck--Yau theorem
+\cite{Donaldson1985,UhlenbeckYau1986}. For a general metric, the same
+curvature formula gives a quantitative estimate with an error term.
+
+Write $F_h$ for its Chern curvature, with the convention
+$c_1(E,h)=\frac{\sqrt{-1}}{2\pi}\tr F_h$, and put
+\begin{equation}\label{eq:curvature}
+ K_h=\sqrt{-1}\Lambda_\omega F_h,
+ \qquad K_h^0=K_h-\frac{\tr K_h}{r}\id_E.
+\end{equation}
+Both endomorphisms are self-adjoint with respect to $h$. The quantity used
+to measure the curvature error is
+\begin{equation}\label{eq:epsilon}
+ \varepsilon_1(h)=\frac1V\int_X\lVert K_h^0\rVert_{\op}\dvol.
+\end{equation}
+\begin{theorem}\label{thm:main}
+For every saturated coherent subsheaf $\mathcal S\subset E$ of rank
+$0<s<r$, one has
+\begin{equation}\label{eq:main}
+ \mu_\omega(E)-\mu_\omega(\mathcal S)
+ \ge \frac{V(r-s)}{2\pi r}
+ \left(\lambda_1(h)-\frac{r}{\max\{s,r-s\}}\varepsilon_1(h)\right).
+\end{equation}
+In particular, if
+\begin{equation}\label{eq:criterion}
+ \lambda_1(h)>c_r\varepsilon_1(h),
+ \qquad c_r=\frac{r}{\lceil r/2\rceil},
+\end{equation}
+then $E$ is slope-stable.
+\end{theorem}
+
+The proof combines the classical subsheaf degree formula with the
+Rayleigh principle; we have not found the inequality stated in this form. Its test section is the orthogonal projection onto
+the subsheaf with its scalar part removed; its pointwise squared norm
+is $s(r-s)/r$. A trace-free matrix estimate gives the displayed rank
+dependence. Since $c_r\le2$ and
+$\varepsilon_1(h)\le\lVert K_h^0\rVert_{L^\infty,\op}$, the simpler
+condition $2\lVert K_h^0\rVert_{L^\infty,\op}<\lambda_1(h)$ also
+implies stability. No simplicity assumption is needed: the strict
+inequality already implies $\lambda_1(h)>0$.
+
+A strictly semistable bundle has a proper saturated subsheaf of equal
+slope. Theorem~\ref{thm:main} therefore forces $\lambda_1(h_j)\to0$
+whenever $\varepsilon_1(h_j)\to0$, in particular along approximate
+Hermitian--Einstein metrics. This conclusion concerns arbitrary such
+sequences; it does not require the harmonic form of the families above.
+
+The relation to the explicit spectral asymptotics is clearest for two
+factors. Let $F,G$ be nonisomorphic stable bundles of equal slope on a
+compact K\"ahler manifold, of ranks $a,b$, with fixed
+Hermitian--Einstein metrics and a nonzero harmonic extension form
+$\beta\in\Omega^{0,1}(\Hom(G,F))$. Scaling the extension by $t$ gives
+exactly one small eigenvalue. Theorem~\ref{thm:two-factor} gives
+\[
+ \lambda_1(t)=\frac{(a+b)\lVert\beta\rVert_{L^2}^2}{Vab}\,t^2
+ -dt^4+O(t^6),\qquad d\ge0,
+\]
+with an explicit formula for $d$ in terms of the inverse split
+Laplacian on the complement of its kernel. In the gauge $g_t$ of
+\eqref{eq:two-gauge}, the
+normalized eigensection converges smoothly to the normalized trace-free
+part of a summand projection. This two-factor result holds in every
+complex dimension.
+
+A second-order correction of the metric, by the Green operator applied to
+the trace-free part of the curvature, makes both estimates in the proof of
+Theorem~\ref{thm:main} asymptotically sharp. On a curve of genus at least
+two, for every $r\ge2$ and $1\le s<r$, this gives nonsplit extensions of a
+stable bundle of rank $r-s$ by one of rank $s$, and metrics with
+\[
+ \frac{\lambda_1}{\varepsilon_1}\longrightarrow\frac r{\max\{s,r-s\}}
+\]
+(Corollary~\ref{cor:sharpness}). These bundles are strictly semistable, so
+no coefficient in \eqref{eq:main} can be decreased, and $c_r$ is optimal in
+every rank. The same families show that $c_r$ is optimal for the criterion
+with $\lVert K_h^0\rVert_{L^\infty,\op}$ in place of $\varepsilon_1$.
+
+\subsection{Organization}
+
+Sections~\ref{sec:two-factor}--\ref{sec:examples} treat harmonic families
+with fixed metrics. They contain the two-factor expansion, the relative
+comparison with the graph Laplacian, and the contraction rule for decay
+orders. Section~\ref{sec:normal-form} gives the harmonic normal form on
+curves. Sections~\ref{sec:flow}--\ref{sec:higher-dim} contain the flow
+results.
+\begin{itemize}
+\item Section~\ref{sec:flow} treats two factors directly.
+\item Section~\ref{sec:diagonal-flow} proves the sharp asymptotics of the
+ diagonal flow.
+\item Section~\ref{sec:transfer} compares the bundle flow with diagonal
+ flows begun at arbitrarily late times.
+\item Section~\ref{sec:complete-spectrum} proves
+ Theorem~\ref{thm:intro-main}, Section~\ref{sec:flow-examples} gives the
+ examples, and Section~\ref{sec:higher-dim} treats higher dimensions.
+\end{itemize}
+The comparison at late times is essential. A comparison begun at a single
+fixed time gives only two-sided bounds of order $\tau^{-a}$, not the
+coefficients. Sections~\ref{sec:repeated} and~\ref{sec:curve-recovery}
+return to fixed metrics, with repeated factors and a recovery theorem. The
+slope inequality is proved at the end.
+
+\subsection{Relation to earlier work and scope}\label{sec:earlier-work}
+
+The scaled-extension construction is classical in this setting.
+Sektnan--Tipler \cite[Section~5]{SektnanTipler2024} use it in an
+adiabatic Hermitian Yang--Mills problem; their Proposition~41 computes
+the action on summand identities, and Lemma~52 uses a weighted quadratic
+form in their differences. Their linearized operator is a connection
+Laplacian with a varying base metric. Here we work with the nonnegative
+Dolbeault Laplacian and fixed metrics, derive a relative comparison for
+each small eigenvalue, and prove convergence of the full small spectral
+subspace. For pairwise nonisomorphic factors, graph contraction also
+determines every leading coefficient and its limiting subspace.
+The two-factor expansion uses standard analytic perturbation theory
+\cite[Chapter~VII]{Kato1995}.
+
+For the flow theorems, existence and convergence to the graded bundle are
+classical inputs \cite{Daskalopoulos1992,Rade1992}; in higher dimensions we
+use Sibley and Wentworth's identification of the singular set
+\cite[Theorem~1.1]{SibleyWentworth2015}. Haiden, Katzarkov, Kontsevich, and
+Pandit \cite{HKKP2018} describe metric growth along the flow on curves by
+weight filtrations and iterated logarithms, with a bounded remainder. Their
+weighted-graph analysis \cite[Section~3]{HKKP2023} supplies the weight
+grading, the multiplier condition, the convexity argument, the regime giving
+the exponent $4/3$, and the logarithmic model of Example~5.13. Our proofs
+use their Green operator correction and order comparison
+\cite[Sections~3.5 and~4.2]{HKKP2018}.
+
+Lam \cite[Theorems~1.1 and~8.2, Proposition~8.6]{Lam2026} extends the
+metric asymptotics to compact K\"ahler manifolds with locally free graded
+object, including repeated factors, again with a bounded remainder. A fixed
+multiplicative bound between metrics leaves a fixed uncertainty in each
+leading coefficient. Theorem~\ref{thm:transfer} removes that uncertainty by
+comparing with diagonal metrics begun at arbitrarily late times. The
+convergence of the remainder in the diagonal flow,
+Theorem~\ref{thm:diag-convergence}, then determines the coefficients. That
+convergence also sharpens the metric asymptotics in the nondegenerate case.
+
+After a linear change of variables, the diagonal flow is gradient flow for
+an exponential loss with linearly separable data, and the weight grading is
+the hard-margin direction (Remark~\ref{rem:implicit-bias}). For gradient
+descent with unit weights, Soudry, Hoffer, Nacson, Gunasekar, and Srebro
+\cite{Soudry2018} prove convergence of the remainder when the support vectors
+span the data. Here that means there is a single tight component. Nacson et
+al.\ \cite[Theorem~10]{Nacson2019} bound the component of the remainder
+outside the span of the support vectors without that assumption.
+In our setting there can be several tight components; the argument for
+convergence in that case is short. The dependence on the initial metric
+enters exactly through those components.
+
+The harmonic gauge condition itself also appears in
+\cite[Section~5.1]{SektnanTipler2024}; our triangular construction on a
+curve supplies the normal form needed to apply the spectral comparison to
+the bundle $E$.
+
+We state the scope of the fixed-metric results once. They concern the
+constructed families: harmonic extension data, a chosen filtration,
+quotient metrics, and scaling exponents, with rates referring to the chosen
+parameter $t$. The flow results use the intrinsic time $\tau$. The
+identification of stable factors uses the limiting space of endomorphisms
+with its multiplication, not the eigenvalue list alone, and it does not
+select a canonical Jordan--H\"older filtration. For arbitrary approximate
+Hermitian--Einstein sequences, the slope inequality gives eigenvalue
+collapse, but convergence of spectral subspaces is not asserted.
+
+\input{two_factor}
+\input{several_factors}
+\input{normal_form}
+\input{yang_mills_flow}
+\input{diagonal_flow}
+\input{transfer}
+\input{complete_spectrum}
+\input{flow_examples}
+\input{higher_dim}
+\input{repeated_factors}
+\input{curve_recovery}
+\input{slope}
+
+\section{Open problems}\label{sec:limits}
+
+\begin{enumerate}
+\item \emph{Arbitrary approximate Hermitian--Einstein sequences.}
+ Corollary~\ref{cor:collapse} concerns eigenvalues only. For a general
+ sequence the Hilbert norms and adjoints depend on $h_j$, and a statement
+ about eigensections must specify a gauge, the limiting holomorphic
+ structure, and the topology of convergence.
+\item \emph{The degenerate case.} When a tight edge carries a vanishing
+ multiplier, iterated logarithms can appear. Theorem~\ref{thm:transfer}
+ reduces the question to the diagonal flow, but the sharp asymptotics are
+ known here only for the zigzag of Theorem~\ref{thm:zigzag-flow}.
+\item \emph{Individual coefficients.} At each faster rate we show that the
+ sum of the coefficients depends on the initial metric. Each coefficient
+ does so when the edges of that exponent form a forest on the tight
+ components, parallel edges counting as cycles: prescribing the constants
+ $Z_{\mathcal C}$ along the forest scales all these conductances by a common
+ factor. The general case is open.
+\item \emph{Repeated factors along the flow.} Then the diagonal flow is
+ replaced by a moment-map flow for $\prod_\alpha GL(m_\alpha)$. Lam
+ \cite{Lam2026} gives the metric asymptotics up to a bounded term; the
+ spectral questions are open.
+\item \emph{More than two steps in dimension at least two.} The
+ Maurer--Cartan equation requires cup-product corrections, and the
+ matching argument needs a Kuranishi-slice version.
+\item \emph{Singular graded objects,} where the flow bubbles
+ \cite{SibleyWentworth2015}.
+\item \emph{Variation of the polarization.} Clarke--Tipler
+ \cite{ClarkeTipler2023} study convergence of Hermitian Yang--Mills
+ connections to the graded bundle as the polarization varies. Our
+ fixed-polarization calculation gives no effective wall-crossing radius.
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+\bibitem[AB83]{AtiyahBott1983}
+Michael~F. Atiyah and Raoul Bott, \emph{The {Y}ang--{M}ills equations
+over {R}iemann surfaces}, Philos. Trans. Roy. Soc. London Ser. A
+\textbf{308} (1983), no.~1505, 523--615.
+
+\bibitem[CT23]{ClarkeTipler2023}
+Andrew Clarke and Carl Tipler, \emph{Semi-stability and local wall-crossing
+for {H}ermitian {Y}ang--{M}ills connections}, arXiv:2304.05245 (2023).
+
+\bibitem[Das92]{Daskalopoulos1992}
+Georgios D. Daskalopoulos, \emph{The topology of the space of stable
+bundles on a compact {R}iemann surface}, J. Differential Geom.
+\textbf{36} (1992), no.~3, 699--746.
+
+\bibitem[DW04]{DaskalopoulosWentworth2004}
+Georgios~D. Daskalopoulos and Richard~A. Wentworth, \emph{Convergence
+properties of the {Y}ang--{M}ills flow on {K}\"ahler surfaces}, J. Reine
+Angew. Math. \textbf{575} (2004), 69--99; correction, ibid.
+\textbf{606} (2007), 235--236.
+
+\bibitem[Don83]{Donaldson1983}
+Simon~K. Donaldson, \emph{A new proof of a theorem of {N}arasimhan and
+{S}eshadri}, J. Differential Geom. \textbf{18} (1983), no.~2, 269--277.
+
+\bibitem[Don85]{Donaldson1985}
+Simon~K. Donaldson, \emph{Anti self-dual {Y}ang--{M}ills connections over
+complex algebraic surfaces and stable vector bundles}, Proc. London Math.
+Soc. (3) \textbf{50} (1985), 1--26.
+
+\bibitem[HKKP18]{HKKP2018}
+Fabian Haiden, Ludmil Katzarkov, Maxim Kontsevich, and Pranav Pandit,
+\emph{Iterated logarithms and gradient flows}, arXiv:1802.04123 (2018).
+
+\bibitem[HKKP23]{HKKP2023}
+Fabian Haiden, Ludmil Katzarkov, Maxim Kontsevich, and Pranav Pandit,
+\emph{Semistability, modular lattices, and iterated logarithms},
+J. Differential Geom. \textbf{123} (2023), no.~1, 21--66,
+arXiv:1706.01073.
+
+\bibitem[HL10]{HuybrechtsLehn2010}
+Daniel Huybrechts and Manfred Lehn, \emph{The geometry of moduli spaces
+of sheaves}, second edition, Cambridge Mathematical Library, Cambridge
+University Press, Cambridge, 2010.
+
+\bibitem[HT04]{HongTian2004}
+Min-Chun Hong and Gang Tian, \emph{Asymptotical behaviour of the
+{Y}ang--{M}ills flow and singular {Y}ang--{M}ills connections}, Math. Ann.
+\textbf{330} (2004), no.~3, 441--472.
+
+\bibitem[Jac14]{Jacob2014}
+Adam Jacob, \emph{Existence of approximate {H}ermitian--{E}instein
+structures on semi-stable bundles}, Asian J. Math. \textbf{18} (2014),
+no.~5, 859--884, arXiv:1012.1888.
+
+\bibitem[Jac15]{Jacob2015}
+Adam Jacob, \emph{The limit of the {Y}ang--{M}ills flow on semi-stable
+bundles}, J. Reine Angew. Math. \textbf{709} (2015), 1--13,
+arXiv:1104.4767.
+
+\bibitem[Kat95]{Kato1995}
+Tosio Kato, \emph{Perturbation theory for linear operators}, second edition,
+Classics in Mathematics, Springer-Verlag, Berlin, 1995.
+
+\bibitem[Kob87]{Kobayashi1987}
+Shoshichi Kobayashi, \emph{Differential geometry of complex vector
+bundles}, Publications of the Mathematical Society of Japan, vol.~15
+(Kan\^o Memorial Lectures~5), Iwanami Shoten, Tokyo, and Princeton
+University Press, Princeton, NJ, 1987.
+
+\bibitem[Lam26]{Lam2026}
+Shing Tak Lam, \emph{Semistability and asymptotics of geometric flows},
+arXiv:2606.09235 (2026).
+
+\bibitem[L{\"u}b83]{Lubke1983}
+Martin L{\"u}bke, \emph{Stability of {E}instein--{H}ermitian vector
+bundles}, Manuscripta Math. \textbf{42} (1983), 245--257.
+
+\bibitem[Mum63]{Mumford1963}
+David Mumford, \emph{Projective invariants of projective structures and
+applications}, Proc. Internat. Congr. Mathematicians (Stockholm, 1962),
+Inst. Mittag-Leffler, Djursholm, 1963, 526--530.
+
+\bibitem[NLGSSS19]{Nacson2019}
+Mor~Shpigel Nacson, Jason~D. Lee, Suriya Gunasekar, Pedro H.~P. Savarese, Nathan Srebro, and Daniel Soudry, \emph{Convergence of gradient
+descent on separable data}, Proceedings of the 22nd International Conference
+on Artificial Intelligence and Statistics (AISTATS 2019), Proc. Mach. Learn.
+Res., vol.~89, 2019, arXiv:1803.01905.
+
+\bibitem[NS65]{NarasimhanSeshadri1965}
+M.~S. Narasimhan and C.~S. Seshadri, \emph{Stable and unitary vector
+bundles on a compact {R}iemann surface}, Ann. of Math. (2) \textbf{82}
+(1965), 540--567.
+
+\bibitem[R{\aa}d92]{Rade1992}
+Johan R{\aa}de, \emph{On the {Y}ang--{M}ills heat equation in two
+and three dimensions}, J. Reine Angew. Math. \textbf{431} (1992),
+123--163.
+
+\bibitem[RS89]{RothblumSchneider1989}
+Uriel~G. Rothblum and Hans Schneider, \emph{Scalings of matrices which
+have prespecified row sums and column sums via optimization},
+Linear Algebra Appl. \textbf{114/115} (1989), 737--764.
+
+\bibitem[ST24]{SektnanTipler2024}
+Lars Martin Sektnan and Carl Tipler, \emph{Hermitian {Y}ang--{M}ills
+connections on pullback bundles}, Calc. Var. Partial Differential
+Equations \textbf{63} (2024), article~13.
+
+\bibitem[Ses67]{Seshadri1967}
+C.~S. Seshadri, \emph{Space of unitary vector bundles on a compact
+{R}iemann surface}, Ann. of Math. (2) \textbf{85} (1967), 303--336.
+
+\bibitem[Sib15]{Sibley2015}
+Benjamin Sibley, \emph{Asymptotics of the {Y}ang--{M}ills flow for
+holomorphic vector bundles over {K}\"ahler manifolds: the canonical
+structure of the limit}, J. Reine Angew. Math. \textbf{706} (2015),
+123--191.
+
+\bibitem[SW15]{SibleyWentworth2015}
+Benjamin Sibley and Richard~A. Wentworth, \emph{Analytic cycles,
+{B}ott--{C}hern forms, and singular sets for the {Y}ang--{M}ills flow on
+{K}\"ahler manifolds}, Adv. Math. \textbf{279} (2015), 501--531.
+
+\bibitem[Sim88]{Simpson1988}
+Carlos~T. Simpson, \emph{Constructing variations of {H}odge structure
+using {Y}ang--{M}ills theory and applications to uniformization},
+J. Amer. Math. Soc. \textbf{1} (1988), no.~4, 867--918.
+
+\bibitem[SK67]{SinkhornKnopp1967}
+Richard Sinkhorn and Paul Knopp, \emph{Concerning nonnegative matrices
+and doubly stochastic matrices}, Pacific J. Math. \textbf{21} (1967),
+no.~2, 343--348.
+
+\bibitem[SHNGS18]{Soudry2018}
+Daniel Soudry, Elad Hoffer, Mor~Shpigel Nacson, Suriya Gunasekar, and
+Nathan Srebro, \emph{The implicit bias of gradient descent on separable
+data}, J. Mach. Learn. Res. \textbf{19} (2018), 1--57.
+
+\bibitem[Tak72]{Takemoto1972}
+Fumio Takemoto, \emph{Stable vector bundles on algebraic surfaces},
+Nagoya Math. J. \textbf{47} (1972), 29--48.
+
+\bibitem[UY86]{UhlenbeckYau1986}
+Karen Uhlenbeck and Shing-Tung Yau, \emph{On the existence of
+{H}ermitian--{Y}ang--{M}ills connections in stable vector bundles},
+Comm. Pure Appl. Math. \textbf{39} (1986), S257--S293.
+
+\end{thebibliography}
+
+\bigskip
+\noindent{\sc Bernd Johannes Wuebben, New York, NY,}
+\texttt{wuebben@gmail.com}
+
+\end{document}

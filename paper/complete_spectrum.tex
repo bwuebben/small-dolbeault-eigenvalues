@@ -1,0 +1,152 @@
+\section{The complete leading small spectrum}\label{sec:complete-spectrum}
+
+We keep the setting of Section~\ref{sec:transfer}: a compact curve, and a
+simple bundle $E$ with pairwise nonisomorphic Jordan--H\"older factors,
+written in the normal form of Lemma~\ref{lem:socle-normal-form} with graph
+$\Gamma$ and masses $M_i=Vr_i$. We use the weight grading $w$, the tight subgraph
+$\mathcal T$, the slacks $\varepsilon_\alpha$, the exponents
+$a_\alpha=1+\varepsilon_\alpha$, and the $a$-quotient graphs of
+Section~\ref{sec:diagonal-flow}. These depend only on $\Gamma$ and the ranks.
+List the small eigenvalues as $\lambda_1\le\cdots\le\lambda_{m-1}$. Assign
+exponents to indices so that larger exponents take smaller indices: the
+first $d_{a_{\max}}$ indices receive $a_{\max}$, and so on. Write $a_j$ for
+the exponent of index $j$.
+
+\begin{theorem}\label{thm:complete-spectrum}
+Assume $(\Gamma,M)$ is nondegenerate. For every smooth initial metric on $E$:
+\begin{enumerate}
+\item $\tau^{a_j}\lambda_j(h(\tau))\to c_j(h)>0$ for every $j<m$.
+\item The coefficients with $a_j=1$ are the positive eigenvalues of the
+ tight subgraph with conductances $u^*$ and masses $M_i$, with multiplicity.
+ They do not depend on the initial metric. The value $\frac12$ occurs with
+ multiplicity at least the number of tight components with at least two
+ vertices.
+\item For every edge the limit $k^\infty_\alpha(h)=\lim\tau^{a_\alpha}
+ k_\alpha(g_\tau)$ exists along the diagonal gauges of
+ Lemma~\ref{lem:socle-matching}. For $a_j=a>1$, the coefficients $c_j(h)$
+ are the positive eigenvalues of the $a$-quotient graph with conductances
+ $k^\infty(h)$, with multiplicity. For every $a>1$ with $d_a\ge1$, their sum,
+ and hence the largest of them, is unbounded as $h(0)$ ranges over metrics
+ on the single bundle $E$.
+\item In smooth unitary flow gauges, for each exponent $a$ and each
+ distinct value $\rho$ among the coefficients with $a_j=a$, the spectral
+ projection onto $\{\lambda_j:a_j=a,\ c_j(h)=\rho\}$ converges in every
+ $L^2\to C^k$ norm to the $\rho$-eigenspace of the $a$-quotient graph. This
+ eigenspace is embedded in $\mathcal K$ as block-scalar endomorphisms
+ constant on the contracted vertices. For $\rho=\frac12$ at $a=1$ it
+ contains $\sum_{i\in\mathcal C}w_i\id_{F_i}$ for each tight component $\mathcal C$ with at
+ least two vertices.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{Eigenvalues.} By Theorems~\ref{thm:diag-convergence}
+and~\ref{thm:diag-spectrum}, every solution $g$ of the diagonal flow has
+$\tau^{a_j}\nu_j(g(\tau))\to\rho_j(g)>0$. The exponent assigned to each
+index is the same for all solutions, and $f=\tau^{-a}$ satisfies the shift
+condition. Corollary~\ref{cor:coefficient-transfer} gives (1), with
+$|\log(c_j(h)/\rho_j(g^{[T]}))|\le\delta_T$. At $a=1$ the value
+$\rho_j(g)$ is the same for all $g$, which proves (2).
+
+\emph{Edge limits.} By \eqref{eq:edge-asymptotics},
+$\tau^{a_\alpha}k_\alpha(g^{[T]}(\tau))\to k^\infty_\alpha(g^{[T]})$.
+Lemma~\ref{lem:instantaneous-edges} puts the lower and upper limits of
+$\tau^{a_\alpha}k_\alpha(g_\tau)$ within $e^{\pm2b_T}$ of
+$k^\infty_\alpha(g^{[T]})$ for every large $T$. Since $b_T\to0$, the limit
+$k^\infty_\alpha(h)$ exists and equals $\lim_Tk^\infty_\alpha(g^{[T]})$. The
+positive eigenvalues of each $a$-quotient graph depend continuously on the
+conductances, so $c_j(h)$ is the corresponding eigenvalue for $k^\infty(h)$.
+
+\emph{Unboundedness.} Fix $a>1$ with $d_a\ge1$ and constants $\theta_{\mathcal C}$ with
+$\sum_{\mathcal C}M_{\mathcal C}\theta_{\mathcal C}=0$. For a large $s_0$, let $g_*$ be the diagonal map with
+logarithms $w s_0+\zeta^*+\sum_{\mathcal C}\theta_{\mathcal C}\mathbf 1_{\mathcal C}$, and set
+$h(0)=g_*^*h_0$. This is a metric on $E$.
+\begin{itemize}
+\item The diagonal flow from $g_*$ at time zero is a time shift of the
+ solution considered at the end of the proof of
+ Theorem~\ref{thm:diag-spectrum}. Hence its constants satisfy
+ $Z_{\mathcal C}=\theta_{\mathcal C}+O(e^{4\max|\theta_{\mathcal C}|-\varepsilon_*s_0})$.
+\item Its total conductance is
+ $\mathfrak e_0\le Ce^{-s_0}+Ce^{4\max|\theta_{\mathcal C}|}e^{-(1+\varepsilon_*)s_0}$.
+\item Compare $h$ on $[0,\infty)$ with the corrected diagonal metrics along
+ the diagonal flow from $g_*$. The initial discrepancy is $O(\mathfrak e_0)$,
+ and Lemma~\ref{lem:layer-energy} bounds the total residual by
+ $O(\sqrt{\mathfrak e_0})$. The barriers give
+ $e^{-b}\widehat h_{g(\tau)}\le h(\tau)\le e^b\widehat h_{g(\tau)}$ for
+ all $\tau\ge0$, with $b=O(\mathfrak e_0+\sqrt{\mathfrak e_0})$ and constants independent of
+ $g_*$.
+\end{itemize}
+Therefore $c_j(h)\in e^{\pm4b}\rho_j(g)$ for every $j$. Take
+$s_0\gg4\max|\theta_{\mathcal C}|/\varepsilon_*$. Then
+Theorem~\ref{thm:diag-spectrum}(3) shows that the sum of the coefficients
+at exponent $a$ takes arbitrarily large values as $(\theta_{\mathcal C})$ varies.
+
+\emph{Spectral subspaces.} Let $u$ be a normalized eigensection with
+$a_j=a$ and $c_j(h)=\rho$, and
+transport it to $(\db_0+N_{g_\tau},\widetilde h_\tau)$. Write $u=x+y$ with
+$x\in\mathcal K$ and $y\perp\mathcal K$ in $h_0$.
+\begin{itemize}
+\item Changing $\widetilde h_\tau$ to $h_0$ alters pointwise norms by a
+ factor $1+o(1)$. So $\lVert D_{g_\tau}u\rVert_{h_0}^2\le\lambda(1+o(1))$
+ with $\lambda=O(\tau^{-a})$. By \eqref{eq:form-lower}, which uses the
+ cancellation only in $h_0$,
+ \[
+  \lVert[N_{g_\tau},x]\rVert^2+\lVert y\rVert^2\le C\lambda.
+ \]
+\item For edges with $a_\alpha<a$, $k_\alpha(g_\tau)\ge c\tau^{-a_\alpha}$
+ by $k^\infty_\alpha(h)>0$. So every limit $x_\infty$ of $x$ is constant on
+ the contracted vertices. The identifications with the diagonal gauges consist of a map
+ tending to the identity followed by a parallel diagonal unitary map, which
+ fixes $\mathcal K$ pointwise. Full-projection convergence
+ (Theorem~\ref{thm:transfer}) therefore gives $y\to0$ in every $C^k$
+ norm.
+\item Test the weak eigenvalue equation against a fixed block-scalar $z$
+ constant on the contracted vertices. Then
+ $\lVert[N_{g_\tau},z]\rVert^2=O(\tau^{-a})$. Replacing $\widetilde h_\tau$
+ by $h_0$ costs $o(\tau^{-a})$. In $h_0$ the complementary term is
+ $\langle[N_{g_\tau},y],[N_{g_\tau},z]\rangle$, since $D_0^*[N,z]=0$. It is
+ at most
+ \[
+  \lVert N_{g_\tau}\rVert_{L^\infty}\lVert y\rVert\lVert[N_{g_\tau},z]\rVert
+  =O(\tau^{-1/2})O(\tau^{-a/2})O(\tau^{-a/2})=o(\tau^{-a}),
+ \]
+ using $\mathfrak e_{g_\tau}=O(\tau^{-1})$, which follows from the decay bound of
+ Lemma~\ref{lem:layer-energy} together with
+ Lemma~\ref{lem:instantaneous-edges}.
+\end{itemize}
+Multiply by $\tau^a$ and pass to the limit, using the edge limits. Edges
+with $a_\alpha<a$ do not contribute, since $z$ is constant across them, and
+edges with $a_\alpha>a$ contribute $o(1)$. So $x_\infty$ is a
+$\rho$-eigenvector of the $a$-quotient graph. The number of eigenvalues in
+this group equals the multiplicity of $\rho$. Limits of orthonormal
+eigensections remain orthonormal because $y\to0$. Compactness in
+$\mathcal K$ and smooth convergence of $y$ give the stated $L^2\to C^k$
+convergence. The last assertion of (4) is
+Theorem~\ref{thm:diag-spectrum}(2).
+\end{proof}
+
+\begin{corollary}\label{cor:metric-asymptotics}
+Under the hypotheses of Theorem~\ref{thm:complete-spectrum}, write
+$h(\tau)=A_\tau g_\tau^*\widetilde h_\tau$ with the diagonal gauges $g_\tau$
+of Lemma~\ref{lem:socle-matching} and $\widetilde h_\tau\to h_0$. The limits
+$Z_{\mathcal C}(h)=\lim_TZ_{\mathcal C}(g^{[T]})$ exist, and, up to a common
+scalar,
+\[
+ \log g_\tau=w\log\tau+y_\infty(h)+o(1),\qquad
+ y_\infty(h)=\zeta^*+\sum_{\mathcal C}Z_{\mathcal C}(h)\mathbf 1_{\mathcal C}.
+\]
+\end{corollary}
+
+\begin{proof}
+The edge limits give convergence of
+$\log d_i-\log d_j-(w_i-w_j)\log\tau$ along every edge. Since the graph is
+connected, all such differences converge.
+\end{proof}
+
+Haiden, Katzarkov, Kontsevich, and Pandit \cite[Theorem~1.1]{HKKP2018} and
+Lam \cite[Theorem~1.1]{Lam2026} describe the metric growth up to a bounded
+term. Corollary~\ref{cor:metric-asymptotics} shows that in the
+nondegenerate case this bounded term converges. The limits
+$Z_{\mathcal C}(h)$ exist because the edge limits converge and the quotient
+of $\Gamma$ by the tight components is connected. So the limit depends on the
+initial metric only through the constants $Z_{\mathcal C}(h)$.

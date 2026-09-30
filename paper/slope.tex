@@ -1,0 +1,342 @@
+\section{A slope inequality and its sharpness}\label{sec:slope}
+
+This section proves Theorem~\ref{thm:main} and shows that its constants are
+optimal in every rank.
+
+\subsection{Projections associated with coherent subsheaves}
+
+We recall the analytic input that permits the use of a possibly singular
+subsheaf as a test section. The Sobolev spaces below are defined using any
+smooth background connection on $\End E$.
+
+\begin{lemma}[Subsheaf degree formula]\label{lem:projection}
+Let $\mathcal S\subset E$ be a saturated coherent subsheaf of rank $s$.
+Outside an analytic subset $Z\subset X$ of complex codimension at least
+two, the sheaf $\mathcal S$ is a holomorphic subbundle of $E$. Its
+$h$-orthogonal projection $P_{\mathcal S}$ extends as an element of
+$W^{1,2}(X,\End E)$ and satisfies, almost everywhere,
+\[
+ P_{\mathcal S}^2=P_{\mathcal S}=P_{\mathcal S}^{*h},\qquad \tr P_{\mathcal S}=s,
+ \qquad (\id_E-P_{\mathcal S})\db_{\End E}P_{\mathcal S}=0.
+\]
+Moreover,
+\begin{equation}\label{eq:degree}
+ 2\pi\deg_\omega\mathcal S
+ =\int_X\tr(K_hP_{\mathcal S})\dvol
+  -\lVert\db_{\End E}P_{\mathcal S}\rVert_{L^2}^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The sheaves $\mathcal S$ and $E/\mathcal S$ are torsion-free, so both
+are locally free away from an analytic subset of codimension at least
+two. On this complement, a local splitting of the resulting exact
+sequence makes $\mathcal S$ a subbundle. The projection identities follow
+there from orthogonality and holomorphicity.
+
+For a smooth subbundle, the Gauss--Codazzi formula gives
+\eqref{eq:degree}. With the Hilbert--Schmidt convention used here,
+$\lVert\db_{\End E}P_{\mathcal S}\rVert_{L^2}^2$ is the squared $L^2$ norm of
+the second fundamental form. The factor $2\pi$ follows from
+$c_1=\frac{\sqrt{-1}}{2\pi}\tr F$ and the contraction identity
+\[
+ \alpha\wedge\frac{\omega^{n-1}}{(n-1)!}
+ =(\Lambda_\omega\alpha)\frac{\omega^n}{n!}
+\]
+for a $(1,1)$-form $\alpha$.
+
+For a saturated coherent subsheaf, we use the standard extension of this
+formula in the theory of weakly holomorphic projections
+\cite{UhlenbeckYau1986,Kobayashi1987}. In particular, the projection is
+bounded and its second fundamental form is square-integrable. A
+regularization argument establishing this integrability and preservation
+of the degree is given in \cite[Sections~2--3]{Jacob2014}. Saturation
+ensures that there is no divisorial contribution from the singular set.
+The regularized degree formula consequently gives
+\eqref{eq:degree} on $X\setminus Z$.
+
+For completeness, square-integrability of the second fundamental form
+also gives the required Sobolev statement. Since $P_{\mathcal S}$ is self-adjoint,
+its $(1,0)$ covariant derivative is the adjoint of its $(0,1)$ derivative,
+so its full first covariant derivative is square-integrable on
+$X\setminus Z$. An analytic set of complex codimension at least two has
+zero $W^{1,2}$ capacity. Applying cutoff functions with Dirichlet energy
+tending to zero, and using boundedness of $P_{\mathcal S}$, extends it across $Z$
+as a $W^{1,2}$ section. The integral formula is unchanged because $Z$
+has measure zero.
+\end{proof}
+
+\begin{remark}\label{rem:weak}
+The condition $(\id_E-P_{\mathcal S})\db_{\End E}P_{\mathcal S}=0$ says that the image of
+$P_{\mathcal S}$ is holomorphic. It does not say that $P_{\mathcal S}$ is a holomorphic
+endomorphism. The latter would require $\db_{\End E}P_{\mathcal S}=0$ and would
+give a holomorphic direct-sum decomposition of $E$.
+\end{remark}
+
+The following elementary estimate uses the trace-free condition on the
+curvature, in addition to the spectrum of the projection.
+
+\begin{lemma}\label{lem:matrix}
+Let $A$ be a self-adjoint trace-free endomorphism of an $r$-dimensional
+Hermitian vector space, and let $\Pi$ be an orthogonal projection of
+rank $s$, where $0<s<r$. Set $q=\Pi-\frac{s}{r}\id$. Then
+\begin{equation}\label{eq:matrix}
+ |q|^2=\frac{s(r-s)}{r},\qquad
+ |\tr(Aq)|\le\min\{s,r-s\}\lVert A\rVert_{\op}.
+\end{equation}
+The coefficient $\min\{s,r-s\}$ in the second inequality is optimal
+among such matrices and projections.
+\end{lemma}
+
+\begin{proof}
+The eigenvalues of $q$ are $(r-s)/r$, with multiplicity $s$, and
+$-s/r$, with multiplicity $r-s$, which proves the norm identity.
+Since $\tr A=0$,
+\[
+ \tr(Aq)=\tr(A\Pi)=-\tr(A(\id-\Pi)).
+\]
+Estimating the two compressed traces by their respective dimensions
+gives \eqref{eq:matrix}.
+
+To see optimality, suppose first that $s\le r-s$ and take
+$A=\id$ on $\operatorname{im}\Pi$ and
+$A=-\frac{s}{r-s}\id$ on its orthogonal complement. Then
+$\tr A=0$, $\lVert A\rVert_{\op}=1$, and $\tr(Aq)=s$.
+For $s\ge r-s$, take $A=\frac{r-s}{s}\id$ on
+$\operatorname{im}\Pi$ and $A=-\id$ on its complement.
+\end{proof}
+
+\subsection{Proof of the slope estimate}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $P_{\mathcal S}$ be the projection supplied by Lemma~\ref{lem:projection}, and
+put
+\[
+ q=P_{\mathcal S}-\frac{s}{r}\id_E.
+\]
+This is a trace-free $W^{1,2}$ endomorphism and
+$\db_{\End E}q=\db_{\End E}P_{\mathcal S}$. Subtracting
+\eqref{eq:degree} from $s/r$ times the degree formula for $E$ gives
+\begin{equation}\label{eq:identity}
+ 2\pi s\bigl(\mu_\omega(E)-\mu_\omega(\mathcal S)\bigr)
+ =\lVert\db_{\End E}q\rVert_{L^2}^2
+  -\int_X\tr(K_h^0q)\dvol.
+\end{equation}
+The scalar part of $K_h$ disappears because $\tr q=0$ pointwise;
+no assumption on $\tr K_h$ is used.
+
+The Rayleigh inequality in \eqref{eq:lambda} extends to trace-free
+$W^{1,2}$ sections by density. Explicitly, a smooth approximation may
+be made trace-free by subtracting its scalar part. Hence
+Lemma~\ref{lem:matrix} gives
+\begin{equation}\label{eq:rayleigh}
+ \lVert\db_{\End E}q\rVert_{L^2}^2
+ \ge\lambda_1(h)\lVert q\rVert_{L^2}^2
+ =\lambda_1(h)V\frac{s(r-s)}{r}.
+\end{equation}
+The same lemma, applied pointwise to $A=K_h^0$, gives
+\begin{equation}\label{eq:error}
+ \left|\int_X\tr(K_h^0q)\dvol\right|
+ \le V\min\{s,r-s\}\varepsilon_1(h).
+\end{equation}
+Combining \eqref{eq:identity}--\eqref{eq:error} and dividing by
+$2\pi s$ proves \eqref{eq:main}, since
+\[
+ \frac{r\min\{s,r-s\}}{s(r-s)}
+ =\frac{r}{\max\{s,r-s\}}.
+\]
+
+Finally,
+\[
+ \max_{1\le s\le r-1}\frac{r}{\max\{s,r-s\}}
+ =\frac{r}{\lceil r/2\rceil}=c_r.
+\]
+Under \eqref{eq:criterion}, every saturated proper subsheaf has strictly
+smaller slope. An arbitrary subsheaf has slope at most that of its
+saturation, so $E$ is stable.
+\end{proof}
+
+\begin{remark}
+The coefficient for all subsheaf ranks is $c_r=2$ in even rank and
+$c_r=2r/(r+1)$ in odd rank. For example, rank three gives $c_3=3/2$.
+For rank four the coefficient in \eqref{eq:main} is $4/3$ for
+subsheaves of rank one or three, and $2$ for subsheaves of rank two.
+Pointwise optimality in Lemma~\ref{lem:matrix} does not by itself give
+optimality of the geometric estimate, which requires simultaneous equality
+in the curvature estimate and the Rayleigh inequality.
+Corollary~\ref{cor:sharpness} shows that both become asymptotically sharp on
+suitable nonsplit extensions. Every coefficient in \eqref{eq:main}, and
+$c_r$ itself, is optimal in every rank.
+\end{remark}
+
+\subsection{Consequences}
+
+\begin{corollary}[A uniform slope margin]\label{cor:margin}
+If $\gamma(h)=\lambda_1(h)-c_r\varepsilon_1(h)>0$, then every coherent
+subsheaf $\mathcal S\subset E$ of rank $0<s<r$ satisfies
+\[
+ \mu_\omega(E)-\mu_\omega(\mathcal S)
+ \ge\frac{V(r-s)}{2\pi r}\gamma(h)
+ \ge\frac{V}{2\pi r}\gamma(h).
+\]
+In particular, if $E$ is simple and $K_h^0=0$, then
+\begin{equation}\label{eq:HE-margin}
+ \mu_\omega(E)-\mu_\omega(\mathcal S)
+ \ge\frac{V(r-s)}{2\pi r}\lambda_1(h)>0.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For a saturated subsheaf, replace the rank-dependent coefficient in
+\eqref{eq:main} by $c_r$. For any other subsheaf, apply the result to its
+saturation, which has the same rank and at least the same degree. If
+$K_h^0=0$, use \eqref{eq:main} directly and the positivity of
+$\lambda_1(h)$ for a simple bundle.
+\end{proof}
+
+\begin{remark}
+An irreducible Hermitian--Einstein connection has only scalar
+holomorphic endomorphisms by the Bochner formula, so
+\eqref{eq:HE-margin} applies in the classical setting. Conversely, a
+stable bundle admits a Hermitian--Einstein metric by
+\cite{Donaldson1985,UhlenbeckYau1986}, and that metric satisfies
+\eqref{eq:criterion}. Thus existence of a metric satisfying the
+criterion is equivalent to stability. The existence direction here is
+the classical correspondence; the estimate does not construct such a
+metric from an arbitrary one.
+\end{remark}
+
+\begin{corollary}[Spectral collapse]\label{cor:collapse}
+Suppose that $E$ is simple and strictly semistable. Fix a saturated
+subsheaf $\mathcal S\subset E$ of rank $0<s<r$ with
+$\mu_\omega(\mathcal S)=\mu_\omega(E)$. Then every smooth Hermitian
+metric $h$ satisfies
+\begin{equation}\label{eq:collapse}
+ 0<\lambda_1(h)
+ \le\frac{r}{\max\{s,r-s\}}\varepsilon_1(h)
+ \le c_r\varepsilon_1(h).
+\end{equation}
+Consequently, if $h_j$ is any sequence with
+$\varepsilon_1(h_j)\longrightarrow0$, then
+$\lambda_1(h_j)\longrightarrow0$.
+\end{corollary}
+
+\begin{proof}
+Strict semistability provides an equal-slope proper subsheaf. Its
+saturation still has equal slope, by semistability. Substituting this
+subsheaf in \eqref{eq:main} proves the upper bound. Simplicity supplies
+strict positivity for each fixed metric.
+\end{proof}
+
+Semistable bundles on compact K\"ahler manifolds admit approximate
+Hermitian--Einstein metrics \cite{Jacob2014}. In the normalizations of
+this paper, these are metrics satisfying
+\[
+ \lVert K_{h_j}-\kappa\id_E\rVert_{L^\infty,\op}\longrightarrow0,
+ \qquad \kappa=\frac{2\pi\mu_\omega(E)}{V}.
+\]
+Their trace-free mean curvatures tend to zero, so
+Corollary~\ref{cor:collapse} applies to every such sequence on a simple
+strictly semistable bundle. The conclusion also holds under the weaker
+assumption in the corollary, without convergence of the scalar part of
+the mean curvature. For a nonsimple bundle, the lowest eigenvalue in
+\eqref{eq:lambda} is already zero for every metric; no conclusion about
+its first positive eigenvalue is asserted.
+
+\begin{proposition}[Scalar changes of metric]\label{prop:conformal}
+If $f$ is a smooth real function on $X$ and $\widetilde h=e^f h$, then
+\[
+ \lambda_1(\widetilde h)=\lambda_1(h),\qquad
+ K_{\widetilde h}^0=K_h^0,\qquad
+ \varepsilon_1(\widetilde h)=\varepsilon_1(h).
+\]
+\end{proposition}
+
+\begin{proof}
+Multiplication of $h$ by a scalar function leaves the induced metric on
+$\End E$ unchanged, and the Dolbeault operator is fixed. It therefore
+leaves both norms in \eqref{eq:lambda} unchanged. The Chern curvatures
+of $\widetilde h$ and $h$ differ by a scalar $(1,1)$-form times
+$\id_E$, so their trace-free mean curvatures agree. The operator norm
+of an endomorphism is also unchanged by a scalar change of metric.
+\end{proof}
+
+\subsection{Sharpness in every rank}
+
+\begin{corollary}[Geometric sharpness in every rank]\label{cor:sharpness}
+Let $X$ be a curve of genus at least two, and let $r\ge2$ and
+$1\le s\le r-1$. There are a simple strictly semistable bundle $E$ of rank
+$r$ with a saturated subbundle of rank $s$ and slope $\mu(E)$, and metrics
+$h_t$ on $E$ with $\varepsilon_1(h_t)\to0$, such that
+\[
+ \frac{\lambda_1(h_t)}{\varepsilon_1(h_t)}\longrightarrow\frac r{\max\{s,r-s\}},
+ \qquad
+ \frac{\lambda_1(h_t)}{\lVert K^0_{h_t}\rVert_{L^\infty,\op}}
+ \longrightarrow\frac r{\max\{s,r-s\}}.
+\]
+Consequently the coefficient $r/\max\{s,r-s\}$ in \eqref{eq:main} cannot be
+decreased for any $(r,s)$, and the constant $c_r$ in \eqref{eq:criterion} is
+optimal in every rank, also for the criterion with the $L^\infty$ norm in
+place of $\varepsilon_1$.
+\end{corollary}
+
+\begin{proof}
+Choose stable $F$ of rank $a=s$ and $G$ of rank $b=r-s$, both of degree
+zero, and nonisomorphic. A nonzero map between them would be an
+isomorphism, so $h^0(\Hom(G,F))=0$. By Riemann--Roch,
+$h^1(\Hom(G,F))=ab(g-1)>0$, so there is a nonzero harmonic $\beta$.
+
+With $v=Rz$, consider on $E_t$ the metric $h_t'=h_0e^{-t^2v}$, where
+$h_t'(x,y)=h_0(e^{-t^2v}x,y)$. As in the proof of
+Lemma~\ref{lem:flow-approximation}, the first variation of mean curvature
+at $h_0$ is $\Delta_0$. For $t\ne0$ the operator changes by $O(t)$. Hence
+\[
+ K_{h_t'}=\kappa\id+t^2(C-\Delta_0v)+O_{C^0}(t^3)
+ =\kappa\id+ct^2q+O_{C^0}(t^3),
+\]
+since $\Delta_0v=z=C-cq$. The endomorphism $K^0_{h_t'}$ is
+$h_t'$-self-adjoint, so its operator norm is its spectral radius. The
+eigenvalues of $ct^2q$ are $ct^2b/r$ and $-ct^2a/r$. Therefore
+\[
+ \lVert K^0_{h_t'}\rVert_{\op}=\frac{ct^2\max\{a,b\}}r+O(t^3)
+\]
+uniformly on $X$, and the same holds for $\varepsilon_1$ and the $L^\infty$
+norm. Since $e^{-Ct^2}h_0\le h_t'\le e^{Ct^2}h_0$,
+\eqref{eq:metric-spectral-comparison} and Theorem~\ref{thm:two-factor} give
+$\lambda_1(h_t')=ct^2(1+O(t^2))$. The ratios therefore tend to
+$r/\max\{a,b\}$.
+
+Transport by $g_t$ in \eqref{eq:two-gauge}. This gives the metrics
+$g_t^*h_t'$ on the fixed bundle $E=E_1$, with the same $\lambda_1$,
+$\varepsilon_1$, and $L^\infty$ norm. The subbundle $F\subset E$ has rank
+$s$ and equal slope, so \eqref{eq:main} gives
+$\lambda_1\le(r/\max\{s,r-s\})\varepsilon_1$ for every metric on $E$. A
+smaller coefficient would contradict the limit. For $s=\lfloor r/2\rfloor$
+the coefficient is $c_r$.
+\end{proof}
+
+\begin{remark}
+The metrics $h_t'$ make both estimates in the proof of
+Theorem~\ref{thm:main} asymptotically sharp. The Rayleigh bound is sharp
+because $u_t\to q/\sqrt{V_q}$. The trace-free matrix estimate is sharp because
+the correction replaces $C$ by its projection $cq$, which is constant on each
+block with the larger absolute value on the smaller block.
+
+Without the correction, on a curve,
+$\lambda_1/\varepsilon_1\to(r/ab)\int\sum_k\sigma_k^2/\int\sigma_{\max}^2$,
+where the $\sigma_k$ are the pointwise singular values of $\beta$. This
+reaches $r/\max\{a,b\}$ exactly when the singular values agree almost
+everywhere. It happens, for example, for line-bundle extensions, when
+$\min\{a,b\}=1$, and for $\beta=\gamma\otimes\id_W$ on
+$F=L_1\otimes W$, $G=L_2\otimes W$, with $L_1L_2^{-1}$ chosen so that
+$W\otimes L_1L_2^{-1}\not\cong W$. It does not give the $L^\infty$
+statement: in rank two, $|\beta|^2$ vanishes somewhere, since $\bar\beta$
+corresponds to a holomorphic section of a line bundle of positive degree.
+
+For line-bundle extensions, put $f=|\beta|^2-V^{-1}\lVert\beta\rVert_{L^2}^2$
+and let $R_{\rm sc}$ be the inverse of the scalar $\db^*\db$ on mean-zero
+functions. Since $z=2fq$ and $q$ is parallel,
+$d=\frac4V\langle f,R_{\rm sc}f\rangle$. More generally, $d=0$ exactly when
+$C=cq$. In that case $q$ is an exact eigensection with eigenvalue $ct^2$,
+which is the first eigenvalue for small $|t|$.
+\end{remark}

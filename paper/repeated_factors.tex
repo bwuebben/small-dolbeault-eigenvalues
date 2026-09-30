@@ -1,0 +1,234 @@
+\section{Repeated stable summands}\label{sec:repeated}
+
+The relative estimate also applies when some stable summands are
+isomorphic. The limiting kernel then contains matrices acting between
+the repeated copies, and the comparison operator is a commutator
+quadratic form on this larger space.
+
+Retain the curve, scaling exponents, and harmonic upper-triangular family
+\eqref{eq:several-family}, but allow repetitions among the stable
+equal-slope bundles $F_1,\ldots,F_m$. Choose pairwise nonisomorphic
+representatives $H_1,\ldots,H_s$ and identifications
+\begin{equation}\label{eq:isotypical-splitting}
+ G=\bigoplus_{i=1}^m F_i
+   \simeq\bigoplus_{\alpha=1}^s H_\alpha\otimes\CC^{m_\alpha},
+ \qquad \sum_\alpha m_\alpha=m.
+\end{equation}
+Here $H_\alpha\otimes\CC^{m_\alpha}$ is the direct sum of all copies
+of $H_\alpha$, called its isotypical component. Fix a
+Hermitian--Einstein metric on each $H_\alpha$ and give its copies the
+transported metric. Thus the product metric on each isotypical
+component is $h_{H_\alpha}\otimes I$. Write
+$r_\alpha=\rk H_\alpha$.
+
+Stability at equal slope gives
+\begin{equation}\label{eq:matrix-algebra}
+ \mathcal A:=H^0(X,\End G)
+ =\bigoplus_{\alpha=1}^s
+   \id_{H_\alpha}\otimes M_{m_\alpha}(\CC).
+\end{equation}
+Every element of $\mathcal A$ is parallel for the split Chern
+connection: under the chosen identifications its nonzero entries
+are constant multiples of the identity of a stable representative.
+Consequently
+\begin{equation}\label{eq:matrix-kernel}
+ \begin{split}
+ \mathcal K:=H^0(X,\End_0G)
+ &=\left\{(X_\alpha)_\alpha:
+             \sum_\alpha r_\alpha\tr X_\alpha=0\right\},\\
+ d:=\dim_\CC\mathcal K&=\sum_\alpha m_\alpha^2-1,\qquad
+ \lVert X\rVert^2=V\sum_\alpha r_\alpha\tr(X_\alpha^*X_\alpha).
+ \end{split}
+\end{equation}
+Use $D_t=D_0+B_t$, $B_tx=[N_t,x]$, $\Delta_t=D_t^*D_t$,
+$P,Q,\gamma,\eta_t$, and $p_*$ as before, now with this kernel.
+Define the nonnegative self-adjoint operator $L_t$ on $\mathcal K$ by
+\begin{equation}\label{eq:matrix-form}
+ \langle x,L_tx\rangle=A_t(x):=\lVert[N_t,x]\rVert_{L^2}^2,
+ \qquad L_t=PB_t^*B_tP|_{\mathcal K}.
+\end{equation}
+Let $\nu_1(t)\le\cdots\le\nu_d(t)$ denote its eigenvalues, including
+zeros. Unlike \eqref{eq:graph-form}, this form may have cross terms
+between extension entries contributing to the same matrix block.
+
+\begin{theorem}[Comparison with the commutator form]\label{thm:matrix-relative}
+If $\eta_t\le\sqrt\gamma/4$ and
+$\gamma_t=(\sqrt\gamma-\eta_t)^2$, then exactly $d$ eigenvalues of
+$\Delta_t$ lie below $\gamma/4$, counting zeros, and
+\begin{equation}\label{eq:matrix-relative}
+ \left(1-\frac{2\eta_t^2}{\gamma_t}\right)\nu_j(t)
+ \le\lambda_j(t)\le\nu_j(t),\qquad 1\le j\le d,
+ \qquad \lambda_{d+1}(t)\ge\frac\gamma4.
+\end{equation}
+In particular, $\lambda_j(t)/\nu_j(t)=1+O(t^{2p_*})$ for every
+positive $\nu_j(t)$, uniformly over these $d$ modes.
+
+For every $t>0$, the trace-free holomorphic endomorphism space of
+$E_t$ has dimension
+\begin{equation}\label{eq:matrix-centralizer}
+ \dim_\CC\{x\in\mathcal K:[N_t,x]=0\}.
+\end{equation}
+Thus $E_t$ is simple if and only if the only elements of $\mathcal A$
+commuting with $N_t$ are scalar identities.
+
+For a unit small eigensection with eigenvalue $\lambda$, and for the
+orthogonal projection $\Pi_t$ onto the full $d$-dimensional small
+spectral subspace, one has, for every $k\ge0$,
+\begin{equation}\label{eq:matrix-convergence}
+ \lVert Qu\rVert_{C^k}\le C_k t^{p_*}\sqrt\lambda,
+ \qquad
+ \lVert\Pi_t-P\rVert_{L^2\to C^k}=O(t^{2p_*}).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Multiplication on either side by a parallel endomorphism commutes
+with the split Dolbeault Laplacian on bundle-valued forms. Since
+$N_t$ is harmonic and $x\in\mathcal K$ is parallel, $B_tx=[N_t,x]$
+is harmonic. In particular,
+\[
+ D_0^*B_tx=0\qquad(x\in\mathcal K).
+\]
+For $u=x+y$, $x\in\mathcal K$ and $y\in QH^1$, the same gap
+estimate and cross-term bound as in \eqref{eq:complement-gap} give
+\[
+ \lVert D_tu\rVert^2
+ \ge\left(1-\frac{2\eta_t^2}{\gamma_t}\right)A_t(x)
+       +\frac{\gamma_t}{2}\lVert y\rVert^2.
+\]
+Also $\nu_d(t)\le\eta_t^2\le\gamma/16$. The min--max argument
+in Theorem~\ref{thm:relative} therefore applies with $d$ in place
+of $m-1$ and proves \eqref{eq:matrix-relative}. No commutativity of
+$\mathcal A$ is used in this argument.
+
+The displayed lower bound identifies the kernel for small $t$ with
+$\{x\in\mathcal K:B_tx=0\}$. The parallel diagonal map $g_t$
+preserves $\mathcal A$ by conjugation, preserves trace, and satisfies
+$N_t=g_tN_1g_t^{-1}$. It therefore identifies the commutants for
+different positive parameters. Since the bundles $E_t$ are also
+holomorphically isomorphic, the kernel dimension formula holds for
+all $t>0$.
+
+To check smooth convergence, the complementary equation is still
+\eqref{eq:schur}, with
+$R_t=QB_t^*B_tP$ and $\lVert R_tx\rVert\le\eta_t\sqrt{A_t(x)}$.
+Every $B_tx$ lies in the fixed finite-dimensional space of harmonic
+$(0,1)$-forms with values in $\End_0G$. Equivalence of norms on
+that space gives
+\[
+ \lVert B_tx\rVert_{H^\ell}\le C_\ell\sqrt{A_t(x)},\qquad
+ \lVert R_tx\rVert_{H^\ell}
+       \le C_\ell t^{p_*}\sqrt{A_t(x)}.
+\]
+This estimate remains valid in the presence of cancellations between
+matrix entries. The uniform complementary inverse estimates and
+Sobolev embedding used in Proposition~\ref{prop:subspace} now give
+the first assertion of \eqref{eq:matrix-convergence}. The largest
+small eigenvalue is $O(t^{2p_*})$; applying that assertion to an
+orthonormal basis of the $d$ small eigensections and using the
+projection formula for the resulting graph over $\mathcal K$
+proves the second assertion.
+\end{proof}
+
+When all $m_\alpha=1$, \eqref{eq:matrix-form} is exactly the
+weighted graph form. For repeated factors, connectedness of that
+graph is insufficient for simplicity. For example, take
+$G=H\oplus H$ with $H$ stable and
+$N_t=t\beta E_{12}$, where $\beta$ is a nonzero harmonic scalar
+$(0,1)$-form. The parallel nilpotent endomorphism $E_{12}$ commutes
+with $N_t$, so this connected two-vertex family is not simple.
+Here $E_{ij}$ denotes the identity map from the $j$th copy of $H$
+to the $i$th, extended by zero on the other blocks.
+
+The mean-curvature calculation \eqref{eq:several-curvature} uses
+only harmonicity and the common Einstein constant, so it also applies
+with repeated factors. In particular, the transported metrics
+$g_t^*h_0$ have uniform mean-curvature error $O(t^{2p_*})$ on the
+fixed bundle $E_1$.
+
+\subsection{Recovery of factors and multiplicities}
+
+After adjoining the scalar identity, the limiting small subspace is
+the algebra $\mathcal A$ in \eqref{eq:matrix-algebra}. Its minimal
+nonzero central idempotents are the projections onto the isotypical
+components. The corresponding ideals have dimensions $m_\alpha^2$,
+so their matrix sizes determine the multiplicities. Within such an
+ideal, a minimal nonzero idempotent has rank one on the multiplicity
+space and its holomorphic image is isomorphic to $H_\alpha$.
+A decomposition of the central identity into orthogonal rank-one
+projections gives $m_\alpha$ copies. Such a decomposition is not
+canonical when $m_\alpha>1$.
+
+The abstract algebra alone determines the multiplicities, but not the
+isomorphism classes of the bundles $H_\alpha$; these come from its action
+on $G$.
+
+\subsection{A simple example with a repeated line bundle}\label{sec:repeated-example}
+
+Let $X$ have genus at least two and volume one. Choose pairwise
+nonisomorphic degree-zero line bundles $A,B,C$, with their
+Hermitian--Einstein metrics, and put
+$G=A\oplus B\oplus A\oplus C$, using the same metric on both
+copies of $A$. Riemann--Roch gives
+$h^1(X,L)=g(X)-1>0$ for every nontrivial degree-zero line bundle
+$L$. Thus one can choose harmonic forms of unit $L^2$ norm
+\[
+ a\in\Omega^{0,1}(\Hom(B,A)),\quad
+ b\in\Omega^{0,1}(\Hom(A,B)),\quad
+ c\in\Omega^{0,1}(\Hom(C,A)).
+\]
+Set $N_{12}=ta$, $N_{23}=t^2b$, $N_{34}=tc$, and all other entries
+to zero. These scales come from the scaling exponents $(4,3,1,0)$. An element of
+$\mathcal K$ is
+\[
+ x=\begin{pmatrix}
+ x_1&0&u&0\\0&x_2&0&0\\v&0&x_3&0\\0&0&0&x_4
+ \end{pmatrix},\qquad \sum_{i=1}^4x_i=0,
+ \qquad \lVert x\rVert^2=\sum_i|x_i|^2+|u|^2+|v|^2.
+\]
+The six nonzero commutator entries give
+\begin{equation}\label{eq:repeated-example-form}
+ \begin{split}
+ A_t(x)={}&t^2\bigl(|x_2-x_1|^2+|x_4-x_3|^2+|u|^2+|v|^2\bigr)\\
+         &+t^4\bigl(|x_3-x_2|^2+|v|^2\bigr).
+ \end{split}
+\end{equation}
+This is positive definite on $\mathcal K$ for $t>0$, so
+Theorem~\ref{thm:matrix-relative} proves that $E_t$ is simple.
+Its upper-triangular filtration has stable degree-zero quotients
+and a degree-zero line subbundle; hence it is strictly semistable.
+
+The $u$ and $v$ modes have comparison eigenvalues $t^2$ and
+$t^2+t^4$. The diagonal part is the four-vertex path with
+conductances $t^2,t^4,t^2$. Its three positive eigenvalues are
+\[
+ 2t^2,\qquad t^2+t^4\pm\sqrt{t^4+t^8}.
+\]
+Thus there are $2^2+1^2+1^2-1=5$ small positive Dolbeault
+eigenvalues, in increasing order,
+\begin{equation}\label{eq:repeated-example-rates}
+ \begin{aligned}
+ \lambda_1&=t^4(1+O(t^2)),\\
+ \lambda_j&=t^2(1+O(t^2))&& (j=2,3),\\
+ \lambda_j&=2t^2(1+O(t^2))&& (j=4,5).
+ \end{aligned}
+\end{equation}
+The full limiting space contains the two off-diagonal maps between
+the copies of $A$, in addition to the three trace-free diagonal
+directions. After adjoining the identity, it is
+$M_2(\CC)\oplus\CC\oplus\CC$, realized on $G$.
+
+For completeness the limiting subspaces at each leading coefficient
+can also be read from this example. The slow line is spanned by
+$\diag(1,1,-1,-1)$. The coefficient-one subspace at order $t^2$
+is spanned by $E_{13},E_{31}$, and the coefficient-two subspace
+is spanned by $\diag(1,-1,0,0)$ and $\diag(0,0,1,-1)$.
+Indeed, $t^{-2}L_t$ converges to the operator with exactly these
+eigenspaces and respective eigenvalues $0,1,2$. In the complementary
+equation \eqref{eq:schur}, the correction has operator norm
+$O(t^4)$ by \eqref{eq:schur-bound}, which applies equally to
+\eqref{eq:matrix-form}. After division by $t^2$ it tends to zero.
+Together with \eqref{eq:matrix-convergence} and the known
+multiplicities, this proves convergence of the three spectral projections
+in every $L^2\to C^k$ norm. It does not single out a basis within
+either two-dimensional limiting subspace.

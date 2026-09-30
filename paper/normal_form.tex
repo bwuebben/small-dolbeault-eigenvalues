@@ -1,0 +1,99 @@
+\section{A harmonic normal form on curves}\label{sec:normal-form}
+
+Every filtered bundle on a curve can be put in a form in which all
+extension entries are harmonic. The normal form follows from Dolbeault
+Hodge theory and a finite sequence of upper-triangular gauge
+transformations. The condition $\db_0^*\beta=0$ is used in the
+scaled-extension construction of Sektnan--Tipler
+\cite[Section~5.1, equation~(28)]{SektnanTipler2024}; on a curve it makes
+every extension entry harmonic. We give the triangular construction
+explicitly to account for the interactions between successive extensions.
+
+
+Let $X$ be a compact connected Riemann surface with a fixed K\"ahler
+form. Suppose a holomorphic bundle $E$ has a filtration by holomorphic
+subbundles
+\begin{equation}\label{eq:curve-filtration}
+ 0=E^{(0)}\subset E^{(1)}\subset\cdots\subset E^{(m)}=E,
+ \qquad F_i=E^{(i)}/E^{(i-1)}.
+\end{equation}
+Put $G=\bigoplus_i F_i$, let $\db_0$ be its split Dolbeault operator,
+and fix Hermitian metrics on the $F_i$. Harmonicity of a
+$\Hom(F_j,F_i)$-valued form always refers to these metrics and the
+fixed K\"ahler form.
+
+\begin{lemma}[Harmonic upper-triangular form]\label{lem:normal-form}
+There is a smooth isomorphism $\Phi:G\to E$ preserving the
+filtration and inducing the identity on each quotient $F_i$, such that
+\begin{equation}\label{eq:harmonic-normal-form}
+ \Phi^{-1}\db_E\Phi=\db_0+\beta,\qquad
+ \beta=\sum_{i<j}\beta_{ij},\qquad
+ \db_0\beta_{ij}=\db_0^*\beta_{ij}=0.
+\end{equation}
+No stability hypothesis or smallness assumption on the original
+extension entries is needed for this normal form.
+\end{lemma}
+
+\begin{proof}
+Choose a smooth splitting $\sigma:G\to E$ of the filtration,
+inducing the identity on its quotients. The pulled-back operator has
+the form $\sigma^{-1}\db_E\sigma=\db_0+A$, where $A$ is strictly
+upper triangular. For $\ell\ge1$, define the subbundle
+\[
+ \mathfrak n^\ell
+ =\bigoplus_{j-i\ge\ell}\Hom(F_j,F_i)\subset\End G.
+\]
+Then $\mathfrak n^a\mathfrak n^b\subset\mathfrak n^{a+b}$,
+$\mathfrak n^m=0$, and $\db_0$ preserves these subbundles.
+
+Suppose that the entries of a current upper-triangular form $A$
+with $j-i<\ell$ have already been made harmonic. Every smooth
+$\Hom(F_j,F_i)$-valued $(0,1)$-form on a curve has a Hodge
+decomposition
+\begin{equation}\label{eq:curve-hodge}
+ A_{ij}=H_{ij}A_{ij}+\db_0v_{ij},
+\end{equation}
+where $H_{ij}$ is harmonic projection and $v_{ij}$ is a smooth
+section. Indeed, the $(0,2)$-term in the Dolbeault Hodge decomposition
+vanishes in complex dimension one. Smoothness follows from elliptic
+regularity. Choose $u\in\Gamma(\mathfrak n^\ell)$ with entries
+$u_{ij}=-v_{ij}$ when $j-i=\ell$ and zero elsewhere, and set
+$U_\ell=\id+u$. This is a globally invertible smooth transformation:
+its inverse is the finite sum $\id-u+u^2-\cdots$.
+
+The transformed extension form is exactly
+\[
+ A'=U_\ell^{-1}AU_\ell+U_\ell^{-1}\db_0U_\ell.
+\]
+Since $A\in\Omega^{0,1}(\mathfrak n^1)$ and
+$u\in\Gamma(\mathfrak n^\ell)$, the multiplication rule gives
+\begin{equation}\label{eq:triangular-gauge}
+ A'\equiv A+\db_0u
+ \pmod{\Omega^{0,1}(\mathfrak n^{\ell+1})}.
+\end{equation}
+For the derivative term, we use $2\ell\ge\ell+1$.
+Thus entries with $j-i<\ell$ are unchanged, and each entry with
+$j-i=\ell$ becomes $H_{ij}A_{ij}$. Changes to higher entries are
+retained for the subsequent steps.
+
+Starting with $\ell=1$ and ending with $\ell=m-1$ makes every
+entry harmonic. If $U=U_1\cdots U_{m-1}$ is the product of the
+successive transformations, then $\Phi=\sigma U$ has all the
+asserted properties. Each transformation is the identity on the
+quotients, and the process terminates after finitely many steps.
+\end{proof}
+
+The higher entries in \eqref{eq:harmonic-normal-form} need not be
+the harmonic projections of the original entries of $A$. For three
+blocks, let the first correction have entries $u_{12},u_{23}$ and
+zero $13$ entry, so that
+$\beta_{12}=A_{12}+\db_0u_{12}$ and
+$\beta_{23}=A_{23}+\db_0u_{23}$ are harmonic. Before the second
+correction, the $13$ entry is
+\begin{equation}\label{eq:three-normal-form}
+ A'_{13}=A_{13}+A_{12}u_{23}-u_{12}\beta_{23}.
+\end{equation}
+It is this modified entry whose harmonic part defines $\beta_{13}$.
+The induction therefore includes the nonlinear interaction of the
+successive extensions.
+

@@ -1,0 +1,249 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+pdftitle={Small Dolbeault eigenvalues near stability walls}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\db}{\bar\partial}
+\title{Small Dolbeault eigenvalues near stability walls}
+\author{Bernd Johannes Wuebben}
+\subjclass[2020]{53C07 (primary); 53C55, 58J50 (secondary)}
+\keywords{Hermitian--Einstein metric, slope stability, Dolbeault Laplacian,
+wall crossing, vector bundle extension, toric variety}
+\date{October 27, 2026}
+
+\begin{document}
+\begin{abstract}
+We determine the small spectrum of the Dolbeault Laplacian on trace-free
+endomorphisms of Hermitian--Einstein bundles near intersections of
+slope-stability walls. On a compact K\"ahler manifold of dimension at
+least two, consider an extension of $\bigoplus_{j=1}^kF_j$ by $F_0$,
+where the factors are pairwise nonisomorphic and stable of equal slope
+at the limiting K\"ahler class, and every extension component is nonzero.
+Write $r_i=\rk F_i$ and let $\epsilon_j$ be the Einstein constant of
+$F_j$ minus that of the extension. In the chamber $\epsilon_j>0$,
+exactly $k$ eigenvalues tend to zero. They agree, to relative error
+$O(\sum_j\epsilon_j)$, with the eigenvalues of
+$\diag(\epsilon_1,\ldots,\epsilon_k)+r_0^{-1}vv^*$,
+where $v_j=\sqrt{r_j\epsilon_j}$.
+The estimate is uniform in all positive ratios of the slope gaps.
+Thus the ranks and slopes determine the leading spectrum even when
+the gaps vanish at arbitrarily different rates.
+
+For two factors we obtain
+$\lambda_1=\delta-D\delta^2+o(\delta^2)$, where $\delta>0$ is the
+quotient Einstein constant minus the subbundle Einstein constant and
+$D\ge0$ is given by the Green operator of the graded connection.
+We also determine the first eigensection through order $\delta$ in
+every spatial $C^m$ norm. Toric tangent bundles provide examples with
+arbitrarily many independently varying small eigenvalues.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+When a stable bundle approaches a strictly semistable polarization,
+its Hermitian--Einstein connection can converge, after gauge, to the
+connection on its graded object. The additional endomorphisms of the
+graded bundle then appear as small eigenvalues of the endomorphism
+Dolbeault Laplacian. We ask how those eigenvalues depend on the distances
+to the stability walls, especially when several distances tend to zero
+at different rates.
+
+Let $X$ be a compact connected K\"ahler manifold of complex dimension
+$n\ge2$. For a K\"ahler form $\omega$ we use
+\[
+ \deg_\omega F=\int_Xc_1(F)\frac{\omega^{n-1}}{(n-1)!},\qquad
+ \mu_\omega(F)=\frac{\deg_\omega F}{\rk F},\qquad
+ V_\omega=\int_X\frac{\omega^n}{n!}.
+\]
+The Einstein constant is $\kappa_\omega(F)=2\pi\mu_\omega(F)/V_\omega$.
+Our operator is $\Delta=\db_{\End}^*\db_{\End}$ on complex
+trace-free endomorphisms. Eigenvalues are counted with complex
+multiplicity. A scalar multiple of a bundle metric induces the same
+endomorphism metric, so the spectrum of a stable bundle with its
+Hermitian--Einstein metric is well defined once $\omega$ is fixed.
+
+Fix an extension of holomorphic vector bundles
+\begin{equation}\label{eq:star}
+ 0\longrightarrow F_0\longrightarrow E
+ \longrightarrow\bigoplus_{j=1}^kF_j\longrightarrow0.
+\end{equation}
+Assume that the $F_i$ are pairwise nonisomorphic, stable of the same
+slope at $\omega_0$, and that every component of the extension class
+in $\Ext^1(F_j,F_0)$ is nonzero. Write $r_i=\rk F_i$ and
+$r=\sum_{i=0}^kr_i$. The extension graph has one central vertex and
+$k$ leaves; we call \eqref{eq:star} a star extension.
+
+Let $\omega_s$ be a smooth family of K\"ahler forms, with $s$ in a
+neighborhood of zero in $\RR^d$. Put
+\begin{equation}\label{eq:epsilon}
+ \epsilon_j(s)=\kappa_{\omega_s}(F_j)-\kappa_{\omega_s}(E),
+ \qquad e(s)=\sum_{j=1}^k\epsilon_j(s).
+\end{equation}
+These are slope surpluses of the quotient factors. Stability requires
+$\epsilon_j>0$: the kernel of $E\to F_j$ must have smaller slope
+than $E$.
+
+\begin{theorem}\label{thm:main}
+Under the preceding assumptions, for $s$ sufficiently close to zero,
+$E$ is stable with respect to $\omega_s$ if and only if
+$\epsilon_j(s)>0$ for every $j$.
+In this region let $\lambda_1(s)\le\lambda_2(s)\le\cdots$ be the
+endomorphism Dolbeault eigenvalues of its Hermitian--Einstein metric.
+Let $\nu_1(s)\le\cdots\le\nu_k(s)$ be the eigenvalues of
+\begin{equation}\label{eq:rank-matrix}
+ S(\epsilon)=\diag(\epsilon_1,\ldots,\epsilon_k)
+       +\frac1{r_0}vv^*,\qquad v_j=\sqrt{r_j\epsilon_j}.
+\end{equation}
+There are constants $C,\gamma>0$ such that
+\begin{equation}\label{eq:main-relative}
+ \left|\frac{\lambda_j(s)}{\nu_j(s)}-1\right|\le Ce(s)
+ \quad(1\le j\le k),\qquad \lambda_{k+1}(s)\ge\gamma.
+\end{equation}
+The constants are independent of the positive ratios
+$\epsilon_i/\epsilon_j$. No transversality of the parameter family
+to the walls is required.
+\end{theorem}
+
+The uniformity in \eqref{eq:main-relative} is a relative assertion for
+each small eigenvalue. An additive error controlled by the largest gap
+would not determine an eigenvalue associated with a much smaller gap.
+Here one may, for example, let one gap be exponentially small in the
+reciprocal of another. The constants may depend on the fixed bundles,
+extension, parameter family and number of factors.
+
+The matrix in \eqref{eq:rank-matrix} is the weighted star-graph
+Laplacian written on the complement of its constant mode. Its Rayleigh
+quotient is
+\begin{equation}\label{eq:graph-intro}
+ \frac{\sum_{j=1}^kr_j\epsilon_j|x_j-x_0|^2}
+      {\sum_{i=0}^kr_i|x_i|^2},\qquad \sum_{i=0}^kr_ix_i=0.
+\end{equation}
+When all surpluses equal $\epsilon$, its eigenvalues are $\epsilon$
+with multiplicity $k-1$ and $(r/r_0)\epsilon$ once. The harmonic
+norms of the extension classes do not occur in this expression.
+
+The proof first solves the Hermitian--Einstein equation orthogonally
+to the block-scalar endomorphisms. If $t_j$ scales the $j$th harmonic
+extension and $w_j=t_j^2$, the remaining equations have the form
+\[
+ V_sr_j\epsilon_j-w_jb_j(s,w)=0,
+ \qquad b_j(s,0)=\|\beta_{j,s}\|^2>0.
+\]
+The factor $w_j$ in its own equation is essential. On the face $t_j=0$
+the $j$th summand splits off, and its integrated curvature is fixed by
+its degree. Equivariance and smoothness therefore give exact
+divisibility by $w_j$, which yields a relative estimate for every
+extension weight without dividing by the smallest slope gap. A relative
+Schur estimate identifies the harmonic-family spectrum with the graph
+spectrum. A pointwise comparison of the corrected and split metrics
+then transfers the estimate to the actual Hermitian--Einstein metric.
+
+For two factors write
+$\delta=\kappa_{\omega_s}(F_1)-\kappa_{\omega_s}(F_0)$.
+Theorem~\ref{thm:second-order} refines the leading result to
+\[
+ \lambda_1=\delta-D\delta^2+o(\delta^2),\qquad D\ge0,
+\]
+and gives a smooth eigensection expansion. The subbundle projection
+has Rayleigh quotient exactly $\delta$ at an HE metric. This identity
+fixes the first term without an unknown metric correction and makes
+the second term a Green-operator expression at the graded limit.
+
+\subsection*{Relation to previous work}
+The Hermitian--Einstein correspondence supplies the metrics on the
+stable factors and identifies simple HE bundles with stable bundles
+\cite{UY,Kobayashi}. Clarke--Tipler \cite{CT} prove local chamber
+decomposition and convergence of HYM connections to the graded
+connection for simple bundles with locally free graded object and
+abelian graded automorphism group. Their Proposition~3.2 gives a
+parameter-dependent complementary implicit-function construction;
+their Theorem~1.2 gives convergence along paths in a stable chamber.
+The bundles considered here satisfy those hypotheses. Delloque
+\cite{Delloque} extends this continuity theory to balanced metrics
+without the abelian automorphism hypothesis. His Theorem~4 also gives
+a norm bound for the difference from the graded connection.
+We use a specialized construction to determine the small spectrum
+quantitatively.
+
+Sektnan--Tipler \cite{ST} construct HYM connections on pullback bundles
+in adiabatic classes. Section~5.2 develops scaled
+harmonic extensions and balances their curvature against slope defects.
+Proposition~50 (Proposition~5.27 of the preprint) supplies a lower bound
+for the linearized operator;
+these are substantial precedents for the construction used here.
+Our estimates concern all small eigenvalues near an interior K\"ahler
+class and are relative uniformly in the independent positive wall
+distances.
+
+The earlier spectral paper \cite{Flow} gives relative graph comparison
+for harmonic families and quantitative transfer along HYM flow. Its
+two-factor harmonic family has expansion $ct^2-dt^4+O(t^6)$.
+The coefficient in our HE expansion is exactly $D=d/c^2$ after
+normalization. The new assertion concerns its occurrence for the
+actual equilibrium metrics, with the slope gap as parameter.
+For several factors, the principal result is the cancellation of
+extension norms from the leading HE spectrum, together with the
+uniform relative error across arbitrarily separated wall distances.
+The proof does not take a joint limit in polarization and flow time.
+
+The toric companion \cite{Chambers} supplies tangent-bundle extensions
+of the form \eqref{eq:star}, including examples with arbitrarily many
+independent slope coordinates. Section~\ref{sec:toric} states the
+geometric inputs and applies the analytic theorem. The analytic proof
+does not use a finite toric census.
+
+\input{geometry.tex}
+\input{spectrum.tex}
+\input{two_factor.tex}
+\input{toric.tex}
+
+\begin{thebibliography}{Kob87}
+\bibitem[CT24]{CT} A. Clarke and C. Tipler,
+\emph{Semi-stability and local wall-crossing for Hermitian Yang--Mills
+connections}, J. Symplectic Geom. \textbf{22} (2024), no.~3, 673--694;
+arXiv:2304.05245.
+\bibitem[Del25]{Delloque} R. Delloque,
+\emph{Continuity of HYM connections with respect to metric variations},
+J. Lond. Math. Soc. (2) \textbf{112} (2025), no.~1, e70219;
+arXiv:2403.16814.
+\bibitem[Kob87]{Kobayashi} S. Kobayashi,
+\emph{Differential Geometry of Complex Vector Bundles}, Publications
+of the Mathematical Society of Japan, vol.~15, Princeton University
+Press and Iwanami Shoten, 1987.
+\bibitem[ST24]{ST} L. M. Sektnan and C. Tipler,
+\emph{Hermitian Yang--Mills connections on pullback bundles},
+Calc. Var. Partial Differential Equations \textbf{63} (2024),
+Paper No.~13; arXiv:2006.06453v2.
+\bibitem[UY86]{UY} K. Uhlenbeck and S.-T. Yau,
+\emph{On the existence of Hermitian--Yang--Mills connections in stable
+vector bundles}, Comm. Pure Appl. Math. \textbf{39} (1986),
+suppl., S257--S293.
+\bibitem[Wue26a]{Flow} B. J. Wuebben,
+\emph{Small Dolbeault eigenvalues along Hermitian Yang--Mills flow},
+preprint, 2026, \url{https://doi.org/10.5281/zenodo.23643223}.
+\bibitem[Wue26b]{Chambers} B. J. Wuebben,
+\emph{Local stability chambers for toric tangent bundles},
+preprint, 2026, \url{https://doi.org/10.5281/zenodo.23681809}.
+\end{thebibliography}
+\end{document}

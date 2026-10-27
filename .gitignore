@@ -12,3 +12,16 @@
 !/checks/
 !/checks/README.md
 !/checks/check_*.py
+!/paper3/
+!/paper3/README.md
+!/paper3/LICENSE
+!/paper3/SHA256.json
+!/paper3/CITATION.cff
+!/paper3/CITATION.bib
+!/paper3/paper/
+!/paper3/paper/*.tex
+!/paper3/paper/main.pdf
+!/paper3/paper/README.md
+!/paper3/checks/
+!/paper3/checks/check_rank_matrix.py
+!/paper3/checks/README.md

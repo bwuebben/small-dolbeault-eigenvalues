@@ -1,0 +1,148 @@
+\section{Relative spectral estimates}
+\label{sec:spectrum}
+
+We first use the metric $h_{\mathrm{split},s}$ on the holomorphic bundle
+defined by \eqref{eq:scaled-dbar}. The comparison below is the
+harmonic-family argument of \cite{Flow}; we give its proof to keep
+track of uniformity in both the polarization and the extension weights.
+
+\subsection{The harmonic family}
+Write $D_0$ for the split Dolbeault operator on trace-free endomorphisms
+and
+\[
+ D_t=D_0+A_t,\qquad A_tx=\left[\sum_jt_j\beta_{j,s},x\right].
+\]
+The complex space $\HH_\CC=\ker D_0$ consists of constant
+block-scalar endomorphisms. Write them as
+$x=\diag(x_iI_{F_i})$, where $\sum_ir_ix_i=0$.
+Let $P$ be the $L^2_s$ projection onto this space and $Q=I-P$.
+The spectral gap of $D_0^*D_0$ on its complement is uniformly
+positive for small $s$. Since the harmonic forms vary smoothly,
+$a_t=\|A_t\|_{L^2\to L^2}\le C|t|$.
+
+For $x\in\HH_\CC$, harmonicity gives $D_0^*A_tx=0$. Distinct
+matrix entries are orthogonal, so
+\begin{equation}\label{eq:harmonic-graph}
+ G_t(x):=\|D_tx\|^2
+   =\sum_{j=1}^kw_jB_j(s)|x_j-x_0|^2,\qquad
+ \|x\|^2=V_s\sum_{i=0}^kr_i|x_i|^2.
+\end{equation}
+No pointwise orthogonality among the forms themselves is required.
+Let $g_1(t)\le\cdots\le g_k(t)$ be the eigenvalues of this
+quadratic form with the displayed mass inner product.
+
+\begin{lemma}\label{lem:relative-schur}
+For small $(s,t)$ with all $t_j\ne0$, the first $k$ eigenvalues
+of $\Delta_t=D_t^*D_t$ satisfy
+\begin{equation}\label{eq:relative-schur}
+ (1-C|t|^2)g_j(t)\le\lambda_j(h_{\mathrm{split},s},\db_{s,t})\le g_j(t).
+\end{equation}
+All remaining eigenvalues have a uniform positive lower bound.
+The constant does not depend on any ratio of the nonzero $t_j$.
+\end{lemma}
+
+\begin{proof}
+For $y\perp\HH_\CC$,
+$\|D_ty\|\ge\|D_0y\|-a_t\|y\|$. Hence the compression
+$C_t=Q\Delta_tQ$ is bounded below by a constant $\gamma>0$ for
+small parameters. For $x\in\HH_\CC$ the harmonic cancellation
+gives $\Delta_tx=A_t^*A_tx$. Its coupling to the complement,
+$F_t=Q\Delta_tP$, therefore satisfies
+\[
+ \|F_tx\|^2\le a_t^2G_t(x).
+\]
+For $0\le\lambda<\gamma/2$ this implies the quadratic-form bound
+\begin{equation}\label{eq:schur-form-bound}
+ 0\le F_t^*(C_t-\lambda)^{-1}F_t
+       \le\frac{2a_t^2}{\gamma}G_t.
+\end{equation}
+
+The $k$ trial directions in $\HH_\CC$ give $k$ eigenvalues
+$O(|t|^2)$ by min--max. The complementary subspace has codimension
+$k$, so the next eigenvalue is at least $\gamma$. Below $\gamma/2$,
+the Schur complement of $\Delta_t-\lambda$ is the finite operator
+\[
+ G_t-\lambda I-F_t^*(C_t-\lambda)^{-1}F_t
+\]
+on $\HH_\CC$. Because $C_t-\lambda$ is positive, the number of
+negative eigenvalues of $\Delta_t-\lambda$ equals that of this
+Schur complement. Comparison with
+$(1-2a_t^2/\gamma)G_t-\lambda I$ and $G_t-\lambda I$ brackets
+every ordered eigenvalue and proves \eqref{eq:relative-schur}.
+The argument uses neither a lower bound on the smallest graph
+eigenvalue nor a separation between graph eigenvalues.
+\end{proof}
+
+\subsection{The actual metric}
+For the solution in Proposition~\ref{prop:balance},
+Lemma~\ref{lem:complement} gives the pointwise metric comparison
+\[
+ e^{-C|w|}h_{\mathrm{split},s}\le h_{\mathrm{HE},s}
+       \le e^{C|w|}h_{\mathrm{split},s}.
+\]
+If $e^{-a}h_0\le h_1\le e^ah_0$, the induced squared norms on
+endomorphism-valued zero-forms and one-forms lie between $e^{-2a}$
+and $e^{2a}$ times the original squared norms. The Dolbeault operator
+and base K\"ahler form are the same on both sides. The Rayleigh
+quotient, followed by min--max, therefore gives
+\begin{equation}\label{eq:metric-comparison}
+ e^{-4a}\lambda_j(h_0)\le\lambda_j(h_1)\le e^{4a}\lambda_j(h_0).
+\end{equation}
+These inequalities hold on the same algebraically trace-free section
+space. They use no derivatives of the metric comparison.
+
+Since $|w|=O(e(s))$, equations \eqref{eq:individual-balance},
+\eqref{eq:relative-schur} and \eqref{eq:metric-comparison} show that
+the first $k$ HE eigenvalues agree, to relative error $O(e(s))$,
+with the graph form whose edge weights are $V_sr_j\epsilon_j$
+and masses $V_sr_i$. Every weight comparison is relative, so it is
+also a relative comparison of the entire graph quadratic form.
+Min--max preserves that comparison for each ordered eigenvalue.
+The common volume cancels, leaving \eqref{eq:graph-intro}.
+The complementary spectral gap persists under the same metric
+comparison.
+
+To obtain \eqref{eq:rank-matrix}, set $y_j=x_j-x_0$. Eliminating
+$x_0$ by the trace constraint gives mass matrix and energy matrix
+\[
+ M=\diag(r_1,\ldots,r_k)-\frac1r(r_ir_j)_{i,j=1}^k,
+ \qquad D=\diag(r_1\epsilon_1,\ldots,r_k\epsilon_k).
+\]
+Direct multiplication gives
+\[
+ M^{-1}=\diag(r_1^{-1},\ldots,r_k^{-1})+\frac1{r_0}\mathbf1\mathbf1^*.
+\]
+The generalized eigenvalues of $(D,M)$ are those of
+$D^{1/2}M^{-1}D^{1/2}$, which is $S(\epsilon)$.
+This proves Theorem~\ref{thm:main}.
+
+\subsection{Consequences for separated gaps}
+The determinant lemma and the trace give
+\begin{equation}\label{eq:det-trace}
+ \prod_{j=1}^k\nu_j=\frac r{r_0}\prod_{j=1}^k\epsilon_j,
+ \qquad
+ \sum_{j=1}^k\nu_j=\sum_{j=1}^k\left(1+\frac{r_j}{r_0}\right)\epsilon_j.
+\end{equation}
+Also, by Cauchy--Schwarz,
+\[
+ \diag(\epsilon)\le S(\epsilon)
+       \le\frac r{r_0}\diag(\epsilon).
+\]
+If $\epsilon_{(1)}\le\cdots\le\epsilon_{(k)}$ are the ordered
+surpluses, then
+\begin{equation}\label{eq:gap-bounds}
+ \epsilon_{(j)}\le\nu_j\le\frac r{r_0}\epsilon_{(j)}.
+\end{equation}
+Thus distinct orders of vanishing in the slope surpluses give the
+same ordered vanishing orders in the small HE spectrum. The matrix
+$S$ determines the constants as well, including repeated scales.
+
+For example, with two leaves and $\epsilon_1/\epsilon_2\to0$,
+the larger eigenvalue has leading term
+$(1+r_2/r_0)\epsilon_2$. The determinant identity then gives
+\[
+ \nu_1\sim\frac{r_0+r_1+r_2}{r_0+r_2}\epsilon_1.
+\]
+The larger edge effectively adds the second leaf's rank to the core
+mass before the smaller eigenvalue is formed. This is the elementary
+two-edge case of the graph contraction principle in \cite{Flow}.

@@ -1,0 +1,204 @@
+\section{The second-order term for two factors}
+\label{sec:two-factor}
+
+Consider a nonsplit extension $0\to F\to E\to G\to0$ with
+$F,G$ nonisomorphic and stable of equal slope at $\omega_0$.
+Write $a=\rk F$, $b=\rk G$ and $r=a+b$. In the stable side put
+\[
+ \delta_s=\kappa_{\omega_s}(G)-\kappa_{\omega_s}(F)>0,
+ \qquad N_s=V_s\frac{ab}{r}.
+\]
+Theorem~\ref{thm:main} gives $\lambda_1\sim\delta_s$.
+We now identify the next coefficient for the actual HE metrics.
+
+\subsection{An exact identity at an HE metric}
+Use the orthogonal smooth splitting determined by any HE metric on
+$E$. Its Dolbeault operator has the form
+\[
+ \db_E=\begin{pmatrix}\db_F&\beta\\0&\db_G\end{pmatrix}.
+\]
+The diagonal metrics here are induced metrics; they need not be HE.
+Let $P_F$ be the orthogonal projection onto $F$, and set
+$q=P_F-(a/r)I$. Then $\|q\|^2=N_s$. The subbundle degree formula
+gives
+\begin{equation}\label{eq:exact-rayleigh}
+ \|\beta\|^2=2\pi a\bigl(\mu(E)-\mu(F)\bigr)
+             =N_s\delta_s,
+ \qquad \frac{\langle q,\Delta q\rangle}{\|q\|^2}=\delta_s,
+\end{equation}
+because $\db_{\End}q=-\beta$. This Rayleigh upper bound is a
+consequence of the classical degree identity.
+
+The off-diagonal HE equation and the K\"ahler identity give
+$\db_{\Hom}^*\beta=0$ for the induced connections. In a unitary
+coframe write $\beta=\sum_\nu\beta_\nu\bar\theta^\nu$ and put
+\begin{equation}\label{eq:C-beta}
+ C_s(\beta)=\diag\left(\sum_\nu\beta_\nu\beta_\nu^*,
+                       -\sum_\nu\beta_\nu^*\beta_\nu\right).
+\end{equation}
+Block multiplication in $\db_{\End}^*\db_{\End}q$ gives
+\begin{equation}\label{eq:Delta-q}
+ \Delta q=C_s(\beta).
+\end{equation}
+The term linear in $\beta$ is $-\db_{\Hom}^*\beta$ and vanishes;
+the remaining quadratic term is \eqref{eq:C-beta}.
+
+Let $Q$ project onto $q^\perp$ in complex trace-free endomorphisms,
+and write $z=C_s(\beta)-\delta_sq$. Suppose the compression
+$A=Q\Delta Q$ has spectrum at least $\gamma>\delta_s$.
+For the unique small eigenvector, take its $q$ component to be one.
+The complementary equation gives $v=-(A-\lambda)^{-1}z$.
+Pairing the remaining equation with $q$ yields
+\begin{equation}\label{eq:exact-schur-two}
+ \lambda=\delta_s-\frac{\langle z,(A-\lambda)^{-1}z\rangle}{N_s}.
+\end{equation}
+In particular
+\[
+ \delta_s-\frac{\|z\|^2}{N_s(\gamma-\delta_s)}
+       \le\lambda\le\delta_s.
+\]
+
+\subsection{The normalized extension limit}
+Let $\beta_s$ be the harmonic representative for the split factor
+HE metrics, and $B_s=\|\beta_s\|^2$. The scalar equation in
+Section~\ref{sec:construction}, now paired with $q$, reads
+\[
+ -N_s\delta_s+B_st^2+O(t^4)=0.
+\]
+The coefficient $B_s$ is exact: the quadratic metric correction is
+in the image of $L_s$ and pairs trivially with its parallel kernel
+vector $q$. Parity makes the scalar equation even, and its derivative
+in $w=t^2$ is $B_s+O(w)>0$. Consequently
+\begin{equation}\label{eq:two-scaling}
+ t_s^2=\frac{N_s}{B_s}\delta_s+O(\delta_s^2).
+\end{equation}
+These estimates are uniform in $s$, including flat approaches to
+$\delta=0$.
+
+We need an orthogonal identification that preserves the subbundle.
+The involution $J=\diag(-I_F,I_G)$ sends $t$ to $-t$; uniqueness
+gives $u(s,-t)=Ju(s,t)J$. Together with $u_t(s,0)=0$, this makes
+the diagonal entries even of order $O(t^2)$ and the off-diagonal
+entries odd of order $O(t^3)$. Write
+\[
+ e^u=\begin{pmatrix}A&B\\B^*&D\end{pmatrix},\qquad
+ T=\begin{pmatrix}I&-A^{-1}B\\0&I\end{pmatrix}.
+\]
+Then
+\[
+ T^*e^uT=\diag(A,D-B^*A^{-1}B).
+\]
+Thus
+$S=T\diag(A^{-1/2},(D-B^*A^{-1}B)^{-1/2})$ is an isometry
+from the split metric to the corrected metric and preserves $F$.
+Its diagonal correction is $O(t^2)$ and its upper entry is $O(t^3)$
+in every $C^m$ norm. Including the derivative of $S$ in
+$S^{-1}\db_{s,t}S$, the upper Dolbeault entry is therefore
+\[
+ \beta_{\mathrm{HE},s,t}=t\beta_s+O_{C^m}(t^3).
+\]
+The estimates at one higher spatial derivative justify this formula
+in $C^m$. The diagonal connections converge smoothly to the split
+wall connections. With \eqref{eq:two-scaling} we obtain
+\begin{equation}\label{eq:normalized-beta}
+ \frac{\beta_{\mathrm{HE},s}}{\sqrt{\delta_s}}
+     \longrightarrow\beta_*:=\sqrt{\frac{N_0}{B_0}}\,\beta_0
+ \quad\hbox{in every }C^m,\qquad \|\beta_*\|^2=N_0.
+\end{equation}
+
+This convergence takes place in the rescaled presentation of the
+extension. On the original fixed $E$, the isomorphism to the scaled
+extension multiplies $F$ by $t$; the pulled-back metric on $F$ is
+therefore $t^2h_F$ to leading order. Smooth convergence to the split
+metric is not asserted in that original presentation.
+
+\subsection{The Green coefficient and eigensection}
+Let $\Delta_0$ be the endomorphism Dolbeault Laplacian at the split
+wall metric, and $G_0$ its inverse on the complement of $q_0$ in
+trace-free endomorphisms. Define
+\begin{equation}\label{eq:D-coefficient}
+ z_0=C_0(\beta_*)-q_0,\qquad
+ D=\frac{\langle z_0,G_0z_0\rangle}{N_0}.
+\end{equation}
+The vector $z_0$ is orthogonal to $q_0$, since
+$\langle q_0,C_0(\beta_*)\rangle=\|\beta_*\|^2=N_0$.
+
+\begin{theorem}\label{thm:second-order}
+As $s\to0$ through $\delta_s>0$,
+\begin{equation}\label{eq:second-order}
+ \lambda_1(s)=\delta_s-D\delta_s^2+o(\delta_s^2).
+\end{equation}
+Here $D\ge0$, with equality precisely when $C_0(\beta_*)=q_0$
+pointwise. After smooth unitary identifications with the wall spaces,
+the normalized first eigensection, with positive $q_s$ component, is
+\begin{equation}\label{eq:eigensection}
+ \psi_s=\frac{q_s}{\sqrt{N_s}}
+       -\delta_s\frac{G_0z_0}{\sqrt{N_0}}+o_{C^m}(\delta_s)
+ \quad\hbox{for every }m.
+\end{equation}
+All other trace-free eigenvalues remain uniformly positive.
+\end{theorem}
+
+\begin{proof}
+Use the orthogonal presentation above and an $L^2$ isometry $U_s$
+incorporating the varying volume density. We use $q_s,Q_s,\Delta_s$
+for the transported endomorphism objects. Nonlinear expressions must
+be formed before this transport: in particular the transported
+$C_s(\beta)$ means $U_sC_s(\beta)$, not $C_0$ applied to a
+transported form. Density multiplication does not commute with the
+quadratic operation $C$.
+
+All differential coefficients converge smoothly to those of $\Delta_0$.
+The latter has trace-free kernel $\CC q_0$. Its complementary gap
+persists for $A_s=Q_s\Delta_sQ_s$. Indeed, a sequence of normalized
+complementary sections with energy tending to zero would have bounded
+$H^1$ norm by the first-order elliptic estimate, a strongly convergent
+$L^2$ subsequence, and a nonzero limit in
+$\ker\Delta_0\cap q_0^\perp$, a contradiction.
+Min--max and \eqref{eq:exact-rayleigh} now give exactly one eigenvalue
+$\lambda_s<\gamma/2$ for small $s$, and positivity follows from
+simplicity of $E$.
+
+Equations \eqref{eq:Delta-q} and \eqref{eq:normalized-beta} imply
+\[
+ z_s=Q_s\Delta_sq_s=U_sC_s(\beta_{\mathrm{HE},s})-\delta_sq_s,
+ \qquad z_s/\delta_s\longrightarrow z_0
+\]
+in every Sobolev norm. After smooth fixed-complement identifications,
+uniform elliptic estimates give
+\[
+ \|v\|_{H^{j+2}}\le C_j\bigl(\|(A_s-\lambda_s)v\|_{H^j}
+                                      +\|v\|_{L^2}\bigr).
+\]
+The complementary gap absorbs the last term. The projections have
+finite rank with smooth kernels and are uniformly bounded on every
+Sobolev space. Hence
+\[
+ \|(A_s-\lambda_s)^{-1}\|_{H^j\to H^{j+2}}\le C_j.
+\]
+The resolvent identity and coefficient convergence from $H^{j+2}$
+to $H^j$ show that these inverses converge to $G_0$ in the stated
+operator norm. Substituting into \eqref{eq:exact-schur-two} proves
+\eqref{eq:second-order}.
+
+Before normalization the small eigensection is $q_s+v_s$, where
+\[
+ v_s=-(A_s-\lambda_s)^{-1}z_s
+     =-\delta_sG_0z_0+o_{H^{j+2}}(\delta_s).
+\]
+Its squared norm is $N_s+\|v_s\|^2$. Normalization therefore changes
+the $q_s$ coefficient only by $O(\delta_s^2)$. Sobolev embedding,
+with arbitrary $j$, gives \eqref{eq:eigensection}; the phase is fixed
+by $\langle q_s,\psi_s\rangle_s>0$. Positivity of $G_0$ proves
+the assertion about $D$ and its zero set.
+\end{proof}
+
+The coefficient is unchanged by nonzero scalar rescaling of the
+extension representative, after the induced unitary identifications.
+It depends on the wall geometry and the projective extension class.
+Ranks and Chern classes alone do not determine it. To compare with
+\cite{Flow}, write $c=B_0/N_0$ and
+$z=C_0(\beta_0)-cq_0$. Its fixed harmonic-family coefficient is
+$d=\langle z,G_0z\rangle/N_0$. Since $z_0=z/c$, we have exactly
+$D=d/c^2$. Theorem~\ref{thm:second-order} identifies this coefficient
+for the actual HE metrics and the exact slope-gap parameter.

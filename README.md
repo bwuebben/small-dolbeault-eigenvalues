@@ -2,6 +2,12 @@
 
 Research manuscript and computational checks by **Bernd Johannes Wuebben**.
 
+**New companion:** [Small Dolbeault eigenvalues near stability walls](paper3/README.md),
+27 October 2026, 13 pages. It determines every small Hermitian–Einstein
+endomorphism eigenvalue near intersecting stability walls from the factor
+ranks and slopes, with a uniform relative estimate across arbitrarily
+separated wall distances. [Current version (PDF)](paper3/paper/main.pdf).
+
 **[Read the paper (PDF, 45 pages)](paper/small-dolbeault-eigenvalues.pdf)**, initial version 20 September 2026, this version 30 September 2026.
 
 ## Summary
@@ -164,5 +170,6 @@ estimates, which are proved in the paper. See the
 A [BibTeX entry](CITATION.bib) and machine-readable
 [citation metadata](CITATION.cff) are provided.
 
-Code is MIT licensed; the manuscript and repository prose are
-CC BY 4.0. See [LICENSE](LICENSE).
+The flow paper's code is MIT licensed; its manuscript and repository prose
+are CC BY 4.0. Paper 3 has a separate rights notice. See [LICENSE](LICENSE)
+and [Paper 3's rights](paper3/LICENSE).

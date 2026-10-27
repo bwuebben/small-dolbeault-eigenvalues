@@ -1,0 +1,222 @@
+\section{The Hermitian--Einstein equation near the graded bundle}
+\label{sec:construction}
+
+We retain the hypotheses of Theorem~\ref{thm:main}. Norm estimates in
+this section are uniform after shrinking the parameter neighborhood.
+They do not compare $|s|$ with any positive slope surplus.
+
+\subsection{Factor metrics and harmonic extensions}
+Choose smoothly varying HE metrics $h_{i,s}$ on the fixed holomorphic
+bundles $F_i$, with scalar normalizations. Here is the local analytic
+justification. First choose normalized HE determinant metrics, using
+the scalar Laplace equation. With those determinants fixed, the
+linearization of the trace-free HE equation at $s=0$ is the
+endomorphism Dolbeault Laplacian on trace-free Hermitian sections.
+It is invertible because $F_i$ is stable. For an integer $\ell>n$,
+the equation is a smooth map from $H^{\ell+2}$ to $H^\ell$.
+The implicit-function theorem and elliptic regularity give the
+metrics for small $s$. Their existence and simplicity also show that
+the factors remain stable.
+
+Let $\beta_{j,s}$ be the harmonic representative of the fixed nonzero
+class in $H^{0,1}(\Hom(F_j,F_0))$. These representatives vary
+smoothly. Indeed the holomorphic Hom bundle is fixed, so the
+cohomology dimension is constant; the spectral projection onto the
+kernel of its smoothly varying elliptic Laplacian is smooth. Elliptic
+regularity gives smoothness in every spatial norm. Write
+\[
+ B_j(s)=\|\beta_{j,s}\|_s^2>0,\qquad
+ h_{\mathrm{split},s}=\bigoplus_{i=0}^kh_{i,s}.
+\]
+Each $B_j$ has a uniform positive lower bound.
+
+On the fixed smooth direct sum define
+\begin{equation}\label{eq:scaled-dbar}
+ \db_{s,t}=\db_0+\sum_{j=1}^kt_j\beta_{j,s},
+ \qquad t\in\RR^k,
+\end{equation}
+where $\beta_{j,s}$ occupies the block $F_j\to F_0$.
+The operator is integrable in every complex dimension:
+$\db_0\beta_{j,s}=0$, and every product of two off-diagonal
+entries vanishes. When all $t_j\ne0$, independent constant
+scalings of the quotient factors identify this extension with
+\eqref{eq:star}. Changes of harmonic representative are implemented
+by upper-triangular complex gauges. Its determinant holomorphic
+structure is independent of $t$.
+
+\subsection{The complementary equation}
+Let $\HH$ be the real space of constant block-scalar Hermitian
+endomorphisms with total trace zero. It has dimension $k$. Let
+$P_s$ be its $L^2_s$ projection and $Q_s=I-P_s$, acting on
+pointwise trace-free Hermitian sections. We seek a metric
+$h=h_{\mathrm{split},s}e^u$, where $u$ is a trace-free Hermitian
+endomorphism satisfying $P_su=0$.
+Express its mean curvature in the fixed Hermitian structure:
+\begin{equation}\label{eq:Khat}
+ \widehat K(s,t,u)
+ =e^{u/2}\bigl(i\Lambda_{\omega_s}F_{\db_{s,t},h_{\mathrm{split},s}e^u}\bigr)e^{-u/2}.
+\end{equation}
+Because $\tr u=0$, its trace is the constant $r\kappa_{\omega_s}(E)$.
+
+\begin{lemma}\label{lem:complement}
+For small $(s,t)$ there is a unique small normalized $u(s,t)$ solving
+\[
+ Q_s\bigl(\widehat K(s,t,u)-\kappa_{\omega_s}(E)I\bigr)=0.
+\]
+It is smooth in the parameters and spatial variables, and for every $m$
+\begin{equation}\label{eq:u-estimate}
+ \|u(s,t)\|_{C^m}\le C_m|t|^2.
+\end{equation}
+The construction is equivariant under independent constant unitary
+scalings of the factors.
+\end{lemma}
+
+\begin{proof}
+Use the real Hermitian spaces $H^{\ell+2}\to H^\ell$, $\ell>n$.
+Block-diagonal positive changes of metric identify the Hermitian bundles
+for different $s$, preserve trace and block scalars, and are bounded
+with bounded inverses in every fixed Sobolev norm. The projections
+$Q_s$ depend smoothly on $s$. After those identifications,
+$Q_s|_{\HH^{\perp_0}}$ is an isomorphism onto
+$\HH^{\perp_s}$ for small $s$. These maps give fixed Banach spaces
+for the parameter-dependent equation.
+
+At $t=u=0$, the split curvature $K_{0,s}$ is block scalar, with
+entries $\kappa_i(s)I_{F_i}$. Differentiation of the un-conjugated
+mean curvature in the convention $h=h_{\mathrm{split},s}e^u$ gives
+$\Delta_{\partial,s}u$. Differentiating the conjugation in
+\eqref{eq:Khat} adds $[u,K_{0,s}]/2$. The K\"ahler identity on
+endomorphism-valued zero-forms is
+$\Delta_{\partial}-\Delta_{\db}=[K_{0,s},\cdot]$. Thus the real
+Hermitian linearization is
+\begin{equation}\label{eq:real-linearization}
+ L_s=\Delta_{\db,s}+\tfrac12[K_{0,s},\cdot]
+    =\tfrac12(\Delta_{\db,s}+\Delta_{\partial,s}).
+\end{equation}
+It is self-adjoint and nonnegative and annihilates $\HH$.
+At $s=0$ all factor Einstein constants agree, so
+$L_0=\Delta_{\db,0}$. Its trace-free Hermitian kernel is exactly
+$\HH$: each factor has only scalar endomorphisms, and the Hom groups
+between distinct stable factors of equal slope vanish.
+
+Consequently $Q_0L_0$ is an isomorphism from the complementary
+$H^{\ell+2}$ space to $H^\ell$. In fixed spaces, $Q_sL_s$ converges
+in this operator norm to $Q_0L_0$. The Neumann-series criterion gives
+uniformly bounded inverses. The implicit-function theorem now produces
+$u(s,t)$, and uniqueness gives $u(s,0)=0$.
+
+The derivative of the split mean curvature in $t_j$ has upper
+off-diagonal entry $-\db_{\Hom}^*\beta_{j,s}$ and lower entry
+its Hermitian adjoint. Both vanish by harmonicity for every $s$.
+Differentiating the complementary equation therefore
+gives $u_{t_j}(s,0)=0$, proving \eqref{eq:u-estimate}. Applying the
+IFT at higher Sobolev indices and using uniqueness, or bootstrapping
+the equation, gives each $C^m$ estimate. All equations, projections
+and normalizations are invariant under the indicated unitary scalings;
+uniqueness proves equivariance.
+\end{proof}
+
+\subsection{Scalar equations on the coordinate faces}
+Set $p_j=I_{F_j}-(r_j/r)I$ for $1\le j\le k$. These form a basis
+of $\HH$. The remaining curvature equations are
+\[
+ f_j(s,t)=\bigl\langle p_j,
+ \widehat K(s,t,u(s,t))-\kappa_{\omega_s}(E)I\bigr\rangle_s=0.
+\]
+Changing the sign of any $t_i$ is induced by a unitary sign on $F_i$,
+and fixes every $p_j$. Thus every $f_j$ is separately even in the
+$t_i$.
+
+We use the following elementary smoothness fact, jointly with the
+parameters. A smooth function $f(s,t)$ that is separately even in
+$t_1,\ldots,t_k$ can be written $F(s,t_1^2,\ldots,t_k^2)$ with
+$F$ smooth on the closed positive orthant and smoothly extendible
+across its faces. In one variable, Taylor expansion has only even
+powers, and its differentiated remainders give derivatives of every
+order in $w=t^2$ up to $w=0$. A smooth extension from the half-line
+then gives the assertion; apply this successively in each variable,
+retaining the other variables and $s$ as parameters. If such an $F$
+vanishes on $w_j=0$, the formula
+\[
+ F(s,w)=w_j\int_0^1\partial_{w_j}F(s,w_1,\ldots,\theta w_j,
+                                      \ldots,w_k)\,d\theta
+\]
+gives smooth divisibility on the orthant. We write $w_j=t_j^2$ below.
+
+\begin{proposition}\label{prop:face}
+The scalar equations have the form
+\begin{equation}\label{eq:scalar-factor}
+ f_j(s,w)=V_sr_j\epsilon_j(s)-w_jb_j(s,w),\qquad
+ b_j(s,w)=B_j(s)+O\left(\sum_iw_i\right).
+\end{equation}
+The functions $b_j$ are smooth jointly in the parameters and orthant
+variables, and the estimates are uniform near the origin.
+\end{proposition}
+
+\begin{proof}
+On the face $t_j=0$, $F_j$ splits holomorphically from the rest.
+Its circle of scalar unitary transformations fixes the Dolbeault
+operator, the background metric and the complementary equation.
+Lemma~\ref{lem:complement} implies that $u(s,t)$ commutes with
+this circle. The corrected metric therefore also splits off $F_j$.
+Conjugation by $e^{u/2}$ preserves the trace of that block. Since
+the total residual is pointwise trace-free, Chern--Weil gives exactly
+\begin{equation}\label{eq:face-identity}
+ f_j(s,t)\big|_{t_j=0}
+ =2\pi\deg_{\omega_s}(F_j)-V_sr_j\kappa_{\omega_s}(E)
+ =V_sr_j\epsilon_j(s).
+\end{equation}
+This equality is independent of all other extension parameters.
+The smoothness fact just stated gives the factorization in
+\eqref{eq:scalar-factor}.
+
+It remains to determine $b_j(s,0)$. At the split metric the quadratic
+curvature term of the entry $t_j\beta_{j,s}$ is positive on $F_0$
+and negative on $F_j$. Its pairing with $p_j$ is
+$-t_j^2\|\beta_{j,s}\|^2$. The diagonal terms from other edges pair
+to zero, as do their off-diagonal cross terms. The quadratic metric
+correction contributes $L_su_2$, whose pairing with $p_j$ vanishes
+because $L_s$ is self-adjoint and $L_sp_j=0$. Hence
+$b_j(s,0)=B_j(s)$. Smoothness yields the remainder uniformly in $s$.
+\end{proof}
+
+\begin{proposition}\label{prop:balance}
+For small $s$ with every $\epsilon_j(s)>0$, there is a positive
+solution $w(s)$ of the scalar equations, and
+\begin{equation}\label{eq:individual-balance}
+ w_j(s)B_j(s)=V_sr_j\epsilon_j(s)\bigl(1+O(e(s))\bigr)
+ \qquad(1\le j\le k).
+\end{equation}
+The estimates are uniform in the positive gap ratios. The corresponding
+corrected metric is an HE metric on $E$, and $E$ is stable.
+\end{proposition}
+
+\begin{proof}
+Extend the $b_j$ smoothly to a full neighborhood of $w=0$, preserving
+positivity after shrinking it. Introduce independent real targets
+$\eta_j$ and solve
+\[
+ w_jb_j(s,w)=V_sr_j\eta_j.
+\]
+The $w$-Jacobian at $w=\eta=0$ is $\diag(B_j(s))$, uniformly
+invertible. The parameter IFT gives $w(s,\eta)=O(|\eta|)$,
+with $w(s,0)=0$. For positive targets the equations themselves force
+each $w_j>0$, so the solution lies where the extension agrees with
+the original functions. Set $\eta_j=\epsilon_j(s)$. Then
+\[
+ \frac{w_jB_j(s)}{V_sr_j\epsilon_j(s)}
+       =\frac{B_j(s)}{b_j(s,w)}=1+O(e(s)).
+\]
+No estimate divides an error by $\min_j\epsilon_j$.
+
+Together with the complementary equation, vanishing of the scalar
+pairings against a basis of $\HH$ gives the full HE equation. Take
+$t_j=\sqrt{w_j}$; all are nonzero, so the holomorphic bundle is $E$.
+To see simplicity, an endomorphism of $E$ preserves $F_0$ because
+$\Hom(F_0,F_j)=0$. Its actions on $F_0$ and on each quotient
+$F_j$ are scalar. Compatibility with each nonzero extension class
+forces all these scalars to agree. The possible remaining map from
+the quotient to $F_0$ is zero because $\Hom(F_j,F_0)=0$.
+Thus an HE metric makes $E$ stable. Necessity of the positive
+surpluses follows from the kernels of $E\to F_j$, as in the introduction.
+\end{proof}

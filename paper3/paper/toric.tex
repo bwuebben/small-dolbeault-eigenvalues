@@ -1,0 +1,142 @@
+\section{Toric tangent bundles}
+\label{sec:toric}
+
+The geometric inputs in this section are proved in the companion
+\cite{Chambers}. We state them explicitly to distinguish the geometry
+needed for Theorem~\ref{thm:main} from the analytic conclusion.
+
+For $k\ge1$ let
+\[
+ X_k=\PP_{(\PP^1)^{2k-1}}
+       \bigl(\mathcal O\oplus\mathcal O(1^k,-1^{k-1})\bigr),
+\]
+using quotient projectivization. The twisting line bundle has degree
+$1$ on the first $k$ base factors and degree $-1$ on the remaining
+$k-1$. Let $\pi:X_k\to(\PP^1)^k$ be the projection onto the
+first $k$ base factors, with components $\pi_j$.
+This is a smooth toric Fano variety of dimension and Picard number
+$2k$. Put $D=-K_{X_k}$ and $h_j=c_1(\pi_j^*\mathcal O_{\PP^1}(1))$.
+The tangent bundle fits into
+\begin{equation}\label{eq:toric-extension}
+ 0\longrightarrow F_0:=T_{X_k/(\PP^1)^k}
+ \longrightarrow T_{X_k}
+ \longrightarrow\bigoplus_{j=1}^k\pi_j^*\mathcal O_{\PP^1}(2)
+ \longrightarrow0.
+\end{equation}
+At $D$, $F_0$ is stable of rank $k$, the quotient line bundles are
+stable of the same slope, and all factors are pairwise nonisomorphic.
+Every component of the extension class is nonzero. The functions
+\[
+ z_j(H)=\left(2h_j-\frac{D}{2k}\right)H^{2k-1}
+\]
+extend to independent real analytic local coordinates at $D$.
+The local stable locus is $z_j>0$ for every $j$.
+
+Choose smooth K\"ahler representatives of the nearby ample classes.
+The slopes in \cite{Chambers} are intersection numbers without a
+factorial denominator. In the present normalization,
+\begin{equation}\label{eq:toric-epsilon}
+ \epsilon_j(H)=\frac{2\pi z_j(H)}{(2k-1)!V_H}
+              =\frac{4\pi k\,z_j(H)}{H^{2k}}.
+\end{equation}
+At the wall the differential of this map is a common positive
+multiple of $dz_j$, so the $\epsilon_j$ are also independent local
+coordinates after completion by $k$ further coordinates.
+
+\begin{corollary}\label{cor:toric}
+For the HE tangent bundle of $X_k$ in its nearby stable chamber,
+there are exactly $k$ small trace-free Dolbeault eigenvalues. To
+relative error $O(\sum_j\epsilon_j)$ they are the eigenvalues of
+\[
+ \diag(\epsilon_1,\ldots,\epsilon_k)+\frac1k vv^*,
+ \qquad v_j=\sqrt{\epsilon_j}.
+\]
+Along a path with every $\epsilon_j=\epsilon$, the leading spectrum
+is $\epsilon$ with multiplicity $k-1$ and $2\epsilon$ once.
+Positive paths with arbitrary distinct orders of vanishing of the
+$\epsilon_j$ are realized by genuine nearby polarizations.
+\end{corollary}
+
+\begin{proof}
+Apply Theorem~\ref{thm:main} with $r_0=k$ and $r_j=1$.
+For equal surpluses the rank-one perturbation has eigenvalue
+$\epsilon$ on the complement of $(1,\ldots,1)$ and $2\epsilon$
+on its span. Independent local coordinates realize the indicated
+positive paths while staying in the ample cone.
+\end{proof}
+
+\begin{example}
+For $X_2$, write the positive surpluses as $\epsilon_1,\epsilon_2$.
+The two comparison eigenvalues are
+\[
+ \nu_\pm=\frac34(\epsilon_1+\epsilon_2)
+    \pm\frac14\sqrt{9(\epsilon_1-\epsilon_2)^2+4\epsilon_1\epsilon_2}.
+\]
+If $\epsilon_1/\epsilon_2\to0$, the actual HE eigenvalues satisfy
+$\lambda_1\sim\frac43\epsilon_1$ and
+$\lambda_2\sim\frac32\epsilon_2$. The relative theorem applies
+equally when $\epsilon_1=e^{-1/\epsilon_2^2}$.
+\end{example}
+
+\begin{example}
+For $X_3$ choose $\epsilon_1=s^6$, $\epsilon_2=s^4$ and
+$\epsilon_3=s^2$, $s>0$. The characteristic polynomial of the
+comparison matrix is
+\[
+ \lambda^3-\frac43(\epsilon_1+\epsilon_2+\epsilon_3)\lambda^2
+ +\frac53(\epsilon_1\epsilon_2+\epsilon_1\epsilon_3+
+                         \epsilon_2\epsilon_3)\lambda
+ -2\epsilon_1\epsilon_2\epsilon_3.
+\]
+Its largest root is asymptotic to $\frac43s^2$. The second elementary
+symmetric function then gives the middle root $\frac54s^4$, and
+the determinant gives the smallest root $\frac65s^6$.
+Consequently the actual tangent-bundle spectrum satisfies
+\[
+ \lambda_1\sim\tfrac65s^6,\qquad
+ \lambda_2\sim\tfrac54s^4,\qquad
+ \lambda_3\sim\tfrac43s^2.
+\]
+These are changes of polarization on one fixed six-dimensional variety.
+\end{example}
+
+Theorem~4.1 and equation~(16) of \cite{Chambers} supply further examples
+from the strictly semistable smooth toric Fano census in dimensions
+three through six, overlapping this family at $X_2$ and $X_3$.
+All 31 indecomposable cases give star extensions of distinct locally
+free stable factors, with nonzero components. Twenty-six have two
+factors and hence also
+satisfy Theorem~\ref{thm:second-order}. The five cases with more
+factors have ranks
+\[
+ (2,1,1),\ (3,1,1),\ (4,1,1),\ (4,1,1),\ (3,1,1,1).
+\]
+In dimension $n$, for a quotient of rank $r_j$ with first Chern class
+$C_j$, the general conversion is
+\[
+ \epsilon_j(H)=\frac{2\pi}{r_j(n-1)!V_H}
+       \left(C_j-\frac{r_j}{n}c_1(T_X)\right)H^{n-1}.
+\]
+Computing the two-factor
+coefficient $D$ would additionally require the wall Green operator
+and normalized harmonic extension; the toric degree data do not
+provide those analytic quantities.
+
+\section{Scope and further questions}
+
+The star structure is responsible for the disappearance of harmonic
+norms from the leading spectrum. It gives one positive scaling
+variable for each independent scalar equation, and a split summand
+on every coordinate face. For general two-step extension graphs
+with cycles, the number of edge weights can exceed the number of
+independent moment equations; the ranks and slope surpluses then
+need not determine all leading weights. Repeated stable factors
+also replace block scalars by noncommutative endomorphism algebras.
+Neither setting is included in Theorem~\ref{thm:main}.
+
+The estimates concern equilibrium metrics for varying K\"ahler forms.
+Relating them to the long-time HYM flow as the polarization also
+approaches a wall requires a uniform two-parameter analysis. The
+inverse-time behavior on the wall and the positive equilibrium gap
+inside the chamber do not by themselves justify interchanging those
+limits.

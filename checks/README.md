@@ -1,5 +1,8 @@
 # Computational checks
 
+These scripts accompany the flow paper. The companion on stability walls
+has its own [exact matrix computations](../paper3/checks/README.md).
+
 Each script uses only the Python 3 standard library and exits with an
 error if any assertion fails. Run one from the repository root, for
 example

@@ -1,0 +1,10 @@
+# Manuscript
+
+*Small Dolbeault eigenvalues near stability walls*, Bernd Johannes Wuebben,
+27 October 2026, 13 pages. [Read the PDF](main.pdf).
+
+Build with `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex`.
+The main file includes `geometry.tex`, `spectrum.tex`, `two_factor.tex` and
+`toric.tex`; its bibliography is inline. No external data or generated
+inputs are required. The [paper guide](../README.md) states the results,
+their scope, and the supporting finite computations.

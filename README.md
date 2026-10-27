@@ -6,7 +6,8 @@ Research manuscript and computational checks by **Bernd Johannes Wuebben**.
 27 October 2026, 13 pages. It determines every small Hermitian–Einstein
 endomorphism eigenvalue near intersecting stability walls from the factor
 ranks and slopes, with a uniform relative estimate across arbitrarily
-separated wall distances. [Current version (PDF)](paper3/paper/main.pdf).
+separated wall distances. [Current version (PDF)](paper3/paper/main.pdf)
+· [Zenodo:23682045](https://zenodo.org/records/23682045).
 
 **[Read the paper (PDF, 45 pages)](paper/small-dolbeault-eigenvalues.pdf)**, initial version 20 September 2026, this version 30 September 2026.
 

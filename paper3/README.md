@@ -3,6 +3,11 @@
 **Bernd Johannes Wuebben** · 27 October 2026 · 13 pages
 
 [Current version (PDF)](paper/main.pdf) · [Manuscript sources](paper/)
+· [Zenodo:23682045](https://zenodo.org/records/23682045)
+
+Version DOI: [10.5281/zenodo.23682045](https://doi.org/10.5281/zenodo.23682045).
+ArXiv submission is pending. [BibTeX](CITATION.bib) and
+[citation metadata](CITATION.cff) identify this version.
 
 This paper determines the small endomorphism Dolbeault spectrum of
 Hermitian–Einstein bundles as the Kähler class approaches an intersection

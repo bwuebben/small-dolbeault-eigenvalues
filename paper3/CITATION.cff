@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript using its version DOI."
+type: article
+title: "Small Dolbeault eigenvalues near stability walls"
+authors:
+  - family-names: Wuebben
+    given-names: Bernd Johannes
+    orcid: "https://orcid.org/0009-0002-4588-3284"
+date-released: 2026-10-27
+version: "2026-10-27"
+doi: 10.5281/zenodo.23682045
+url: "https://bwuebben.github.io/papers/small-dolbeault-stability-walls/"
+repository-code: "https://github.com/bwuebben/small-dolbeault-eigenvalues/tree/main/paper3"

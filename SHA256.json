@@ -1,11 +1,11 @@
 {
-  ".github/workflows/verify.yml": "f0a59467cc9fc033019b4898395b9143e19827ef07eb7d54e877fbc6308c451f",
+  ".github/workflows/verify.yml": "56e5bf925cec8f7eb9a7f736c87fd14dc4311133b7aa6f9b00f0a3a9d719d475",
   ".gitignore": "36989e14787d7a09cf7132ebfbf3b3a9174ad99878c5dc63a80b2b196da9f041",
   "CITATION.bib": "cf67d70b6526c16fe9cfaeccbed7dddb2431ed501fb74b063edbafe7eece45a3",
   "CITATION.cff": "9b2fdf1b63e297d8489165c93e373951747f2a9141229fbe866d46d3611caca7",
   "LICENSE": "a869390ac8a218507deb53cf6ee5d5c0e7eacb586f9a6b6edcc43ad7de38fb9f",
   "Makefile": "7a2b03efc543008f23885e2311b7e48a624f5297e4bd421ee1901ef83b0b830a",
-  "README.md": "130960c7cc418d477a8187f1dfd9895b5cdd49455c58cf2825eb0fe1e14a8977",
+  "README.md": "319e4b2ca7162be8a79876320e805a2ea38a1bd963d30887fc7eb0d29ccb82b9",
   "checks/README.md": "e2b1cf116c8278b9bad12d22f62924fb9391363f1e96562d08ba9a428f364526",
   "checks/check_harmonic_normal_form.py": "2de34dcd8ccfc0e9d099038a22c18b28530abbb1b93ea0665d247e2e3183dabb",
   "checks/check_repeated_factors.py": "fe430d758fd8e334e3dbea717113ee3df5318a7e0e2ba4116ee4ab40d23581db",

@@ -26,6 +26,8 @@ jobs:
           cffconvert --validate -i paper3/CITATION.cff
       - name: Install LaTeX
         run: |
+          # Use the official HTTPS archive instead of the runner's slow Azure mirror.
+          printf '%s\n' 'https://archive.ubuntu.com/ubuntu/' | sudo tee /etc/apt/apt-mirrors.txt
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends latexmk texlive-latex-recommended texlive-fonts-recommended
       - name: Build both manuscripts

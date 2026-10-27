@@ -59,7 +59,7 @@ The stability-wall examples use the geometric constructions in
 
 The computations require Python 3 and use only its standard library.
 Building the PDFs requires `make` and a TeX Live installation with
-`latexmk`, `amsart`, `geometry` and `hyperref`. No external data is needed.
+`latexmk`, `amsart`, `geometry`, `hyperref` and `booktabs`. No external data is needed.
 From the repository root:
 
 ```bash

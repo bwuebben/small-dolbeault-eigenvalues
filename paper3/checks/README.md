@@ -1,6 +1,8 @@
 # Exact matrix computations
 
-Run `python3 check_rank_matrix.py`. Python's standard library is sufficient.
+From the repository root, run `make checks-paper3` or
+`python3 paper3/checks/check_rank_matrix.py`. From this directory, run
+`python3 check_rank_matrix.py`. Python's standard library is sufficient.
 
 The program uses rational arithmetic to check the reduced mass inverse,
 every principal-minor coefficient, and equality of the full and reduced
@@ -11,3 +13,5 @@ two-leaf discriminant, and the separated toric constants `6/5, 5/4, 4/3`.
 The general identities and the analytic estimates are proved in the
 [manuscript](../paper/main.pdf). These finite computations do not solve
 the Hermitian–Einstein equation or compute the Green operator.
+See the [paper guide](../README.md) for the results and hypotheses, or
+the [repository guide](../../README.md) for the separate flow computations.

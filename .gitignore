@@ -6,7 +6,12 @@
 !/CITATION.cff
 !/CITATION.bib
 !/Makefile
+!/SHA256.json
+!/.github/
+!/.github/workflows/
+!/.github/workflows/verify.yml
 !/paper/
+!/paper/README.md
 !/paper/*.tex
 !/paper/small-dolbeault-eigenvalues.pdf
 !/checks/

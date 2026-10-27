@@ -11,7 +11,8 @@ example
 python3 checks/check_two_step_flow.py
 ```
 
-or all seven with `make checks`. Exact identities use rational
+or all seven with `make checks-flow`. The repository-wide `make checks`
+also runs the stability-wall matrix computation. Exact identities use rational
 arithmetic (`fractions.Fraction`); spectra are computed by Jacobi
 diagonalization in 110-digit `decimal` arithmetic. The scripts check the
 finite-dimensional algebra and model computations on which the proofs

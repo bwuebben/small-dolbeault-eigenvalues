@@ -3,6 +3,7 @@
 **Bernd Johannes Wuebben** · 27 October 2026 · 13 pages
 
 [Current version (PDF)](paper/main.pdf) · [Manuscript sources](paper/)
+· [Abstract and citation](https://bwuebben.github.io/papers/small-dolbeault-stability-walls/)
 · [Zenodo:23682045](https://zenodo.org/records/23682045)
 
 Version DOI: [10.5281/zenodo.23682045](https://doi.org/10.5281/zenodo.23682045).
@@ -12,7 +13,8 @@ ArXiv submission is pending. [BibTeX](CITATION.bib) and
 This paper determines the small endomorphism Dolbeault spectrum of
 Hermitian–Einstein bundles as the Kähler class approaches an intersection
 of slope-stability walls. It is a separate companion to
-[Small Dolbeault eigenvalues along Hermitian Yang–Mills flow](../README.md).
+[Small Dolbeault eigenvalues along Hermitian Yang–Mills flow](../paper/README.md).
+The [repository guide](../README.md) indexes both papers and their separate citations.
 
 ## Main results
 
@@ -63,15 +65,19 @@ extension graphs with cycles are outside the theorems.
 ## Build and finite computations
 
 ```bash
-cd paper
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
-python3 ../checks/check_rank_matrix.py
+# From the repository root:
+make paper3         # build/paper3/main.pdf; leaves the released PDF unchanged
+make checks-paper3  # exact matrix computations
+make integrity     # verify both distribution manifests
 ```
 
 The five TeX files are self-contained, with an inline bibliography and no
 external data. The [matrix checks](checks/README.md) use only the Python
 standard library. They verify finite algebraic identities and examples;
 the analytic estimates are proved in the manuscript.
+The [source guide](paper/README.md) describes a direct LaTeX build.
+The [SHA-256 manifest](SHA256.json) covers this distribution's sources,
+released PDF, computation, guides, citation files and rights notice.
 
 ## Rights
 

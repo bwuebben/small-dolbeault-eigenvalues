@@ -1,17 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite the manuscript as below."
-title: "Small Dolbeault Eigenvalues along Hermitian Yang–Mills Flow: Manuscript and Computational Checks"
+message: "This repository contains two manuscripts. The preferred citation below is the flow paper; cite paper3/CITATION.cff for the stability-wall paper."
+title: "Small Dolbeault eigenvalues: flow and stability walls"
 type: software
 authors:
   - family-names: Wuebben
     given-names: Bernd Johannes
-date-released: 2026-09-30
+    orcid: "https://orcid.org/0009-0002-4588-3284"
 repository-code: "https://github.com/bwuebben/small-dolbeault-eigenvalues"
-license:
-  - CC-BY-4.0
-  - MIT
+url: "https://github.com/bwuebben/small-dolbeault-eigenvalues"
+# Rights vary by directory; see LICENSE and paper3/LICENSE.
 keywords:
   - Hermitian Yang–Mills flow
+  - Hermitian–Einstein metrics
   - Dolbeault Laplacian
   - holomorphic vector bundles
   - spectral degeneration
@@ -23,5 +23,21 @@ preferred-citation:
   authors:
     - family-names: Wuebben
       given-names: Bernd Johannes
+      orcid: "https://orcid.org/0009-0002-4588-3284"
   year: 2026
-  url: "https://github.com/bwuebben/small-dolbeault-eigenvalues/blob/main/paper/small-dolbeault-eigenvalues.pdf"
+  date-released: "2026-09-30"
+  version: "2026-09-30"
+  doi: 10.5281/zenodo.23643223
+  url: "https://bwuebben.github.io/papers/small-dolbeault-eigenvalues/"
+references:
+  - type: unpublished
+    title: "Small Dolbeault eigenvalues near stability walls"
+    authors:
+      - family-names: Wuebben
+        given-names: Bernd Johannes
+        orcid: "https://orcid.org/0009-0002-4588-3284"
+    year: 2026
+    date-released: "2026-10-27"
+    version: "2026-10-27"
+    doi: 10.5281/zenodo.23682045
+    url: "https://bwuebben.github.io/papers/small-dolbeault-stability-walls/"

@@ -68,7 +68,7 @@ coefficient for equilibrium metrics with the slope gap as parameter.
 **Toric examples (Section 5).** Tangent bundles of smooth toric Fano
 varieties realize arbitrarily many independent small spectral scales.
 The geometric extensions and local chambers come from
-[Local stability chambers for toric tangent bundles](https://doi.org/10.5281/zenodo.23681809).
+[Local stability chambers for toric tangent bundles](https://doi.org/10.5281/zenodo.23682140).
 The joint limit in polarization and HYM flow time, repeated factors, and
 extension graphs with cycles are outside the theorems.
 

@@ -13,7 +13,7 @@ equilibrium metrics as the Kähler class varies.
 
 | Manuscript | Current version | Read and cite |
 |---|---|---|
-| **[Small Dolbeault eigenvalues near stability walls](paper3/README.md)** | 27 October 2026 · 13 pages | [PDF](paper3/paper/main.pdf) · [Abstract](https://bwuebben.github.io/papers/small-dolbeault-stability-walls/) · [Zenodo:23682045](https://zenodo.org/records/23682045) |
+| **[Small Dolbeault eigenvalues near stability walls](paper3/README.md)** | 27 October 2026 · 13 pages | [PDF](paper3/paper/main.pdf) · [Abstract](https://bwuebben.github.io/papers/small-dolbeault-stability-walls/) · [Zenodo:23717764](https://zenodo.org/records/23717764) |
 | **[Small Dolbeault eigenvalues along Hermitian Yang–Mills flow](paper/README.md)** | 30 September 2026 · 45 pages; initial version 20 September | [PDF](paper/small-dolbeault-eigenvalues.pdf) · [Abstract](https://bwuebben.github.io/papers/small-dolbeault-eigenvalues/) · [Zenodo:23643223](https://zenodo.org/records/23643223) |
 
 **Near stability walls.** For star extensions of pairwise nonisomorphic
@@ -90,7 +90,7 @@ and both LaTeX builds on pushes and pull requests.
 
 Cite the particular manuscript used, with its version DOI:
 
-- Stability walls: [10.5281/zenodo.23682045](https://doi.org/10.5281/zenodo.23682045)
+- Stability walls: [10.5281/zenodo.23717764](https://doi.org/10.5281/zenodo.23717764)
   · [BibTeX](paper3/CITATION.bib) · [CFF](paper3/CITATION.cff).
 - HYM flow: [10.5281/zenodo.23643223](https://doi.org/10.5281/zenodo.23643223)
   · [BibTeX](CITATION.bib) · [CFF](CITATION.cff).

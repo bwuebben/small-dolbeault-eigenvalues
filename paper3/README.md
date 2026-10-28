@@ -4,9 +4,9 @@
 
 [Current version (PDF)](paper/main.pdf) · [Manuscript sources](paper/)
 · [Abstract and citation](https://bwuebben.github.io/papers/small-dolbeault-stability-walls/)
-· [Zenodo:23682045](https://zenodo.org/records/23682045)
+· [Zenodo:23717764](https://zenodo.org/records/23717764)
 
-Version DOI: [10.5281/zenodo.23682045](https://doi.org/10.5281/zenodo.23682045).
+Version DOI: [10.5281/zenodo.23717764](https://doi.org/10.5281/zenodo.23717764).
 ArXiv submission is pending. [BibTeX](CITATION.bib) and
 [citation metadata](CITATION.cff) identify this version.
 
@@ -60,8 +60,9 @@ satisfy
 ```
 
 The coefficient $D$ is given by the Green operator at the graded limit.
-The first eigensection is determined through order $\delta$ in every
-spatial $C^m$ norm. This identifies the earlier harmonic-family
+After rescaling the extension and making unitary identifications with the
+graded limit, the normalized first eigensection is determined through order
+$\delta$ in every spatial $C^m$ norm. This identifies the earlier harmonic-family
 coefficient for equilibrium metrics with the slope gap as parameter.
 
 **Toric examples (Section 5).** Tangent bundles of smooth toric Fano
